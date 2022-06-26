@@ -2,7 +2,8 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `posts/**/*.md`,
+  filePathPattern: `posts/**/*.mdx`,
+  contentType: 'mdx',
   fields: {
     title: {
       type: 'string',
@@ -30,7 +31,10 @@ export const Post = defineDocumentType(() => ({
     slug: {
       type: 'string',
       resolve: (post) =>
-        `/posts/${encodeURI(post.title.replace(/\s/g, '-').toLowerCase())}`,
+        `/posts/${post.title
+          .replace(/\s/g, '-')
+          .toLowerCase()
+          .replace('ä', 'ae')}`,
     },
   },
 }))

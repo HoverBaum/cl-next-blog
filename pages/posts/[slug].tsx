@@ -1,6 +1,9 @@
+/** @jsxImportSource @emotion/react */
 import Head from 'next/head'
-import { useMDXComponent } from 'next-contentlayer/hooks'
 import { allPosts, Post } from 'contentlayer/generated'
+import { BlogPost } from 'components/BlogPost'
+import { css } from '@emotion/react'
+import { Wrapper } from 'components/Wrapper'
 
 export async function getStaticPaths() {
   const paths: string[] = allPosts.map((post) => post.slug)
@@ -32,7 +35,9 @@ const DocLayout = ({ post }: { post: Post }) => {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <pre>{JSON.stringify(post, null, 2)}</pre>
+      <Wrapper>
+        <BlogPost post={post} />
+      </Wrapper>
     </>
   )
 }

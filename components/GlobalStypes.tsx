@@ -25,28 +25,34 @@ export const GlobalStyles = () => (
         font-family: 'Noto Sans', sans-serif;
         font-weight: 300;
         color: ${theme.textColor};
+        font-size: 18px;
       }
 
       h1 {
         ${scaledFontSize(5)};
         font-weight: 300;
+        margin-bottom: 0;
       }
       h2 {
         ${scaledFontSize(4)};
         font-weight: 300;
         font-family: 'Noto Serif', serif;
+        margin-bottom: 0;
       }
       h3 {
         ${scaledFontSize(3)};
         font-family: 'Noto Serif', serif;
+        margin-bottom: 0;
       }
       h4 {
         ${scaledFontSize(2)};
         font-family: 'Noto Serif', serif;
+        margin-bottom: 0;
       }
       h5 {
         ${scaledFontSize(1)};
         font-family: 'Noto Serif', serif;
+        margin-bottom: 0;
       }
     `}
   />

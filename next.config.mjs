@@ -5,4 +5,7 @@ export default withContentlayer({
   compiler: {
     emotion: true,
   },
+  images: {
+    domains: ['storage.googleapis.com'],
+  },
 })
