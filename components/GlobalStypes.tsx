@@ -1,10 +1,10 @@
 import { css, Global } from '@emotion/react'
 import { theme } from './theme'
 
-const baseFontSize = '1em'
+const baseFontSize = '1rem'
 const fontRatio = 1.33
 
-const scaledFontSize = (scale: number) => {
+export const scaledFontSize = (scale: number) => {
   return css`
     font-size: calc(${baseFontSize} * ${Math.pow(fontRatio, scale)});
   `
@@ -21,12 +21,26 @@ export const GlobalStyles = () => (
         src: url('/fonts/Simonetta-Black.ttf');
       }
 
+      @font-face {
+        font-family: 'Simonetta';
+        src: url('/fonts/Simonetta-Regular.ttf');
+      }
+
+      @font-face {
+        font-family: 'Noto Sans Light';
+        src: url('/fonts/NotoSans-Light.ttf');
+      }
+
+      @font-face {
+        font-family: 'Noto Serif';
+        src: url('/fonts/NotoSerif-Regular.ttf');
+      }
+
       html,
       body {
         padding: 0;
         margin: 0;
         min-height: 100%;
-        font-size: ${baseFontSize};
         font-family: 'Noto Sans', sans-serif;
         font-weight: 300;
         color: ${theme.textColor};
@@ -40,13 +54,12 @@ export const GlobalStyles = () => (
       }
       h2 {
         ${scaledFontSize(4)};
-        font-weight: 900;
-        font-family: 'Simonetta-Black', serif;
+        font-family: 'Noto Serif', cursive;
         margin-bottom: 0;
       }
       h3 {
         ${scaledFontSize(3)};
-        font-family: 'Simonetta-Black', serif;
+        font-family: 'Noto Serif', serif;
         margin-bottom: 0;
       }
       h4 {
@@ -58,6 +71,16 @@ export const GlobalStyles = () => (
         ${scaledFontSize(1)};
         font-family: 'Simonetta-Black', serif;
         margin-bottom: 0;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #cc4a1a;
+      }
+
+      ::selection {
+        background: #ff6933;
+        color: white;
       }
     `}
   />

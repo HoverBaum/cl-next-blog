@@ -16,9 +16,6 @@ export const MDXLink: React.FC<PropsWithChildren<MDXLinkProps>> = ({
       href={href}
       css={css`
         text-decoration: underline;
-        &:hover {
-          color: ${theme.mainColor};
-        }
       `}
     >
       {children}

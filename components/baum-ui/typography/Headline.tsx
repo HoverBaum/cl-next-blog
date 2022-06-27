@@ -2,16 +2,17 @@
 import { css } from '@emotion/react'
 import { PropsWithChildren } from 'react'
 
-export const Wrapper: React.FC<PropsWithChildren<unknown>> = ({ children }) => {
+export const Headline: React.FC<PropsWithChildren<unknown>> = ({
+  children,
+}) => {
   return (
-    <div
+    <h1
       css={css`
-        max-width: 50rem;
-        padding: 0 1rem;
-        margin: 0 auto;
+        margin-top: 2.074em;
+        margin-bottom: 0.2rem;
       `}
     >
       {children}
-    </div>
+    </h1>
   )
 }
