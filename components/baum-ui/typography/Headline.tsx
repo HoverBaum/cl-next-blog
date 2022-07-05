@@ -8,7 +8,6 @@ export const Headline: React.FC<PropsWithChildren<unknown>> = ({
   return (
     <h1
       css={css`
-        margin-top: 2.074em;
         margin-bottom: 0.2rem;
       `}
     >

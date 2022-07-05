@@ -4,30 +4,36 @@ import { Title } from 'components/baum-ui'
 import { theme } from 'components/theme'
 import { Wrapper } from 'components/Wrapper'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export const Header = () => {
+  const router = useRouter()
+  const isHomepage = router.pathname === '/'
+
   return (
-    <header
-      css={css`
-        /* background-image: url('/header.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        filter: saturate(120%);
-        width: 100%;
-        height: 50vh;
-        color: ${theme.headerColor}; */
-      `}
-    >
+    <header>
       <Wrapper>
         <hgroup
           css={css`
             margin-bottom: 10vh;
           `}
         >
-          <Title>
-            <Link href="/">Hendriks Blog</Link>
-          </Title>
+          {isHomepage && (
+            <Title>
+              <Link href="/">Hendriks Blog</Link>
+            </Title>
+          )}
+          {!isHomepage && (
+            <h2
+              css={css`
+                font-family: 'Simonetta-Black', serif;
+                color: #cc4a1a;
+              `}
+            >
+              <Link href="/">Hendriks Blog</Link>
+            </h2>
+          )}
+
           <h4
             css={css`
               font-family: 'Noto Sans', sans-serif;

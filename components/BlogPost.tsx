@@ -4,6 +4,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { Post as ContentlayerPost } from 'contentlayer/generated'
 import { ComponentType } from 'react'
 import { MDXComponents } from './MDXComponents/MDXComponents'
+import { Headline } from './baum-ui'
 
 type PostProps = {
   post: ContentlayerPost
@@ -18,7 +19,7 @@ export const BlogPost: ComponentType<PostProps> = ({ post }) => {
         padding-bottom: 2rem;
       `}
     >
-      <h1>{post.title}</h1>
+      <Headline>{post.title}</Headline>
       <MDXContent components={MDXComponents} />
     </article>
   )
