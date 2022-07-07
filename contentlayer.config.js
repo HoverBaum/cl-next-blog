@@ -36,6 +36,20 @@ export const Post = defineDocumentType(() => ({
           .toLowerCase()
           .replace('ä', 'ae')}`,
     },
+    excerpt: {
+      type: 'string',
+      resolve: (post) => {
+        // Take the first paragraph of the content.
+        // But at least 300 words and only full paragraphs.
+        const lines = post.body.raw.split('\n').filter((line) => line !== '')
+        const excerpt = lines.reduce((acc, line) => {
+          if (acc.join(' ').length > 300) {
+            return acc
+          } else return acc.concat(line)
+        }, [])
+        return excerpt
+      },
+    },
   },
 }))
 
