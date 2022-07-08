@@ -43,18 +43,17 @@ export const Post = defineDocumentType(() => ({
         // Take the first paragraph of the content.
         // But at least 300 words and only full paragraphs.
         // We split on empty and not new lines.
-        console.log(post.title)
-        const lines = post.body.raw.split('\n\n').filter((line) => line !== '')
+        const lines = post.body.raw
+          .replace(/\r\n/g, '\n')
+          .split('\n\n')
+          .filter((line) => line !== '')
         const excerpt = lines.reduce((acc, line) => {
           if (/\!\[.+?\]\(.+?\)/.test(line)) return acc
           if (acc.join(' ').length > 300) {
             return acc
           } else return acc.concat(line)
         }, [])
-        if (post.title === 'Trying my hands at Deno v1.0') console.log(excerpt)
         const excerptMDX = excerpt.join('\n')
-        if (post.title === 'Trying my hands at Deno v1.0')
-          console.log(excerptMDX)
         const compiledExcerpt = await bundleMDX({
           source: excerptMDX,
         })
