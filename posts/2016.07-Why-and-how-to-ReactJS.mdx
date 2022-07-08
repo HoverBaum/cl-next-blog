@@ -92,7 +92,7 @@ It is just a plain old JavaScript Object. It can of cause be more complex and ne
 
 Redux strong point is it's unidirectional dataflow. as you can see below data only flows one way. This makes reasoning about things so much more doable. There is no back and forth of two directional databinding. There is only a Store which is in a state that we can represent.
 
-<img id="flowDiagram" src="/images/tech/redux-flow.png" style="width: 50%;" />
+<img id="flowDiagram" src="/images/tech/redux-flow.png" />
 <span class="caption">Visualizing dataflow in Redux</span>
 
 ## Reducers
@@ -492,11 +492,7 @@ When you look at a problem with an app build on React and Redux there are three 
 
 And this right here is one of the awesome things we get from using React and Redux and thus separating the concerns of handling the state and display of our application. Whenever you find a bug it will be withing those three categories. Let's look at how to find out where your problem lies.
 
-<img
-  id="flowDiagram"
-  src="/images/tech/debugReactReduxFlowChart.png"
-  style="width: 70%;"
-/>
+<img id="flowDiagram" src="/images/tech/debugReactReduxFlowChart.png" />
 <span class="caption">Basic flowchart to find the source of a bug.</span>
 
 ### 1 Rendering
