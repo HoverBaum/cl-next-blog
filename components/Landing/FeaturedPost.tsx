@@ -37,9 +37,22 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
         <Img src={post.firstImage.src} alt={post.firstImage.alt} />
       )}
       <MDXContent components={MDXComponents} />
-      <Paragraph>
+
+      {/* Adding the read more always at the bottom and same bottom.
+      One div creates the space, the other positions the link. */}
+      <div
+        css={css`
+          height: 3rem;
+        `}
+      ></div>
+      <div
+        css={css`
+          position: absolute;
+          bottom: 0;
+        `}
+      >
         <Link href={post.slug}>…continue reading</Link>
-      </Paragraph>
+      </div>
     </PostCard>
   )
 }

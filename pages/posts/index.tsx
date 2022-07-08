@@ -25,7 +25,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
       </Head>
 
       <Wrapper>
-        <Headline>All posts</Headline>
+        <Headline>All {posts.length} posts</Headline>
         <div>
           {posts.map((post, idx) => (
             <PostCard

@@ -23,8 +23,16 @@ export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
   children,
 }) => {
   return (
-    <article>
-      <h3>
+    <article
+      css={css`
+        position: relative;
+      `}
+    >
+      <h3
+        css={css`
+          margin-top: 0;
+        `}
+      >
         <Link href={slug}>
           <a
             css={css`
@@ -42,7 +50,7 @@ export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
       {!!date && (
         <time dateTime={date}>{format(parseISO(date), 'LLLL d, yyyy')}</time>
       )}
-      <div>{children}</div>
+      {children}
     </article>
   )
 }

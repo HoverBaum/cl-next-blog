@@ -73,6 +73,14 @@ export const GlobalStyles = () => (
         margin-bottom: 0;
       }
 
+      h1 a,
+      h2 a,
+      h3 a,
+      h4 a,
+      h5 a {
+        text-decoration: none;
+      }
+
       a {
         text-decoration: underline;
       }
@@ -80,6 +88,8 @@ export const GlobalStyles = () => (
       a:hover,
       a:focus {
         color: #cc4a1a;
+        text-decoration: underline;
+        transition: 0.3s ease-out;
       }
 
       ::selection {

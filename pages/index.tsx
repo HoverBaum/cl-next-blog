@@ -4,12 +4,29 @@ import { compareDesc } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
 import { FeaturedPost } from 'components/Landing/FeaturedPost'
+import { css } from '@emotion/react'
+import { theme } from 'components/theme'
+import Link from 'next/link'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
     return compareDesc(new Date(a.date), new Date(b.date))
   })
   return { props: { posts } }
+}
+
+const SmallTitle = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <h4
+      css={css`
+        color: ${theme.mainColor};
+        text-decoration: underline;
+        margin-top: 4rem;
+      `}
+    >
+      {children}
+    </h4>
+  )
 }
 
 const Home = ({ posts }: { posts: Post[] }) => {
@@ -20,7 +37,25 @@ const Home = ({ posts }: { posts: Post[] }) => {
       </Head>
 
       <Wrapper>
+        <SmallTitle>Current post</SmallTitle>
         <FeaturedPost post={posts[0]} variant="big" />
+
+        <SmallTitle>Recent posts</SmallTitle>
+        <div
+          css={css`
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 2rem;
+            grid-row-gap: 0px;
+          `}
+        >
+          <FeaturedPost post={posts[1]} variant="small" />
+          <FeaturedPost post={posts[2]} variant="small" />
+        </div>
+
+        <SmallTitle>More</SmallTitle>
+        <Link href="/posts">All posts</Link>
       </Wrapper>
     </div>
   )
