@@ -1,5 +1,5 @@
 export const theme = {
-  mainColor: '#0BA6D7',
+  mainColor: '#cc4a1a',
 
   // Gerys build after
   // https://www.smashingmagazine.com/2016/04/web-developer-guide-color/#creating-harmonious-grays

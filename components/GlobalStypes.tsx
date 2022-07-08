@@ -73,8 +73,12 @@ export const GlobalStyles = () => (
         margin-bottom: 0;
       }
 
-      a:hover {
+      a {
         text-decoration: underline;
+      }
+
+      a:hover,
+      a:focus {
         color: #cc4a1a;
       }
 

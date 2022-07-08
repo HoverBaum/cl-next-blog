@@ -7,24 +7,39 @@
  */
 
 import { css } from '@emotion/react'
-import { Paragraph } from 'components/baum-ui'
+import { Button, Paragraph } from 'components/baum-ui'
+import { Img } from 'components/MDXComponents/Img'
+import { MDXComponents } from 'components/MDXComponents/MDXComponents'
+import { PostCard } from 'components/PostCard'
 import { Post } from 'contentlayer/generated'
+import { useMDXComponent } from 'next-contentlayer/hooks'
+import Link from 'next/link'
 
 type FeaturedPostProps = {
   post: Post
+  variant?: 'big' | 'small'
 }
 
-export const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
+export const FeaturedPost: React.FC<FeaturedPostProps> = ({
+  post,
+  variant = 'small',
+}) => {
+  const MDXContent = useMDXComponent(post.excerpt.code)
   console.log(post)
-
   return (
-    <article
-      css={css`
-        padding-bottom: 2rem;
-      `}
+    <PostCard
+      title={post.title}
+      tags={post.tags}
+      slug={post.slug}
+      date={post.date}
     >
-      <h2>{post.title}</h2>
-      <Paragraph>FEATURED CONTENT HERE</Paragraph>
-    </article>
+      {variant === 'big' && post.firstImage && (
+        <Img src={post.firstImage.src} alt={post.firstImage.alt} />
+      )}
+      <MDXContent components={MDXComponents} />
+      <Paragraph>
+        <Link href={post.slug}>…continue reading</Link>
+      </Paragraph>
+    </PostCard>
   )
 }
