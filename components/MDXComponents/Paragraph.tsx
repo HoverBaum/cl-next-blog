@@ -1,20 +1,11 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
+import { Paragraph as BaumParagraph } from 'components/baum-ui'
 import React, { PropsWithChildren } from 'react'
 
 export const Paragraph: React.FC<PropsWithChildren<unknown>> = ({
   children,
 }) => {
   if (typeof children === 'string')
-    return (
-      <p
-        css={css`
-          text-align: justify;
-          line-height: 120%;
-        `}
-      >
-        {children}
-      </p>
-    )
+    return <BaumParagraph>{children}</BaumParagraph>
   return <>{children}</>
 }

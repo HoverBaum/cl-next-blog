@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
+import { css, SerializedStyles } from '@emotion/react'
 import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
 import { PropsWithChildren } from 'react'
@@ -26,6 +26,10 @@ export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
     <article
       css={css`
         position: relative;
+        height: 100%;
+        padding: 1rem;
+        border-radius: 5px;
+        background-color: var(--surface2);
       `}
     >
       <h3
@@ -34,14 +38,7 @@ export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
         `}
       >
         <Link href={slug}>
-          <a
-            css={css`
-              color: ${theme.textColor};
-              cursor: pointer;
-            `}
-          >
-            {title}
-          </a>
+          <a>{title}</a>
         </Link>
       </h3>
       <div>

@@ -11,7 +11,7 @@ export const Paragraph: React.FC<PropsWithChildren<unknown>> = ({
       css={css`
         font-size: 1rem;
         font-family: 'Roboto', sans-serif;
-        color: rgba(0, 0, 0, 0.87);
+        color: var(--text1);
         line-height: 150%;
       `}
     >
