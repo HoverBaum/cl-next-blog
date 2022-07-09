@@ -5,7 +5,13 @@ import React, { PropsWithChildren } from 'react'
 export const Paragraph: React.FC<PropsWithChildren<unknown>> = ({
   children,
 }) => {
-  if (typeof children === 'string')
-    return <BaumParagraph>{children}</BaumParagraph>
-  return <>{children}</>
+  if (typeof children === 'object' && children) {
+    //@ts-ignore
+    const isImage = children.props && children.props.src && children.props.alt
+    if (isImage) {
+      return <>{children}</>
+    }
+  }
+
+  return <BaumParagraph>{children}</BaumParagraph>
 }
