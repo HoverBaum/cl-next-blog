@@ -7,6 +7,7 @@ import { FeaturedPost } from 'components/Landing/FeaturedPost'
 import { css } from '@emotion/react'
 import { theme } from 'components/theme'
 import Link from 'next/link'
+import { IconItem } from 'components/IconItem'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -47,15 +48,51 @@ const Home = ({ posts }: { posts: Post[] }) => {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: 1fr;
             grid-column-gap: 2rem;
-            grid-row-gap: 0px;
+            grid-row-gap: 2rem;
           `}
         >
           <FeaturedPost post={posts[1]} variant="small" />
           <FeaturedPost post={posts[2]} variant="small" />
         </div>
 
+        <SmallTitle>This is me</SmallTitle>
+        <p>
+          Hi, I am Hendrik. Webdev for fun and passionate about knowledge
+          sharing.
+        </p>
+
         <SmallTitle>More</SmallTitle>
-        <Link href="/posts">All posts</Link>
+        <div
+          css={css`
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 2rem;
+            grid-row-gap: 2rem;
+          `}
+        >
+          <IconItem icon="✍️">
+            <Link href="/posts">All posts</Link>
+          </IconItem>
+          <IconItem>
+            <Link href="/posts">Dev posts</Link>
+          </IconItem>
+          <IconItem>
+            <Link href="/posts">My talks</Link>
+          </IconItem>
+          <IconItem>
+            <Link href="/posts">Posts by tags</Link>
+          </IconItem>
+          <IconItem>
+            <Link href="/posts">Posts by categories</Link>
+          </IconItem>
+          <IconItem>
+            <Link href="/posts">Projects</Link>
+          </IconItem>
+          <IconItem>
+            <Link href="/posts">About me</Link>
+          </IconItem>
+        </div>
       </Wrapper>
     </div>
   )

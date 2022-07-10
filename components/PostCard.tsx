@@ -29,7 +29,7 @@ export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
         height: 100%;
         padding: 1rem;
         border-radius: 5px;
-        background-color: var(--surface2);
+        background-color: var(--surface1);
       `}
     >
       <h3

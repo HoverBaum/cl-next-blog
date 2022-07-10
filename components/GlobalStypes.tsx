@@ -128,7 +128,7 @@ export const GlobalStyles = () => (
         font-weight: 300;
         font-size: 18px;
         color: var(--text1);
-        background-color: var(--surface2);
+        background-color: var(--surface1);
       }
 
       h1 {
