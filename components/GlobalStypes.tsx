@@ -40,9 +40,13 @@ export const GlobalStyles = () => (
       // https://web.dev/building-a-color-scheme/
       //16°, 77%, 45%
       * {
-        --brand-hue: 16;
+        /* --brand-hue: 16;
         --brand-saturation: 77%;
-        --brand-lightness: 45%;
+        --brand-lightness: 45%; */
+
+        --brand-hue: 211;
+        --brand-saturation: 37%;
+        --brand-lightness: 49%;
 
         /* light */
         --brand-light: hsl(
