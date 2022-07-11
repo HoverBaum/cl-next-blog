@@ -11,7 +11,7 @@ export const Title: React.FC<PropsWithChildren<unknown>> = ({ children }) => {
         font-size: 5.2917rem;
 
         & a {
-          color: var() (--brand);
+          color: var(--brand);
         }
       `}
     >

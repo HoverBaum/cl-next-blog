@@ -80,8 +80,8 @@ const Home = ({ posts }: { posts: Post[] }) => {
           <IconItem>
             <Link href="/posts">My talks</Link>
           </IconItem>
-          <IconItem>
-            <Link href="/posts">Posts by tags</Link>
+          <IconItem icon="🔖">
+            <Link href="/tags">All tags</Link>
           </IconItem>
           <IconItem>
             <Link href="/posts">Posts by categories</Link>
