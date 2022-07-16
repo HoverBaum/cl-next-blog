@@ -31,6 +31,7 @@ const SmallTitle = ({ children }: { children: React.ReactNode }) => {
 }
 
 const Home = ({ posts }: { posts: Post[] }) => {
+  console.log(posts[0])
   return (
     <div>
       <Head>
@@ -83,8 +84,8 @@ const Home = ({ posts }: { posts: Post[] }) => {
           <IconItem icon="🔖">
             <Link href="/tags">All tags</Link>
           </IconItem>
-          <IconItem>
-            <Link href="/posts">Posts by categories</Link>
+          <IconItem icon="🚪">
+            <Link href="/categories">Posts by categories</Link>
           </IconItem>
           <IconItem>
             <Link href="/posts">Projects</Link>

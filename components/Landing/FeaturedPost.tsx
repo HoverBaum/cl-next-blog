@@ -25,7 +25,6 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
   variant = 'small',
 }) => {
   const MDXContent = useMDXComponent(post.excerpt.code)
-  console.log(post)
   return (
     <div className={variant === 'small' ? 'shadow' : ''}>
       <PostCard

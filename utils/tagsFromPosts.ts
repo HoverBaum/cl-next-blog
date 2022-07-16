@@ -15,21 +15,21 @@ export type TagType = {
  * @returns A list of tags sorted by occurance descending.
  */
 export const tagsFromPosts = (posts: Post[]): TagType[] => {
-  const tagsMaps = posts.reduce((tags, post) => {
-    post.tags &&
+  const tags = posts.reduce((acc, post) => {
+    if (post.tags) {
       post.tags.forEach((tag) => {
-        tags[tag] = (tags[tag] || 0) + 1
+        if (!acc[tag]) {
+          acc[tag] = {
+            name: tag,
+            count: 0,
+            slug: `/tags/${stringToSlug(tag)}`,
+            tag: `# ${tag}`,
+          }
+        }
+        acc[tag].count++
       })
-    return tags
-  }, {} as { [key: string]: number })
-  const tagNames: string[] = Object.keys(tagsMaps).sort((a, b) => {
-    return tagsMaps[b] - tagsMaps[a]
-  })
-  const tags: TagType[] = tagNames.map((name) => ({
-    name,
-    slug: `/tags/${stringToSlug(name)}`,
-    tag: `# ${name}`,
-    count: tagsMaps[name],
-  }))
-  return tags
+    }
+    return acc
+  }, {} as Record<string, TagType>)
+  return Object.values(tags).sort((a, b) => b.count - a.count)
 }
