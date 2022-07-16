@@ -5,7 +5,6 @@ import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
 import { FeaturedPost } from 'components/Landing/FeaturedPost'
 import { css } from '@emotion/react'
-import { theme } from 'components/theme'
 import Link from 'next/link'
 import { IconItem } from 'components/IconItem'
 

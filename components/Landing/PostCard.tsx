@@ -1,26 +1,26 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { Post } from 'contentlayer/generated'
 import { format, parseISO } from 'date-fns'
-import { useMDXComponent } from 'next-contentlayer/hooks'
 import Link from 'next/link'
-import { MDXComponents } from './MDXComponents/MDXComponents'
+import { PropsWithChildren } from 'react'
 
 type PostCardProps = {
-  post: Post
-  variant?: 'small' | 'large'
+  title: string
+  slug: string
+  tags?: string[]
+  date?: string
 }
 
 /**
- * A previewof a post, linking to the full blogpost.
+ * A card representing a post, linking to the full blogpost.
  */
-export const PostPreview: React.FC<PostCardProps> = ({
-  post,
-  variant = 'small',
+export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
+  title,
+  slug,
+  tags = [],
+  date,
+  children,
 }) => {
-  const { title, slug, tags, date } = post
-  const MDXContent = useMDXComponent(post.excerpt.code)
-
   return (
     <article
       css={css`
@@ -41,18 +41,12 @@ export const PostPreview: React.FC<PostCardProps> = ({
         </Link>
       </h3>
       <div>
-        {tags &&
-          tags.length > 0 &&
-          tags.map((tag) => <span key={tag}>#{tag} </span>)}
+        {tags.length > 0 && tags.map((tag) => <span key={tag}>#{tag} </span>)}
       </div>
       {!!date && (
         <time dateTime={date}>{format(parseISO(date), 'LLLL d, yyyy')}</time>
       )}
-      <MDXContent components={MDXComponents} />
-
-      <div>
-        <Link href={post.slug}>…continue reading</Link>
-      </div>
+      {children}
     </article>
   )
 }

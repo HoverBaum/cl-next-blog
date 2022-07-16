@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /** @jsxImportSource @emotion/react */
 import Head from 'next/head'
 import { allPosts, Post } from 'contentlayer/generated'
@@ -6,7 +7,8 @@ import { Wrapper } from 'components/Wrapper'
 import { postsByDateDesc } from 'utils/sort'
 import { FeaturedPost } from 'components/Landing/FeaturedPost'
 import { categoriesFromPosts, CategoryType } from 'utils/categoriesFromPosts'
-import { Headline } from 'components/baum-ui'
+import { Headline, Paragraph } from 'components/baum-ui'
+import Link from 'next/link'
 
 export async function getStaticPaths() {
   const categories = categoriesFromPosts(allPosts)
@@ -68,6 +70,17 @@ const CategoryLayout = ({
             />
           </div>
         ))}
+
+        <div
+          css={css`
+            margin-top: 4rem;
+          `}
+        >
+          <Paragraph>
+            End of "{category.name}", back to{' '}
+            <Link href="/categories">all categoires</Link>.
+          </Paragraph>
+        </div>
       </Wrapper>
     </>
   )

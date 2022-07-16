@@ -7,10 +7,9 @@
  */
 
 import { css } from '@emotion/react'
-import { Button, Paragraph } from 'components/baum-ui'
 import { Img } from 'components/MDXComponents/Img'
 import { MDXComponents } from 'components/MDXComponents/MDXComponents'
-import { PostCard } from 'components/PostCard'
+import { PostCard } from './PostCard'
 import { Post } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Link from 'next/link'
