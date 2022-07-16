@@ -1,8 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import Head from 'next/head'
 import { allPosts, Post } from 'contentlayer/generated'
-import { BlogPost } from 'components/BlogPost'
-import { css } from '@emotion/react'
+import { BlogPost } from 'components/Posts/BlogPost'
 import { Wrapper } from 'components/Wrapper'
 
 export async function getStaticPaths() {

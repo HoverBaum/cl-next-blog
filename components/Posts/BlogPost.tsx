@@ -3,8 +3,8 @@ import { css } from '@emotion/react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { Post as ContentlayerPost } from 'contentlayer/generated'
 import { ComponentType } from 'react'
-import { MDXComponents } from './MDXComponents/MDXComponents'
-import { Headline } from './baum-ui'
+import { MDXComponents } from '../MDXComponents/MDXComponents'
+import { Headline } from '../baum-ui'
 import { format, parseISO } from 'date-fns'
 
 type PostProps = {

@@ -5,7 +5,7 @@ import { css } from '@emotion/react'
 import { Wrapper } from 'components/Wrapper'
 import { tagsFromPosts, TagType } from 'utils/tagsFromPosts'
 import { postsByDateDesc } from 'utils/sort'
-import { FeaturedPost } from 'components/Landing/FeaturedPost'
+import { FeaturedPost } from 'components/Posts/FeaturedPost'
 import { Headline } from 'components/baum-ui'
 
 export async function getStaticPaths() {

@@ -5,7 +5,7 @@ import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
 import { css } from '@emotion/react'
 import { Headline } from 'components/baum-ui'
-import { FeaturedPost } from 'components/Landing/FeaturedPost'
+import { FeaturedPost } from 'components/Posts/FeaturedPost'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
