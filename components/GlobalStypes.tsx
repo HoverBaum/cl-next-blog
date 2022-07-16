@@ -74,6 +74,7 @@ export const GlobalStyles = () => (
         --surface4-dark: hsl(var(--brand-hue) 5% 25%);
         --surface-shadow-dark: var(--brand-hue) 50% 3%;
         --shadow-strength-dark: 0.8;
+        --image-filter-dark: grayscale(40%);
       }
 
       :root {
@@ -89,6 +90,7 @@ export const GlobalStyles = () => (
         --surface4: var(--surface4-light);
         --surface-shadow: var(--surface-shadow-light);
         --shadow-strength: var(--shadow-strength-light);
+        --image-filter: var(--image-filter-light);
       }
 
       @media (prefers-color-scheme: dark) {
@@ -104,6 +106,7 @@ export const GlobalStyles = () => (
           --surface4: var(--surface4-dark);
           --surface-shadow: var(--surface-shadow-dark);
           --shadow-strength: var(--shadow-strength-dark);
+          --image-filter: var(--image-filter-dark);
         }
       }
 

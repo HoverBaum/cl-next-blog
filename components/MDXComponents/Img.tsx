@@ -25,6 +25,7 @@ export const Img: ComponentType<ImgProps> = ({ src, alt }) => {
           display: block;
           border-radius: 0.2rem;
           margin-bottom: 0.5rem;
+          filter: var(--image-filter);
         `}
       />
       <figcaption>{alt}</figcaption>
