@@ -1,5 +1,6 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import { bundleMDX } from 'mdx-bundler'
+import highlight from 'rehype-highlight'
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -79,4 +80,6 @@ export default makeSource({
   contentDirPath: '.',
   contentDirInclude: ['posts'],
   documentTypes: [Post],
+  // We use highlighting hjere to have it run once at build and not during runtime.
+  mdx: { rehypePlugins: [highlight] },
 })
