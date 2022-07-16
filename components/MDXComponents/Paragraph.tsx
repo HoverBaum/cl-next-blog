@@ -6,8 +6,13 @@ export const Paragraph: React.FC<PropsWithChildren<unknown>> = ({
   children,
 }) => {
   if (typeof children === 'object' && children) {
-    //@ts-ignore
-    const isImage = children.props && children.props.src && children.props.alt
+    const isImage =
+      //@ts-ignore
+      children.props &&
+      //@ts-ignore
+      children.props.src &&
+      //@ts-ignore
+      /(jpg|jpeg|png|webp|gif|webm)$/i.test(children.props.src)
     if (isImage) {
       return <>{children}</>
     }
