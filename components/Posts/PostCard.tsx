@@ -1,26 +1,22 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { format, parseISO } from 'date-fns'
+import { Post } from 'contentlayer/generated'
 import Link from 'next/link'
 import { PropsWithChildren } from 'react'
+import { PostMeta } from './PostMeta'
 
 type PostCardProps = {
-  title: string
-  slug: string
-  tags?: string[]
-  date?: string
+  post: Post
 }
 
 /**
  * A card representing a post, linking to the full blogpost.
  */
 export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
-  title,
-  slug,
-  tags = [],
-  date,
+  post,
   children,
 }) => {
+  const { title, slug } = post
   return (
     <article
       css={css`
@@ -40,12 +36,7 @@ export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
           <a>{title}</a>
         </Link>
       </h3>
-      <div>
-        {tags.length > 0 && tags.map((tag) => <span key={tag}>#{tag} </span>)}
-      </div>
-      {!!date && (
-        <time dateTime={date}>{format(parseISO(date), 'LLLL d, yyyy')}</time>
-      )}
+      <PostMeta post={post} />
       {children}
     </article>
   )
