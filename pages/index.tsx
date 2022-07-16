@@ -74,8 +74,8 @@ const Home = ({ posts }: { posts: Post[] }) => {
           <IconItem icon="✍️">
             <Link href="/posts">All posts</Link>
           </IconItem>
-          <IconItem>
-            <Link href="/posts">Dev posts</Link>
+          <IconItem icon="👨‍💻">
+            <Link href="/categories/devbaum">Dev posts</Link>
           </IconItem>
           <IconItem>
             <Link href="/posts">My talks</Link>
