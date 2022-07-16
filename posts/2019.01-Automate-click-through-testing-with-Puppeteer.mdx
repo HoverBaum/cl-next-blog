@@ -6,16 +6,15 @@ tags:
   - Testing
   - Automation
 categories:
-  - Technical
+  - devbaum
 date: 2019-01-29 16:09:23
 ---
-
 
 Testing is one of the essential steps in software development. Yet, testing and especially manual testing that clicks through the application is a tedious job that we often shy away from. But it doesn't have to be. With great tooling coming out over the past couple of years we now have what it takes to automate click-through testing in our build process. In this post, we will look at why manual or click-through tests are important and how to turn this tedious and bothersome task into a fun one that drives our development forward.
 
 ![Today we will test websites as real users would.](https://storage.googleapis.com/hoverbaum-blog-assets/puppeteer-testing/jest%2Bpuppeteer.png)
 
-{/*<!-- more -->*/}
+{/* <!-- more --> */}
 
 Restless readers can jump straight into the [repo accompanying this post](https://github.com/HoverBaum/jest-puppeteer-website-testing).
 
@@ -54,46 +53,44 @@ And here is the code for the website:
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Testing Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body style="font-family: sans-serif">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Testing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body style="font-family: sans-serif">
+    <h1>Testing page</h1>
 
-  <h1>Testing page</h1>
+    <!-- Counter interface -->
+    <button data-test="button-increment" id="js-increment">Increment</button>
+    <p>Current count: <span data-test="count-output" id="js-count"></span></p>
 
-  <!-- Counter interface -->
-  <button data-test="button-increment" id="js-increment">Increment</button>
-  <p>Current count: <span data-test="count-output" id="js-count"></span></p>
-  
-  <!-- Button to show a message -->
-  <button data-test="button-display" id="js-display">Display Message</button>
-  
-  <script>
+    <!-- Button to show a message -->
+    <button data-test="button-display" id="js-display">Display Message</button>
 
-    // --- Counter ---
-    let count = 0    
-    const incrementBtn = document.getElementById('js-increment')
-    const countSpan = document.getElementById('js-count')
+    <script>
+      // --- Counter ---
+      let count = 0
+      const incrementBtn = document.getElementById('js-increment')
+      const countSpan = document.getElementById('js-count')
 
-    incrementBtn.addEventListener('click', () => {
-      count += 1
+      incrementBtn.addEventListener('click', () => {
+        count += 1
+        countSpan.innerHTML = count
+      })
+
       countSpan.innerHTML = count
-    })
 
-    countSpan.innerHTML = count
-
-    // --- Display ---
-    document.getElementById('js-display').addEventListener('click', () => {
-      const messageContainer = document.createElement('p')
-      messageContainer.innerHTML = 'A message here'
-      messageContainer.setAttribute('data-test', 'display')
-      document.body.appendChild(messageContainer)
-    })
-  </script>
-</body>
+      // --- Display ---
+      document.getElementById('js-display').addEventListener('click', () => {
+        const messageContainer = document.createElement('p')
+        messageContainer.innerHTML = 'A message here'
+        messageContainer.setAttribute('data-test', 'display')
+        document.body.appendChild(messageContainer)
+      })
+    </script>
+  </body>
 </html>
 ```
 
@@ -113,7 +110,7 @@ We are going to use [Jest](https://jestjs.io/), a framework for "Delightful Java
 
 [Puppeteer](https://pptr.dev/) will be our tool to automate the browser and interactions with it. Written by the Chromium Team Puppeteer provides an interface to the [DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) and can be used in combination with any browser supporting it. We will be using Puppeteer with the Chromium version that comes bundled with it.
 
-For this post Jest was used in version *23.6.0* together with Puppeteer *1.11.0*.
+For this post Jest was used in version _23.6.0_ together with Puppeteer _1.11.0_.
 
 Apart from these, we will use [live-server](https://github.com/tapio/live-server/) as a local web server. Using a local web server makes us independent of frameworks used. We will be able to test any website using this approach because no matter how you develop your site, be it React, Angular, Vue or some other flavor of the year framework, in the end, you will get a plain old website. And using this approach we can test them all.
 
@@ -139,15 +136,18 @@ const testUrl = 'http://localhost:8282'
 
 beforeAll(async () => {
   // Wait until a local webserver is started to test against.
-  await new Promise(resolve => {
-    serverProcess = spawn('live-server', [`--port=${testUrl.split(':')[2]}`, '--no-browser'])
+  await new Promise((resolve) => {
+    serverProcess = spawn('live-server', [
+      `--port=${testUrl.split(':')[2]}`,
+      '--no-browser',
+    ])
     // Better wait for a first response from the server to ensure the website is available.
     serverProcess.stdout.on('data', resolve)
   })
 
   browser = await puppeteer.launch({
     headless: false,
-    slowMo: 100
+    slowMo: 100,
   })
 })
 ```
@@ -218,7 +218,7 @@ Congratulations, with your first test in place, it is time to run it. For that, 
 
 ### Selecting Elements
 
-The above verifies number *0* from the three things we want to check during our test. Next up is the counter itself and the displayed message.
+The above verifies number _0_ from the three things we want to check during our test. Next up is the counter itself and the displayed message.
 
 0. ✅ Display when we visit it.
 1. Increase the count displayed when we click the "Increment" button.
@@ -231,7 +231,9 @@ For the counter, we will want to check that it starts with 0 and then that it is
 ```javascript
 it('should initially have a count of 0', async () => {
   await page.goto(testUrl)
-  const count = await page.$eval('[data-test="count-output"]', e => parseInt(e.innerHTML))
+  const count = await page.$eval('[data-test="count-output"]', (e) =>
+    parseInt(e.innerHTML)
+  )
   await page.screenshot({ path: 'screens/initialCount.png' })
 
   expect(count).toBe(0)
@@ -256,13 +258,17 @@ Once we can find elements on the page, we can also interact with them and for ex
 it('should increment on click', async () => {
   await page.goto(testUrl)
   const incrementBtn = await page.$('[data-test="button-increment"]')
-  const initialCount = await page.$eval('[data-test="count-output"]', e => parseInt(e.innerHTML))
+  const initialCount = await page.$eval('[data-test="count-output"]', (e) =>
+    parseInt(e.innerHTML)
+  )
   const expectedCount = initialCount + 1
 
   await incrementBtn.click()
-  const newCount = await page.$eval('[data-test="count-output"]', e => parseInt(e.innerHTML))
+  const newCount = await page.$eval('[data-test="count-output"]', (e) =>
+    parseInt(e.innerHTML)
+  )
   await page.screenshot({ path: 'screens/incrementedCount.png' })
-  
+
   expect(newCount).toBe(expectedCount)
 })
 ```
@@ -286,7 +292,7 @@ All we have left now, are elements that dynamically get added to the page and we
 ```javascript
 it('should display a message', async () => {
   await page.goto(testUrl)
-  await page.$eval('[data-test="button-display"]', e => e.click())
+  await page.$eval('[data-test="button-display"]', (e) => e.click())
   await page.screenshot({ path: 'screens/messageDisplay.png' })
   const displays = await page.$$('[data-test="display"]')
 
@@ -309,10 +315,12 @@ Congratulations, all tests are green!
 Earlier we hardcoded displaying a browser with a delay to watch our tests happen. Since we don't always want to do that, let's change it up to depend on an environment variable `SHOW_BROWSER`. Cases were we might not want to get the visual especially include pipelines for build and deploy of out application which usually runs on systems where we don't care about visualization but speed.
 
 ```javascript
-const browserConfig = process.env.SHOW_BROWSER ? {
-  headless: false,
-  slowMo: 100
-} : {}
+const browserConfig = process.env.SHOW_BROWSER
+  ? {
+      headless: false,
+      slowMo: 100,
+    }
+  : {}
 browser = await puppeteer.launch(browserConfig)
 ```
 
@@ -339,6 +347,7 @@ Now go out and automate all your tests 🚀
 Next episode: Automated testing using Cypress to visually debug automated tests (coming soon)
 
 Further reading:
+
 - [repo accompanying this post](https://github.com/HoverBaum/jest-puppeteer-website-testing)
 - https://www.valentinog.com/blog/ui-testing-jest-puppetteer/
 - https://jestjs.io/

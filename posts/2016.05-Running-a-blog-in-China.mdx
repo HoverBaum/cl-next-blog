@@ -4,16 +4,15 @@ tags:
   - Hexo
   - China
 categories:
-  - Technical
+  - devbaum
 date: 2016-05-20 17:30:17
 ---
-
 
 Reader of my adventures in China beware! This post is in English and will get technical. You have been warned.
 
 Turns out running a blog in China is not the easiest thing. Well actually running a blog in itself is quite some work but that is a different topic.
 
-{/*<!-- more -->*/}
+{/* <!-- more --> */}
 
 ## My blogs history
 
@@ -21,19 +20,21 @@ After moving through several "blogging providers", you know trying out Tumblr an
 
 While Wordpress dynamically generates pages from information in a database Hexo takes in Markdown files and generates static HTML. The advantage being that static HTML files do not have security risks with them as they do not expose any database or similar thing.
 
-##  Working with Hexo
+## Working with Hexo
 
 Being a webdev I wanted to make the generated files better. So obviously they should go through some automated post-processing which should also upload them via FTP to my server and all that with one command. Easy enough. Just get a few gulp tasks running and a simple `gulp all` would get the new version online. Very nice.
 
 ```javascript
 //Minify the generated HTML.
-gulp.task('html', function() {
-    gulp.src('./public/**/*.html')
-        .pipe(minifyInline())
-        .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest('./public'));
-});
+gulp.task('html', function () {
+  gulp
+    .src('./public/**/*.html')
+    .pipe(minifyInline())
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('./public'))
+})
 ```
+
 You can have a look at the entire gulpfile I use in this [gist](https://gist.github.com/HoverBaum/cdec2a667a9616de374a790d39174466#file-gulpfile-js).
 
 ### Moving to China

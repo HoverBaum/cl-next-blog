@@ -4,9 +4,8 @@ tags:
   - Deno
   - JavaScript
 categories:
-  - Technical
+  - devbaum
 date: 2020-05-27 10:16:12
-
 ---
 
 Following the release of [Deno v1.0](https://deno.land/v1) I got excited to try my hands at it. These are my first experiences writing a simple tool in Deno.
@@ -20,7 +19,7 @@ To try my hands at Deno and collect some experience on how ready it is I decided
 
 You can go and checkout the [finished repo](https://github.com/HoverBaum/md_website/tree/v1.0.0) or an [example website created](https://md-website-example-nugz74lgw.now.sh/).
 
-{/*<!-- more -->*/}
+{/* <!-- more --> */}
 
 ## Organizing
 
@@ -63,7 +62,9 @@ const findMarkdownFiles = async () => {
 }
 ```
 
-<small>Feel free to correct my coding here (still new to generator functions).</small>
+<small>
+  Feel free to correct my coding here (still new to generator functions).
+</small>
 
 On the way though I noticed that the docs were incorrectly not providing a path (e.g: `"."`) as the first argument to `walk`. Quickly opened a [PR to update the docs](https://github.com/denoland/deno/pull/5668) so the next person won't face the same half hour of struggling.
 
@@ -105,10 +106,10 @@ On a side note a painful lesson I learned in an earlier project is that collecti
 Equipped with that and some String Literals we can easily wrap the created HTML inside a whole HTML page with a nice title, navigation and inclusion of the new.css styles.
 
 ```javascript
-const addSurroundings = (headerCreator: (title: string) => string) => (
-  htmlFile: HTMLFile
-): ParsedFile => {
-  const content = `<!DOCTYPE html>
+const addSurroundings =
+  (headerCreator: (title: string) => string) =>
+  (htmlFile: HTMLFile): ParsedFile => {
+    const content = `<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -120,11 +121,11 @@ const addSurroundings = (headerCreator: (title: string) => string) => (
 <body>
   ${headerCreator(htmlFile.name)}${htmlFile.content}
 </body>`
-  return {
-    path: htmlFile.path,
-    content,
+    return {
+      path: htmlFile.path,
+      content,
+    }
   }
-}
 ```
 
 And we have files with a navigation and styling, ready to be saved. A simple step, without dependencies. Greatly aided through TypeScript, Step 3 ✅
