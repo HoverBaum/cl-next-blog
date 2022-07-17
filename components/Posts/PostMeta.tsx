@@ -38,7 +38,7 @@ export const PostMeta: React.FC<PostMetaProps> = ({ post }) => {
                 `}
               >
                 <Link href={`/categories/${stringToSlug(category)}`}>
-                  {category}
+                  {category.toUpperCase()}
                 </Link>
               </span>
             ))}

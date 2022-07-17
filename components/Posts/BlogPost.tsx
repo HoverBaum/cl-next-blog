@@ -22,6 +22,7 @@ export const BlogPost: ComponentType<PostProps> = ({ post }) => {
     >
       <Headline>{post.title}</Headline>
       <PostMeta post={post} />
+      <hr />
       <MDXContent components={MDXComponents} />
     </article>
   )
