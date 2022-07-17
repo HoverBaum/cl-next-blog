@@ -7,6 +7,7 @@ import { tagsFromPosts, TagType } from 'utils/tagsFromPosts'
 import { postsByDateDesc } from 'utils/sort'
 import { FeaturedPost } from 'components/Posts/FeaturedPost'
 import { Headline } from 'components/baum-ui'
+import { Breadcrums } from 'components/Breadcrums'
 
 export async function getStaticPaths() {
   const tags = tagsFromPosts(allPosts)

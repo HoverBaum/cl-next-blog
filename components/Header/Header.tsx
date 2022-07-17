@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { Title } from 'components/baum-ui'
+import { Breadcrums } from 'components/Breadcrums'
 import { theme } from 'components/theme'
 import { Wrapper } from 'components/Wrapper'
 import Link from 'next/link'
@@ -43,6 +44,18 @@ export const Header = () => {
           >
             Ein Baum und seine Abenteuer
           </h4>
+          {!isHomepage && (
+            <>
+              <hr />
+              <div
+                css={css`
+                  margin-top: 0.5rem;
+                `}
+              >
+                <Breadcrums />
+              </div>
+            </>
+          )}
         </hgroup>
       </Wrapper>
     </header>

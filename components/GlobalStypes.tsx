@@ -211,6 +211,16 @@ export const GlobalStyles = () => (
         transition: 0.3s ease-out;
       }
 
+      hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid var(--text1);
+        margin: 1em 0;
+        padding: 0;
+        opacity: 0.33;
+      }
+
       ::selection {
         background: #ff6933;
         color: white;
