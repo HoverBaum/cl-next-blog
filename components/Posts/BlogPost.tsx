@@ -18,11 +18,6 @@ export const BlogPost: ComponentType<PostProps> = ({ post }) => {
     <article
       css={css`
         padding-bottom: 2rem;
-
-        & pre {
-          overflow-x: auto;
-          background-color: var(--surface2);
-        }
       `}
     >
       <Headline>{post.title}</Headline>

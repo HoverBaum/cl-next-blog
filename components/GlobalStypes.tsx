@@ -1,4 +1,8 @@
 import { css, Global } from '@emotion/react'
+import {
+  highlightDarkStyles,
+  highlightLightStyles,
+} from 'utils/hightlightStyles'
 import { theme } from './theme'
 
 const baseFontSize = '1rem'
@@ -9,6 +13,22 @@ export const scaledFontSize = (scale: number) => {
     font-size: calc(${baseFontSize} * ${Math.pow(fontRatio, scale)});
   `
 }
+
+const shadowcss = css`
+  border: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
+  box-shadow: 0 1rem 0.5rem -0.5rem;
+  box-shadow: 0 2.8px 2.2px
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
+    0 6.7px 5.3px
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.01)),
+    0 12.5px 10px
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),
+    0 22.3px 17.9px
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),
+    0 41.8px 33.4px
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
+    0 100px 80px hsl(var(--surface-shadow) / var(--shadow-strength));
+`
 
 export const GlobalStyles = () => (
   <Global
@@ -110,20 +130,28 @@ export const GlobalStyles = () => (
         }
       }
 
-      .shadow {
+      // Code highlihgting.
+
+      // light
+      ${highlightLightStyles}
+      @media (prefers-color-scheme: dark) {
+        ${highlightDarkStyles}
+      }
+      .hljs {
+        display: block;
+        background-color: var(--surface2);
+      }
+
+      pre {
+        overflow-x: auto;
+        background-color: var(--surface2);
+        padding: 0.5rem;
         border: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
-        box-shadow: 0 1rem 0.5rem -0.5rem;
-        box-shadow: 0 2.8px 2.2px
-            hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
-          0 6.7px 5.3px
-            hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.01)),
-          0 12.5px 10px
-            hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),
-          0 22.3px 17.9px
-            hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),
-          0 41.8px 33.4px
-            hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
-          0 100px 80px hsl(var(--surface-shadow) / var(--shadow-strength));
+      }
+
+      // Shadow class.
+      .shadow {
+        ${shadowcss}
       }
 
       html,
