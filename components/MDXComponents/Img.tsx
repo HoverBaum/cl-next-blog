@@ -26,6 +26,11 @@ export const Img: ComponentType<ImgProps> = ({ src, alt }) => {
           border-radius: 0.2rem;
           margin-bottom: 0.5rem;
           filter: var(--image-filter);
+
+          &:hover {
+            filter: none;
+            transition: all 0.3s ease-out;
+          }
         `}
       />
       <figcaption>{alt}</figcaption>
