@@ -60,39 +60,6 @@ const Home = ({ posts }: { posts: Post[] }) => {
           Hi, I am Hendrik. Webdev for fun and passionate about knowledge
           sharing.
         </p>
-
-        <SmallTitle>More</SmallTitle>
-        <div
-          css={css`
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 1fr;
-            grid-column-gap: 2rem;
-            grid-row-gap: 2rem;
-          `}
-        >
-          <IconItem icon="✍️">
-            <Link href="/posts">All posts</Link>
-          </IconItem>
-          <IconItem icon="👨‍💻">
-            <Link href="/categories/devbaum">Dev posts</Link>
-          </IconItem>
-          <IconItem>
-            <Link href="/posts">My talks</Link>
-          </IconItem>
-          <IconItem icon="🔖">
-            <Link href="/tags">All tags</Link>
-          </IconItem>
-          <IconItem icon="🚪">
-            <Link href="/categories">Posts by categories</Link>
-          </IconItem>
-          <IconItem>
-            <Link href="/posts">Projects</Link>
-          </IconItem>
-          <IconItem>
-            <Link href="/posts">About me</Link>
-          </IconItem>
-        </div>
       </Wrapper>
     </div>
   )

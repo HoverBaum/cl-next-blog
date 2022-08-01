@@ -12,13 +12,13 @@ export const Header = () => {
   const isHomepage = router.pathname === '/'
 
   return (
-    <header>
+    <header
+      css={css`
+        margin-bottom: 10vh;
+      `}
+    >
       <Wrapper>
-        <hgroup
-          css={css`
-            margin-bottom: 10vh;
-          `}
-        >
+        <hgroup>
           {isHomepage && (
             <Title>
               <Link href="/">Hendriks Blog</Link>
@@ -44,19 +44,52 @@ export const Header = () => {
           >
             Ein Baum und seine Abenteuer
           </h4>
-          {!isHomepage && (
-            <>
-              <hr />
-              <div
-                css={css`
-                  margin-top: 0.5rem;
-                `}
-              >
-                <Breadcrums />
-              </div>
-            </>
-          )}
         </hgroup>
+        <nav>
+          <ul
+            css={css`
+              list-style: none;
+              padding: 0;
+              display: flex;
+
+              & > li {
+                margin-right: 1rem;
+                & a {
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+              }
+            `}
+          >
+            <li>
+              <Link href="/categories/devbaum">Dev posts</Link>
+            </li>
+            <li>
+              <Link href="/posts">Posts</Link>
+            </li>
+            <li>
+              <Link href="/tags">Tags</Link>
+            </li>
+            <li>
+              <Link href="/categories">Categories</Link>
+            </li>
+          </ul>
+        </nav>
+        {!isHomepage && (
+          <>
+            <hr />
+            <div
+              css={css`
+                margin-top: 0.5rem;
+              `}
+            >
+              <Breadcrums />
+            </div>
+          </>
+        )}
       </Wrapper>
     </header>
   )
