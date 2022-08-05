@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import { Header } from 'components/Header/Header'
 import { GlobalStyles } from 'components/GlobalStypes'
 import { css } from '@emotion/react'
+import { Footer } from 'components/Footer/Footer'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       >
         <Component {...pageProps} />
       </div>
+      <Footer />
     </>
   )
 }
