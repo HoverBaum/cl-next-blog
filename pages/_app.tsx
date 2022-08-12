@@ -5,11 +5,16 @@ import { Header } from 'components/Header/Header'
 import { GlobalStyles } from 'components/GlobalStypes'
 import { css } from '@emotion/react'
 import { Footer } from 'components/Footer/Footer'
+import { CommandPalette } from 'components/CommandPalette/CommandPalette'
+import { KBarProvider } from 'kbar'
+import { useKBarActions } from 'components/CommandPalette/kBarActions'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { kBarActions } = useKBarActions()
   return (
-    <>
+    <KBarProvider actions={kBarActions}>
       <GlobalStyles />
+      <CommandPalette />
       <Header />
       <div
         css={css`
@@ -19,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </div>
       <Footer />
-    </>
+    </KBarProvider>
   )
 }
 
