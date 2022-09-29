@@ -1,8 +1,10 @@
+/* Generated using: http://theme.wallbaum.dev/?color=%23378acd */
+
 * {
   /* Light colors */
   --primary-light: #378acd;
   --text-light: #364149;
-  --accent-light: #cd7e37;
+  --accent-light: #db770b;
   --background-light: #f8fafb;
   --surface-light: #fefefe;
   --border-light: 1px solid #b6bdc226;
@@ -13,7 +15,7 @@
   /* Dark colors */
   --primary-dark: #0073b9;
   --text-dark: #d3dadf;
-  --accent-dark: #b94c00;
+  --accent-dark: #c73d00;
   --background-dark: #171a1c;
   --surface-dark: #22272a;
   --border-dark: 1px solid #b7bcbf26;
