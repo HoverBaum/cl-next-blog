@@ -28,7 +28,7 @@ export const Header = () => {
             <h2
               css={css`
                 font-family: 'Simonetta-Black', serif;
-                color: #cc4a1a;
+                color: var(--primary);
               `}
             >
               <Link href="/">Hendriks Blog</Link>

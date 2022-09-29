@@ -17,7 +17,7 @@ export const CommandPalette = () => {
           css={css`
             max-width: 640px;
             width: 100%;
-            background: var(--surface2);
+            background: var(--surface);
             border-radius: 8px;
             overflow: hidden;
           `}
@@ -33,7 +33,7 @@ export const CommandPalette = () => {
               outline: none;
               border: none;
               background: var(surface1);
-              color: var(--text1);
+              color: var(--text);
             `}
           />
           <Results />

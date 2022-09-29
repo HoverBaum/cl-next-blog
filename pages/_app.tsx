@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import '../styles/globals.css'
+import '../styles/variables.css'
 import type { AppProps } from 'next/app'
 import { Header } from 'components/Header/Header'
 import { GlobalStyles } from 'components/GlobalStypes'

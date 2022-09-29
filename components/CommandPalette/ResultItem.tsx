@@ -23,7 +23,7 @@ export const ResultItem = React.forwardRef(
         css={css`
           background: ${active ? '#eeeeee22' : 'transparent'};
           padding: 8px 16px;
-          border-left: 2px solid ${active ? 'var(--text1 )' : 'transparent'};
+          border-left: 2px solid ${active ? 'var(--text )' : 'transparent'};
         `}
       >
         <span>{action.name}</span>

@@ -19,7 +19,7 @@ const SmallTitle = ({ children }: { children: React.ReactNode }) => {
   return (
     <h4
       css={css`
-        color: var(--brand);
+        color: var(--primary);
         margin-top: 4rem;
         margin-bottom: 1rem;
       `}

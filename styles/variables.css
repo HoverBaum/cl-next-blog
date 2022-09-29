@@ -1,0 +1,85 @@
+* {
+  /* Light colors */
+  --primary-light: #378acd;
+  --text-light: #364149;
+  --accent-light: #cd7e37;
+  --background-light: #f8fafb;
+  --surface-light: #fefefe;
+  --border-light: 1px solid #b6bdc226;
+  --shadow-light: 0px 1px 2.2px #67696a05, 0px 2.4px 5.3px -5px #67696a07,
+    0px 4.5px 10px -5px #67696a09, 0px 8px 17.9px -5px #67696a0b,
+    0px 15px 33.4px -5px #67696a0d, 0px 36px 80px -5px #67696a12;
+
+  /* Dark colors */
+  --primary-dark: #0073b9;
+  --text-dark: #d3dadf;
+  --accent-dark: #b94c00;
+  --background-dark: #171a1c;
+  --surface-dark: #22272a;
+  --border-dark: 1px solid #b7bcbf26;
+  --shadow-dark: 0px 1px 2.2px #00000024, 0px 2.4px 5.3px -5px #00000034,
+    0px 4.5px 10px -5px #00000040, 0px 8px 17.9px -5px #0000004c,
+    0px 15px 33.4px -5px #0000005c, 0px 36px 80px -5px #00000080;
+}
+
+:root {
+  color-scheme: light;
+
+  --primary: var(--primary-light);
+  --text: var(--text-light);
+  --accent: var(--accent-light);
+  --background: var(--background-light);
+  --surface: var(--surface-light);
+  --border: var(--border-light);
+  --shadow: var(--shadow-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --primary: var(--primary-dark);
+    --text: var(--text-dark);
+    --accent: var(--accent-dark);
+    --background: var(--background-dark);
+    --surface: var(--surface-dark);
+    --border: var(--border-dark);
+    --shadow: var(--shadow-dark);
+  }
+}
+
+[color-scheme='light'] {
+  color-scheme: light;
+
+  --primary: var(--primary-light);
+  --text: var(--text-light);
+  --accent: var(--accent-light);
+  --background: var(--background-light);
+  --surface: var(--surface-light);
+  --border: var(--border-light);
+  --shadow: var(--shadow-light);
+}
+
+[color-scheme='dark'] {
+  color-scheme: dark;
+
+  --primary: var(--primary-dark);
+  --text: var(--text-dark);
+  --accent: var(--accent-dark);
+  --background: var(--background-dark);
+  --surface: var(--surface-dark);
+  --border: var(--border-dark);
+  --shadow: var(--shadow-dark);
+}
+
+html.dark {
+  color-scheme: dark;
+
+  --primary: var(--primary-dark);
+  --text: var(--text-dark);
+  --accent: var(--accent-dark);
+  --background: var(--background-dark);
+  --surface: var(--surface-dark);
+  --border: var(--border-dark);
+  --shadow: var(--shadow-dark);
+}
