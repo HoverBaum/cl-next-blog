@@ -150,7 +150,7 @@ export const GlobalStyles = () => (
       }
 
       ::selection {
-        background: #ff6933;
+        background: var(--accent);
         color: white;
       }
     `}
