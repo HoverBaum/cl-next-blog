@@ -5,8 +5,6 @@ import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
 import { FeaturedPost } from 'components/Posts/FeaturedPost'
 import { css } from '@emotion/react'
-import Link from 'next/link'
-import { IconItem } from 'components/IconItem'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -19,7 +17,7 @@ const SmallTitle = ({ children }: { children: React.ReactNode }) => {
   return (
     <h4
       css={css`
-        color: var(--primary);
+        color: var(--accent);
         margin-top: 4rem;
         margin-bottom: 1rem;
       `}

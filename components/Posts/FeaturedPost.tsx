@@ -25,29 +25,27 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
 }) => {
   const MDXContent = useMDXComponent(post.excerpt.code)
   return (
-    <div className={variant === 'small' ? 'shadow' : ''}>
-      <PostCard post={post}>
-        {variant === 'big' && post.firstImage && (
-          <Img src={post.firstImage.src} alt={post.firstImage.alt} />
-        )}
-        <MDXContent components={MDXComponents} />
+    <PostCard flat={variant === 'big'} post={post}>
+      {variant === 'big' && post.firstImage && (
+        <Img src={post.firstImage.src} alt={post.firstImage.alt} />
+      )}
+      <MDXContent components={MDXComponents} />
 
-        {/* Adding the read more always at the bottom and same bottom.
+      {/* Adding the read more always at the bottom and same bottom.
       One div creates the space, the other positions the link. */}
-        <div
-          css={css`
-            height: 2rem;
-          `}
-        ></div>
-        <div
-          css={css`
-            position: absolute;
-            bottom: 1rem;
-          `}
-        >
-          <Link href={post.slug}>…continue reading</Link>
-        </div>
-      </PostCard>
-    </div>
+      <div
+        css={css`
+          height: 2rem;
+        `}
+      ></div>
+      <div
+        css={css`
+          position: absolute;
+          bottom: 1rem;
+        `}
+      >
+        <Link href={post.slug}>…continue reading</Link>
+      </div>
+    </PostCard>
   )
 }

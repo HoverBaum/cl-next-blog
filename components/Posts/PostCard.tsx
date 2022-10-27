@@ -7,6 +7,7 @@ import { PostMeta } from './PostMeta'
 
 type PostCardProps = {
   post: Post
+  flat?: boolean
 }
 
 /**
@@ -14,6 +15,7 @@ type PostCardProps = {
  */
 export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
   post,
+  flat = false,
   children,
 }) => {
   const { title, slug } = post
@@ -24,7 +26,15 @@ export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
         height: 100%;
         padding: 1rem;
         border-radius: 5px;
-        background-color: var(--background);
+        background-color: var(--surface);
+        border: var(--border);
+        box-shadow: var(--shadow);
+        ${flat &&
+        css`
+          background-color: var(--background);
+          border: none;
+          box-shadow: none;
+        `}
       `}
     >
       <h3

@@ -13,11 +13,6 @@ export const scaledFontSize = (scale: number) => {
   `
 }
 
-const shadowcss = css`
-  border: var(--border);
-  box-shadow: var(--shadow);
-`
-
 export const GlobalStyles = () => (
   <Global
     styles={css`
@@ -75,11 +70,6 @@ export const GlobalStyles = () => (
         background-color: var(--surface);
         padding: 0.5rem;
         border: var(--border);
-      }
-
-      // Shadow class.
-      .shadow {
-        ${shadowcss}
       }
 
       html,

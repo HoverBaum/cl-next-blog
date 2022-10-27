@@ -20,8 +20,9 @@ export const CommandPalette = () => {
             background: var(--surface);
             border-radius: 8px;
             overflow: hidden;
+            border: var(--border);
+            box-shadow: var(--shadow);
           `}
-          className="shadow"
         >
           {/* Handles the show/hide and height animations */}
           <KBarSearch
