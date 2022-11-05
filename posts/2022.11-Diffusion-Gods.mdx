@@ -1,0 +1,154 @@
+---
+title: The Gods of Diffusion
+tags:
+  - StableDiffusion
+  - AiArt
+categories:
+  - General
+date: 2020-11-05
+---
+
+I have rencently been spending quite some time with text2image generation. And while looking around for great styles for a project I generated a `"Chromatic Goddess of Colors"` that I really liked. This sparked the idea within me to generate a whole pantheon of gods and see how far I could push this!
+
+I labeled them "The Gods of Diffusion" and here they are:
+
+![The Gods of Diffusion](/images/general/gods-of-diffusion/gods_of_diffusion.png)
+
+For text2image tool, you might have heared of Dall-E and Midjourney as popular platforms. While both of these are paid services, there is also an Open Source solution called _Stable Diffusion_ you can experience it online using [DreamStudio](https://beta.dreamstudio.ai/) or even run it locally on your machine, for free. For this experiment I ran Stable Diffusion on my Razer Blade 14" with a 100 Watt RTX 3070. I set it up using [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) and used the weight for [Stable Diffusion 1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5).
+
+During the process I generated over 120 images with each taking about 15 seconds to be created. Let me introduce you to the results and walk you through the process.
+
+## The Gods of Diffusion
+
+Named in a referance to the Diffusion part of Stable Diffusion, there are six gods in the Pantheon.
+
+For each god I will share all parameters for generation that differ between all of them. Read the next section for a deeper look at prompt crafting and other parameters used.
+
+### The Chromatic Goddess of Colors
+
+She was the first in the pantheon of Diffusion. I image her to be the guardian of colors and everything that brings them into our lifes like play, theater, arts and music. She is the one that makes sure that we see the world in all its colors and that we enjoy it thoroughly enjoy them.
+
+In modern society she would likely be the guardian of diversity and inclusion, making sure everyone can add their color to each others life.
+
+<Img
+  src="/images/general/gods-of-diffusion/chromatic_goddess_of_colors.png"
+  alt="The Chromatic Goddess of Colors"
+  limitHeight={true}
+/>
+
+```txt
+chromatic goddess of colors
+Seed: 1501367136, Model hash: 81761151
+```
+
+### The Vibrant God of Inspiration
+
+His image radiates strength and the bravery required to go out into that unknown space of posiblity where we can find inspiration. I see him inspiring all of us to take on the challenges in our lifes. His image reminds us to strive for those "break through" moments.
+
+<Img
+  src="/images/general/gods-of-diffusion/vibrant_god_of_inspiration.png"
+  alt="The Vibrant God of Inspiration"
+  limitHeight={true}
+/>
+
+```txt
+vibrant god of inspiration
+Seed: 1501367136
+```
+
+### The Brilliant Goddess of Perseverance
+
+The Goddess of Perseverance was born from a long process, perfectrly illustrating her virtues. She reminds us that perseverance makes us shine brilliantly. Already in her image you can see how she inspired the artist to stick with those details, persevearing through the process that is the creation of an artworks. For me she is a symbol to trust the process and belive in the results.
+
+<Img
+  src="/images/general/gods-of-diffusion/brilliant_goddess_of_perseverance.png"
+  alt="The Brilliant Goddess of Perseverance"
+  limitHeight={true}
+/>
+
+```txt
+brilliant goddess of perseverance
+Seed: 4286468546
+```
+
+### The Sparkling God of Divination
+
+The Goddess of Perseverances partner is the God of Divination, his eyes see into the "might be", they sparkle with the posibilities that lie ahead of us. His vague shapes in contrast to those of his partners remind us that the future is yet to be written. While his eyes are seeing all the "could bees", it's up to us to make the "will be"!
+
+<Img
+  src="/images/general/gods-of-diffusion/sparkling_god_of_divination.png"
+  alt="The Sparkling God of Divination"
+  limitHeight={true}
+/>
+
+```txt
+face of sparkling god of divination
+Seed: 4286468531
+```
+
+### The Alleviated Goddess of Creation
+
+As goddesses go she is on a vague side of things. Brimming with the possibilities of creation her shape never really settled and is instead constantly being re-created over and over again. She created everything and everything is creating her. Thinking about her forming hair reminds us that everything is being created all the time and as she created us, so are we creating the world.
+
+<Img
+  src="/images/general/gods-of-diffusion/alleviated_goddess_of_creation.png"
+  alt="The Alleviated Goddess of Creation"
+  limitHeight={true}
+/>
+
+```txt
+alleviated goddess of creation
+Seed: 4219165820
+```
+
+### The Steadfast God of Entropy
+
+He accompanies Creation. As Creation is the start of everything, he is it's end. Everything goes to entropy, even the god himself has a whole in his chest that get's bigger all the time without every growing. All that is not conciously maintained and re-created goes to entropy, falls into disrepair and eventually, disappears.
+
+<Img
+  src="/images/general/gods-of-diffusion/steadfast_god_of_entropy.png"
+  alt="The Steadfast God of Entropy"
+  limitHeight={true}
+/>
+
+```txt
+face of steadfast god of entropy
+Seed: 862733685
+```
+
+## The process
+
+All gods were generated using the same basic parameters.
+
+```txt
+{prompt}, dramatic lighting, illustration by greg rutkowski, yoji shinkawa, 4k, digital art, concept art, trending on artstation
+Steps: 60, Sampler: LMS, CFG scale: 7, Seed: 862733685, Size: 512x512, Model hash: 81761151
+```
+
+The things that vary between them are the seed and the prompt. For some gods I had to add `face of` to the front of the prompt, as Stable Diffusion would generate full bodies from just their name. If you don't know what the rest of the parameters do, that is enough content for it's own blog post.
+
+The Goddess of Colors was born more by accident. Following her images, I tried generating more gods using the same seed, to imitate the style. That worked perfectly for the God of Inspiration and, seeing the amazing results from the first two images I wanted to continue with the same seed to ensure a consistent art style. But soon I had to realize that for one, this would be boring and two, many gods I came up with didn't yield nice results. So, after I struggled to get good images out of the same seed and as I already felt attached to the names I had come up with, I decided to take a different route: open up the seed and go for pairs of gods.
+
+As you can see above the pairs of gods always share the same seed for generation. This gives them a style that is somewhat related. The part of the prompt that gives the "style" was inspired by Concept Art images on [Lexica](https://lexica.art/) that I likes and combined.
+
+### Retouching
+
+Generation using Stable Diffusion in fact worked so good that I only had to touch up one of the gods. For the God of Divination I didn't like his original right eye, so i replaced that with the left one and ran him through img2img to let Stable Diffusion fix any artifacts.
+
+![Fixing the right eye of a god](/images/general/gods-of-diffusion/divination-process.png)
+
+### Upscaling
+
+My initial workflow produced images in the size of 512x512. To get something more useable I used the [SD Upscale](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#stable-diffusion-upscale) feature of the webui. This feature upscales overlapping tiles of the image and runs them through img2img using the same prompt and seed as the original generation to imoprove quality of the upscale. For this process I used a 150 steps to really bring out all the details, a Denoising Strength of 0.23, a widtha nd height of 640 (following the guides recommandation) and everything else set to the same as during original generation.
+
+![Upscaling a god - left 512x512 and right 1024x1024](/images/general/gods-of-diffusion/colors-upscale.png)
+
+The upscaling process reveils more details and enables display on larger screen or usage for other media.
+
+## Final thoughts
+
+This was a super fun evening of diving into image generation. If you feel inspired to try something like this yourself, as of writing this [Lexica](https://lexica.art/) is the best place to experience text2image generation yourself, it only required a Google login to get started. While all service offer a free trial, Lexica will get you up to speed with truely good looking images.
+
+I hope you enjoyed this journey into the Pantheon of Diffusion.
+
+![Trident Emoji](/images/emojis/trident.png)

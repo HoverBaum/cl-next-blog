@@ -6,9 +6,14 @@ import { ComponentType } from 'react'
 type ImgProps = {
   src: string
   alt: string
+  limitHeight?: boolean
 }
 
-export const Img: ComponentType<ImgProps> = ({ src, alt }) => {
+export const Img: ComponentType<ImgProps> = ({
+  src,
+  alt,
+  limitHeight = false,
+}) => {
   return (
     <figure
       css={css`
@@ -22,6 +27,11 @@ export const Img: ComponentType<ImgProps> = ({ src, alt }) => {
         alt={alt}
         css={css`
           max-width: 100%;
+          ${limitHeight &&
+          css`
+            scroll-snap-stop: ;
+            max-height: 80vh;
+          `}
           display: block;
           border-radius: 0.2rem;
           margin-bottom: 0.5rem;
