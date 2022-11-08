@@ -8,7 +8,11 @@ export const Title: React.FC<PropsWithChildren<unknown>> = ({ children }) => {
       css={css`
         color: var(--primary);
         font-family: 'Simonetta-Black', serif;
-        font-size: 5.2917rem;
+        font-size: 4.1616rem;
+
+        @media screen and (min-width: 640px) {
+          font-size: 5.5349rem;
+        }
 
         & a {
           color: var(--primary);

@@ -85,29 +85,36 @@ export const GlobalStyles = () => (
       }
 
       h1 {
-        ${scaledFontSize(5)};
+        ${scaledFontSize(4)};
         font-family: 'Simonetta-Black', serif;
         margin-bottom: 0;
+        @media screen and (min-width: 640px) {
+          ${scaledFontSize(5)};
+        }
       }
       h2 {
-        ${scaledFontSize(4)};
+        ${scaledFontSize(3)};
         font-family: 'Noto Serif', cursive;
         margin-bottom: 0;
+        @media screen and (min-width: 640px) {
+          ${scaledFontSize(4)};
+        }
       }
       h3 {
-        ${scaledFontSize(3)};
+        ${scaledFontSize(2)};
         font-family: 'Noto Serif', serif;
         margin-bottom: 0;
+        @media screen and (min-width: 640px) {
+          ${scaledFontSize(3)};
+        }
       }
       h4 {
-        ${scaledFontSize(2)};
-        font-family: 'Simonetta-Black', serif;
-        margin-bottom: 0;
-      }
-      h5 {
         ${scaledFontSize(1)};
         font-family: 'Simonetta-Black', serif;
         margin-bottom: 0;
+        @media screen and (min-width: 640px) {
+          ${scaledFontSize(2)};
+        }
       }
 
       h1 a,
