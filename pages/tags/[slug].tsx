@@ -7,7 +7,6 @@ import { tagsFromPosts, TagType } from 'utils/tagsFromPosts'
 import { postsByDateDesc } from 'utils/sort'
 import { FeaturedPost } from 'components/Posts/FeaturedPost'
 import { Headline } from 'components/baum-ui'
-import { Breadcrums } from 'components/Breadcrums'
 
 export async function getStaticPaths() {
   const tags = tagsFromPosts(allPosts)
@@ -23,7 +22,6 @@ export async function getStaticProps(ctx: { params: any }) {
     ? ctx.params.slug
     : [ctx.params.slug]
   const slug = `/tags/${slugs.join('/')}`
-  console.log('slug for tag:', slug)
   const tags = tagsFromPosts(allPosts)
   const tag = tags.find((tag) => tag.slug === slug)
   if (!tag) return { props: {} }

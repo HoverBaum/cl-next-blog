@@ -24,7 +24,6 @@ export async function getStaticProps(ctx: { params: any }) {
     ? ctx.params.slug
     : [ctx.params.slug]
   const slug = `/categories/${slugs.join('/')}`
-  console.log('slug for category:', slug)
   const categories = categoriesFromPosts(allPosts)
   const category = categories.find((category) => category.slug === slug)
   if (!category) return { props: {} }

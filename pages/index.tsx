@@ -30,7 +30,6 @@ const SmallTitle = ({ children }: { children: React.ReactNode }) => {
 }
 
 const Home = ({ posts }: { posts: Post[] }) => {
-  console.log(posts[0])
   return (
     <div>
       <Head>

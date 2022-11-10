@@ -54,6 +54,5 @@ export const useKBarActions = () => {
         }))
       )
   }, [router])
-  console.log(kBarActions)
   return { kBarActions }
 }
