@@ -40,7 +40,7 @@ export const GlobalStyles = () => (
       }
 
       * {
-        --image-filter-dark: grayscale(40%);
+        --image-filter-dark: grayscale(10%);
       }
 
       :root {
