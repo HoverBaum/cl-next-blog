@@ -14,9 +14,11 @@ export const PostMeta: React.FC<PostMetaProps> = ({ post }) => {
   return (
     <div
       css={css`
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        @media screen and (min-width: 768px) {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
 
         & a {
           text-decoration: none;
