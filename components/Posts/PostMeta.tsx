@@ -13,6 +13,7 @@ export const PostMeta: React.FC<PostMetaProps> = ({ post }) => {
   const { tags, categories, date } = post
   return (
     <div
+      className="mb-4"
       css={css`
         font-size: 0.8rem;
         @media screen and (min-width: 768px) {
