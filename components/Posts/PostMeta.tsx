@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
 import { Post } from 'contentlayer/generated'
 import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
@@ -12,37 +10,17 @@ export type PostMetaProps = {
 export const PostMeta: React.FC<PostMetaProps> = ({ post }) => {
   const { tags, categories, date } = post
   return (
-    <div
-      className="mb-4"
-      css={css`
-        font-size: 0.8rem;
-        @media screen and (min-width: 768px) {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-        }
-
-        & a {
-          text-decoration: none;
-        }
-        & a:hover {
-          text-decoration: underline;
-        }
-      `}
-    >
+    <div className="mb-4 text-sm md:flex flex-row justify-between">
       <div>
         <div>
           {categories &&
             categories.length > 0 &&
             categories.map((category) => (
-              <span
-                key={category}
-                css={css`
-                  margin-right: 0.5rem;
-                `}
-              >
+              <span key={category} className="mr-1">
                 <Link href={`/categories/${stringToSlug(category)}`}>
-                  {category.toUpperCase()}
+                  <a className="no-underline hover:underline">
+                    {category.toUpperCase()}
+                  </a>
                 </Link>
               </span>
             ))}
@@ -51,13 +29,10 @@ export const PostMeta: React.FC<PostMetaProps> = ({ post }) => {
           {tags &&
             tags.length > 0 &&
             tags.map((tag) => (
-              <span
-                key={tag}
-                css={css`
-                  margin-right: 0.5rem;
-                `}
-              >
-                <Link href={`/tags/${stringToSlug(tag)}`}>{`#${tag}`}</Link>
+              <span key={tag} className="mr-0.5">
+                <Link href={`/tags/${stringToSlug(tag)}`}>
+                  <a className="no-underline hover:underline">{`#${tag}`}</a>
+                </Link>
               </span>
             ))}
         </div>
