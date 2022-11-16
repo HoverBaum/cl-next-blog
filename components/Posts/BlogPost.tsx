@@ -16,6 +16,7 @@ export const BlogPost: ComponentType<PostProps> = ({ post }) => {
 
   return (
     <article
+      className=""
       css={css`
         padding-bottom: 2rem;
       `}
