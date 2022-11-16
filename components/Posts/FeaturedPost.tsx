@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 /**
  * A Blogpost featured either big or small.
  * The big version contains more information and the first image of the post if any.
@@ -6,7 +5,6 @@
  * Both have a "read more" CTA.
  */
 
-import { css } from '@emotion/react'
 import { Img } from 'components/MDXComponents/Img'
 import { MDXComponents } from 'components/MDXComponents/MDXComponents'
 import { PostCard } from './PostCard'
@@ -33,17 +31,8 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
 
       {/* Adding the read more always at the bottom and same bottom.
       One div creates the space, the other positions the link. */}
-      <div
-        css={css`
-          height: 2rem;
-        `}
-      ></div>
-      <div
-        css={css`
-          position: absolute;
-          bottom: 1rem;
-        `}
-      >
+      <div className="h-8"></div>
+      <div className="absolute bottom-4">
         <Link href={post.slug}>…continue reading</Link>
       </div>
     </PostCard>

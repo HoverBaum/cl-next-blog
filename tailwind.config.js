@@ -39,6 +39,15 @@ module.exports = {
           800: '#00304d',
           900: '#00101a',
         },
+        background: {
+          DEFAULT: '#f8fafb',
+        },
+        surface: {
+          DEFAULT: '#fefefe',
+        },
+        border: {
+          DEFAULT: '#b6bdc226',
+        },
       },
     },
   },

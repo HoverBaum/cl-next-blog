@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
 import { Post } from 'contentlayer/generated'
 import Link from 'next/link'
 import { PropsWithChildren } from 'react'
@@ -21,27 +19,11 @@ export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
   const { title, slug } = post
   return (
     <article
-      css={css`
-        position: relative;
-        height: 100%;
-        padding: 1rem;
-        border-radius: 5px;
-        background-color: var(--surface);
-        border: var(--border);
-        box-shadow: var(--shadow);
-        ${flat &&
-        css`
-          background-color: var(--background);
-          border: none;
-          box-shadow: none;
-        `}
-      `}
+      className={`relative h-full p-4 rounded ${
+        flat ? 'bg-background' : 'bg-surface border-2 border-border shadow-xl'
+      }`}
     >
-      <h3
-        css={css`
-          margin-top: 0;
-        `}
-      >
+      <h3 className="mt-0">
         <Link href={slug}>
           <a>{title}</a>
         </Link>

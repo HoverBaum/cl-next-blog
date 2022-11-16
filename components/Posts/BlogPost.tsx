@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { Post as ContentlayerPost } from 'contentlayer/generated'
 import { ComponentType } from 'react'
@@ -15,12 +13,7 @@ export const BlogPost: ComponentType<PostProps> = ({ post }) => {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <article
-      className=""
-      css={css`
-        padding-bottom: 2rem;
-      `}
-    >
+    <article className="pb-7">
       <Headline>{post.title}</Headline>
       <PostMeta post={post} />
       <hr />
