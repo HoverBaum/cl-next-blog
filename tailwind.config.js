@@ -28,6 +28,7 @@ module.exports = {
       colors: {
         primary: {
           DEFAULT: '#378acd',
+          dark: '0073b9',
           50: '#80cfff',
           100: '#80cfff',
           200: '#80cfff',
@@ -39,14 +40,25 @@ module.exports = {
           800: '#00304d',
           900: '#00101a',
         },
+        accent: {
+          DEFAULT: '#db770b',
+          dark: '#c73d00',
+        },
         background: {
           DEFAULT: '#f8fafb',
+          dark: '#171a1c',
         },
         surface: {
           DEFAULT: '#fefefe',
+          dark: '#22272a',
         },
         border: {
           DEFAULT: '#b6bdc226',
+          dark: 'b7bcbf26',
+        },
+        text: {
+          DEFAULT: '#364149',
+          dark: '#d3dadf',
         },
       },
     },

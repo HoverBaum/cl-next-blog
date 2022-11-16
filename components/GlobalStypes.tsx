@@ -16,29 +16,6 @@ export const scaledFontSize = (scale: number) => {
 export const GlobalStyles = () => (
   <Global
     styles={css`
-      //https://fonts.google.com/share?selection.family=Noto%20Emoji%7CNoto%20Sans:ital,wght@0,300;1,300%7CNoto%20Serif
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Emoji&family=Noto+Sans:ital,wght@0,300;1,300&family=Noto+Serif&display=swap');
-
-      @font-face {
-        font-family: 'Simonetta-Black';
-        src: url('/fonts/Simonetta-Black.ttf');
-      }
-
-      @font-face {
-        font-family: 'Simonetta';
-        src: url('/fonts/Simonetta-Regular.ttf');
-      }
-
-      @font-face {
-        font-family: 'Noto Sans Light';
-        src: url('/fonts/NotoSans-Light.ttf');
-      }
-
-      @font-face {
-        font-family: 'Noto Serif';
-        src: url('/fonts/NotoSerif-Regular.ttf');
-      }
-
       * {
         --image-filter-dark: grayscale(10%);
       }
@@ -70,18 +47,6 @@ export const GlobalStyles = () => (
         background-color: var(--surface);
         padding: 0.5rem;
         border: var(--border);
-      }
-
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        min-height: 100%;
-        font-family: 'Noto Sans', sans-serif;
-        font-weight: 300;
-        font-size: 18px;
-        color: var(--text);
-        background-color: var(--background);
       }
 
       h1 {
@@ -144,11 +109,6 @@ export const GlobalStyles = () => (
         margin: 1em 0;
         padding: 0;
         opacity: 0.33;
-      }
-
-      ::selection {
-        background: var(--accent);
-        color: white;
       }
     `}
   />

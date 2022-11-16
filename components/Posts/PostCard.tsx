@@ -20,7 +20,9 @@ export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
   return (
     <article
       className={`relative h-full p-4 rounded ${
-        flat ? 'bg-background' : 'bg-surface border-2 border-border shadow-xl'
+        flat
+          ? 'bg-background dark:bg-background-dark'
+          : 'bg-surface dark:bg-surface-dark border-2 border-border dark:border-border-dark shadow-xl'
       }`}
     >
       <h3 className="mt-0">
