@@ -48,68 +48,6 @@ export const GlobalStyles = () => (
         padding: 0.5rem;
         border: var(--border);
       }
-
-      h1 {
-        ${scaledFontSize(4)};
-        font-family: 'Simonetta-Black', serif;
-        margin-bottom: 0;
-        @media screen and (min-width: 640px) {
-          ${scaledFontSize(5)};
-        }
-      }
-      h2 {
-        ${scaledFontSize(3)};
-        font-family: 'Noto Serif', cursive;
-        margin-bottom: 0;
-        @media screen and (min-width: 640px) {
-          ${scaledFontSize(4)};
-        }
-      }
-      h3 {
-        ${scaledFontSize(2)};
-        font-family: 'Noto Serif', serif;
-        margin-bottom: 0;
-        @media screen and (min-width: 640px) {
-          ${scaledFontSize(3)};
-        }
-      }
-      h4 {
-        ${scaledFontSize(1)};
-        font-family: 'Simonetta-Black', serif;
-        margin-bottom: 0;
-        @media screen and (min-width: 640px) {
-          ${scaledFontSize(2)};
-        }
-      }
-
-      h1 a,
-      h2 a,
-      h3 a,
-      h4 a,
-      h5 a {
-        text-decoration: none;
-      }
-
-      a {
-        text-decoration: underline;
-      }
-
-      a:hover,
-      a:focus {
-        color: var(--primary);
-        text-decoration: underline;
-        transition: 0.3s ease-out;
-      }
-
-      hr {
-        display: block;
-        height: 1px;
-        border: 0;
-        border-top: 1px solid var(--text);
-        margin: 1em 0;
-        padding: 0;
-        opacity: 0.33;
-      }
     `}
   />
 )

@@ -61,6 +61,10 @@ module.exports = {
           dark: '#d3dadf',
         },
       },
+      fontFamily: {
+        noto: ['Noto Serif', 'serif'],
+        simonetta: ['Simonetta-Black', 'serif'],
+      },
     },
   },
   plugins: [],

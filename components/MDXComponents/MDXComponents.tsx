@@ -1,3 +1,4 @@
+import { Ruler } from 'components/Ruler'
 import { Img } from './Img'
 import { MDXLink } from './MDXLink'
 import { Paragraph } from './Paragraph'
@@ -10,7 +11,7 @@ export const MDXComponents = {
   h2: (props: any) => (
     <>
       <h2 {...props} />
-      <hr style={{ marginTop: '-0.5rem' }} />
+      <Ruler className="-mt-3" />
     </>
   ),
 }

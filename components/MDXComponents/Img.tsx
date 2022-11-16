@@ -1,6 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
 import { ComponentType } from 'react'
 
 type ImgProps = {
@@ -15,33 +13,13 @@ export const Img: ComponentType<ImgProps> = ({
   limitHeight = false,
 }) => {
   return (
-    <figure
-      css={css`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      `}
-    >
+    <figure className="flex flex-col items-center my-6">
       <img
         src={src}
         alt={alt}
-        css={css`
-          max-width: 100%;
-          ${limitHeight &&
-          css`
-            scroll-snap-stop: ;
-            max-height: 80vh;
-          `}
-          display: block;
-          border-radius: 0.2rem;
-          margin-bottom: 0.5rem;
-          filter: var(--image-filter);
-
-          &:hover {
-            filter: none;
-            transition: all 0.3s ease-out;
-          }
-        `}
+        className={`max-w-full block rounded-md mb-1 ease-out duration-300 dark:grayscale-[10%] hover:grayscale-0 ${
+          limitHeight ? 'max-h-[80vh]' : ''
+        }`}
       />
       <figcaption>{alt}</figcaption>
     </figure>

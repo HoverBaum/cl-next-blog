@@ -4,6 +4,7 @@ import { ComponentType } from 'react'
 import { MDXComponents } from '../MDXComponents/MDXComponents'
 import { Headline } from '../baum-ui'
 import { PostMeta } from './PostMeta'
+import { Ruler } from 'components/Ruler'
 
 type PostProps = {
   post: ContentlayerPost
@@ -16,7 +17,7 @@ export const BlogPost: ComponentType<PostProps> = ({ post }) => {
     <article className="pb-7">
       <Headline>{post.title}</Headline>
       <PostMeta post={post} />
-      <hr />
+      <Ruler />
       <MDXContent components={MDXComponents} />
     </article>
   )

@@ -2,6 +2,7 @@
 import { css } from '@emotion/react'
 import { Title } from 'components/baum-ui'
 import { Breadcrums } from 'components/Breadcrums'
+import { Ruler } from 'components/Ruler'
 import { theme } from 'components/theme'
 import { Wrapper } from 'components/Wrapper'
 import Link from 'next/link'
@@ -80,7 +81,7 @@ export const Header = () => {
         </nav>
         {!isHomepage && (
           <>
-            <hr />
+            <Ruler />
             <div
               css={css`
                 margin-top: 0.5rem;
