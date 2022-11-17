@@ -63,6 +63,7 @@ module.exports = {
       },
       fontFamily: {
         noto: ['Noto Serif', 'serif'],
+        notoSans: ['Noto Sans', 'sans-serif'],
         simonetta: ['Simonetta-Black', 'serif'],
       },
     },

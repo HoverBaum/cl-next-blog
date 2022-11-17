@@ -1,9 +1,6 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
 import { Title } from 'components/baum-ui'
 import { Breadcrums } from 'components/Breadcrums'
 import { Ruler } from 'components/Ruler'
-import { theme } from 'components/theme'
 import { Wrapper } from 'components/Wrapper'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -13,11 +10,7 @@ export const Header = () => {
   const isHomepage = router.pathname === '/'
 
   return (
-    <header
-      css={css`
-        margin-bottom: 10vh;
-      `}
-    >
+    <header className="mb-[10vh]">
       <Wrapper>
         <hgroup>
           {isHomepage && (
@@ -26,67 +19,47 @@ export const Header = () => {
             </Title>
           )}
           {!isHomepage && (
-            <h2
-              css={css`
-                font-family: 'Simonetta-Black', serif;
-                color: var(--primary);
-              `}
-            >
+            <h2 className="font-simonetta text-primary dark:text-primary-dark">
               <Link href="/">Hendriks Blog</Link>
             </h2>
           )}
 
-          <h4
-            css={css`
-              font-family: 'Noto Sans', sans-serif;
-              font-weight: 300;
-              margin-top: 0;
-            `}
-          >
+          <h4 className="font-noto font-light mt-1">
             Ein Baum und seine Abenteuer
           </h4>
         </hgroup>
         <nav>
-          <ul
-            css={css`
-              list-style: none;
-              padding: 0;
-              display: flex;
-
-              & > li {
-                margin-right: 1rem;
-                & a {
-                  text-decoration: none;
-                  text-transform: uppercase;
-                  &:hover {
-                    text-decoration: underline;
-                  }
-                }
-              }
-            `}
-          >
-            <li>
-              <Link href="/categories/devbaum">Dev posts</Link>
+          <ul className="flex p-0 list-none">
+            <li className="mr-4">
+              <Link href="/categories/devbaum">
+                <a className="uppercase no-underline hover:underline">
+                  Dev posts
+                </a>
+              </Link>
             </li>
-            <li>
-              <Link href="/posts">Posts</Link>
+            <li className="mr-4">
+              <Link href="/posts">
+                <a className="uppercase no-underline hover:underline">Posts</a>
+              </Link>
             </li>
-            <li>
-              <Link href="/tags">Tags</Link>
+            <li className="mr-4">
+              <Link href="/tags">
+                <a className="uppercase no-underline hover:underline">Tags</a>
+              </Link>
             </li>
-            <li>
-              <Link href="/categories">Categories</Link>
+            <li className="mr-4">
+              <Link href="/categories">
+                <a className="uppercase no-underline hover:underline">
+                  Categories
+                </a>
+              </Link>
             </li>
           </ul>
         </nav>
         {!isHomepage && (
           <>
             <Ruler />
-            <div
-              css={css`
-                margin-top: 0.5rem;
-              `}
-            >
+            <div className="mt-1">
               <Breadcrums />
             </div>
           </>

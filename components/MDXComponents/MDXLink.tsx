@@ -1,6 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
-import { theme } from 'components/theme'
 import { PropsWithChildren } from 'react'
 
 type MDXLinkProps = {
@@ -12,12 +9,7 @@ export const MDXLink: React.FC<PropsWithChildren<MDXLinkProps>> = ({
   href,
 }) => {
   return (
-    <a
-      href={href}
-      css={css`
-        text-decoration: underline;
-      `}
-    >
+    <a href={href} className="underline">
       {children}
     </a>
   )

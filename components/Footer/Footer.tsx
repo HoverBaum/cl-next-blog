@@ -1,36 +1,15 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
 import { Wrapper } from 'components/Wrapper'
 import Link from 'next/link'
 
 export const Footer = () => {
   return (
-    <footer
-      css={css`
-        margin-top: 5vh;
-      `}
-    >
+    <footer className="mt-[5vh] pb-6">
       <Wrapper>
-        <ul
-          css={css`
-            list-style: none;
-            padding: 0;
-            display: flex;
-
-            & > li {
-              margin-right: 1rem;
-              & a {
-                text-decoration: none;
-                text-transform: uppercase;
-                &:hover {
-                  text-decoration: underline;
-                }
-              }
-            }
-          `}
-        >
+        <ul className="flex p-0 list-none">
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/">
+              <a className="uppercase no-underline hover:underline">Home</a>
+            </Link>
           </li>
         </ul>
       </Wrapper>

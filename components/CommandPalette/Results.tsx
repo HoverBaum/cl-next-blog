@@ -20,11 +20,7 @@ export const Results = () => {
         typeof item === 'string' ? (
           <KBarCategory category={item} />
         ) : (
-          <ResultItem
-            active={active}
-            action={item}
-            currentRootActionId={rootActionId || undefined}
-          />
+          <ResultItem active={active} action={item} />
         )
       }
     />

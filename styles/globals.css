@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* https://fonts.google.com/share?selection.family=Noto%20Emoji%7CNoto%20Sans:ital,wght@0,300;1,300%7CNoto%20Serif */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji&family=Noto+Sans:ital,wght@0,300;1,300&family=Noto+Serif&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Emoji&family=Noto+Sans:ital,wght@0,300;1,300&family=Noto+Serif&display=swap'); */
 
 @font-face {
   font-family: 'Simonetta-Black';
@@ -16,7 +16,7 @@
 }
 
 @font-face {
-  font-family: 'Noto Sans Light';
+  font-family: 'Noto Sans';
   src: url('/fonts/NotoSans-Light.ttf');
 }
 

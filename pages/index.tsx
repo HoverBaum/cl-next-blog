@@ -17,7 +17,7 @@ export async function getStaticProps() {
 
 const SmallTitle = ({ children }: { children: React.ReactNode }) => {
   return (
-    <h4 className="mt-10 mb-4 text-primary-600 dark:text-primary-dark">
+    <h4 className="mt-10 mb-4 text-primary-600 dark:text-primary-dark font-simonetta">
       {children}
     </h4>
   )

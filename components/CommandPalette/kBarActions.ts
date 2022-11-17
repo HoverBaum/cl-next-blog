@@ -45,7 +45,7 @@ export const useKBarActions = () => {
         }))
       )
       .concat(
-        allPosts.sort(postsByDateDesc).map(({ _id, title, slug, tags }) => ({
+        allPosts.sort(postsByDateDesc).map(({ _id, title, slug }) => ({
           id: _id,
           name: title,
           section: 'Posts',

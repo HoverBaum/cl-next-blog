@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
 import { KBarAnimator, KBarPortal, KBarPositioner, KBarSearch } from 'kbar'
 import { Results } from './Results'
 
@@ -7,36 +5,11 @@ export const CommandPalette = () => {
   return (
     <KBarPortal>
       {/* Renders the content outside the root node */}
-      <KBarPositioner
-        css={css`
-          backdrop-filter: blur(5px);
-        `}
-      >
+      <KBarPositioner className="backdrop-blur-sm">
         {/* Centers the content */}
-        <KBarAnimator
-          css={css`
-            max-width: 640px;
-            width: 100%;
-            background: var(--surface);
-            border-radius: 8px;
-            overflow: hidden;
-            border: var(--border);
-            box-shadow: var(--shadow);
-          `}
-        >
+        <KBarAnimator className="max-w-2xl w-full bg-surface dark:bg-surface-dark rounded-lg overflow-hidden border-border dark:border-border-dark shadow-lg">
           {/* Handles the show/hide and height animations */}
-          <KBarSearch
-            css={css`
-              width: 100%;
-              padding: 12px 16px;
-              font-size: 16px;
-              box-sizing: border-box;
-              outline: none;
-              border: none;
-              background: var(surface1);
-              color: var(--text);
-            `}
-          />
+          <KBarSearch className="px-4 py-1 w-full outline-none border-0 border-b-2 " />
           <Results />
         </KBarAnimator>
       </KBarPositioner>
