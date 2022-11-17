@@ -1,10 +1,5 @@
-/** @jsxImportSource @emotion/react */
-
-import { css } from '@emotion/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-
-const defaultOpacity = 0.66
 
 export const Breadcrums = () => {
   const route = useRouter()
@@ -26,33 +21,13 @@ export const Breadcrums = () => {
 
   return (
     <nav>
-      <ul
-        css={css`
-          display: flex;
-          flex-direction: row;
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        `}
-      >
+      <ul className="flex flex-row liste-none p-0 m-0">
         {crumbs.map((crumb, index) => (
           <li key={crumb.href}>
-            <span
-              css={css`
-                opacity: ${defaultOpacity};
-                &:hover {
-                  opacity: 1;
-                }
-              `}
-            >
+            <span className="opacity-60 hover:opacity-100">
               <Link href={crumb.href}>{crumb.name}</Link>
             </span>
-            <span
-              css={css`
-                margin: 0 0.2rem;
-                opacity: ${defaultOpacity};
-              `}
-            >
+            <span className="mx-0.5 opacity-60">
               {index < crumbs.length - 1 ? '/' : ''}
             </span>
           </li>

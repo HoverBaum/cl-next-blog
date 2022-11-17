@@ -16,20 +16,6 @@ export const scaledFontSize = (scale: number) => {
 export const GlobalStyles = () => (
   <Global
     styles={css`
-      * {
-        --image-filter-dark: grayscale(10%);
-      }
-
-      :root {
-        --image-filter: var(--image-filter-light);
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --image-filter: var(--image-filter-dark);
-        }
-      }
-
       // Code highlihgting.
 
       // light
