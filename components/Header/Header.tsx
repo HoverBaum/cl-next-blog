@@ -29,7 +29,7 @@ export const Header = () => {
           </h4>
         </hgroup>
         <nav>
-          <ul className="flex p-0 list-none">
+          <ul className="flex flex-wrap p-0 list-none">
             <li className="mr-4">
               <Link href="/categories/devbaum">
                 <a className="uppercase no-underline hover:underline">
