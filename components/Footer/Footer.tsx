@@ -29,7 +29,7 @@ export const Footer = () => {
 
           <div>
             <h4 className="mb-1">Search</h4>
-            <div className="relative flex items-center w-full h-8 rounded-lg focus-within:shadow-lg bg-background dark:bg-background-dark overflow-hidden">
+            <div className="relative flex items-center w-full h-8 rounded-lg bg-background dark:bg-background-dark overflow-hidden border border-border">
               <div className="grid place-items-center h-full w-12 text-text dark:text-text-dark">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

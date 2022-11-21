@@ -16,9 +16,9 @@ export const ResultItem = React.forwardRef(
     return (
       <div
         ref={ref}
-        className={`${
-          active ? 'bg-primary-50/20 border-text' : ''
-        } px-4 py-1 border-l-2`}
+        className={`px-4 py-1 border-l-2 dark:border-background-dark ${
+          active ? 'bg-primary-50/20 border-text dark:border-primary-300' : ''
+        }`}
       >
         <span>{action.name}</span>
       </div>
