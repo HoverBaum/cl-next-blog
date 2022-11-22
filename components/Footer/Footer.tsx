@@ -1,30 +1,31 @@
+import { headerLinks, NavLink } from 'components/Header/Header'
 import { Wrapper } from 'components/Wrapper'
 import { useKBar } from 'kbar'
 import Link from 'next/link'
 
+const footerLinks: NavLink[] = [
+  { href: '/', title: 'Home' },
+  ...headerLinks,
+  { href: 'https://hendrikwallbaum.de/impressum.html', title: 'Impressum' },
+]
+
 export const Footer = () => {
   const { query } = useKBar()
   return (
-    <footer className="mt-[5vh] py-6 bg-surface dark:bg-surface-dark">
+    <footer className="mt-[5vh] py-6 bg-surface dark:bg-surface-dark border-t-2 border-t-border dark:border-t-border-dark">
       <Wrapper>
         <div className="mb-4 grid grid-cols-1 md:grid-cols-2">
           <ul className="grid grid-cols-1 p-0 list-none">
             <li>
               <h4 className="mb-1">Links</h4>
             </li>
-            <li>
-              <Link href="/">
-                <a className="no-underline hover:underline">Home</a>
-              </Link>
-            </li>
-            <li>
-              <a
-                href="https://hendrikwallbaum.de/impressum.html"
-                className="no-underline hover:underline"
-              >
-                Impressum
-              </a>
-            </li>
+            {footerLinks.map(({ href, title }) => (
+              <li key={href + title} className="mb-1">
+                <Link href={href}>
+                  <a className="no-underline hover:underline">{title}</a>
+                </Link>
+              </li>
+            ))}
           </ul>
 
           <div>
@@ -66,8 +67,7 @@ export const Footer = () => {
 
         <p className="text-center">
           <small>
-            ©{new Date().getFullYear()}{' '}
-            <a href="https://hendrikwallbaum.de/">Hendrik Wallbaum</a>
+            Blog by <a href="https://hendrikwallbaum.de/">Hendrik Wallbaum</a>
           </small>
         </p>
       </Wrapper>

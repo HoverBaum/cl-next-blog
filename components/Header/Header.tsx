@@ -5,6 +5,21 @@ import { Wrapper } from 'components/Wrapper'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
+export type NavLink = {
+  href: string
+  title: string
+}
+
+export const headerLinks: NavLink[] = [
+  {
+    href: '/categories/devbaum',
+    title: 'Dev posts',
+  },
+  { href: '/posts', title: 'Posts' },
+  { href: '/tags', title: 'Tags' },
+  { href: '/categories', title: 'Categories' },
+]
+
 export const Header = () => {
   const router = useRouter()
   const isHomepage = router.pathname === '/'
@@ -30,30 +45,15 @@ export const Header = () => {
         </hgroup>
         <nav>
           <ul className="flex flex-wrap p-0 list-none">
-            <li className="mr-4">
-              <Link href="/categories/devbaum">
-                <a className="uppercase no-underline hover:underline">
-                  Dev posts
-                </a>
-              </Link>
-            </li>
-            <li className="mr-4">
-              <Link href="/posts">
-                <a className="uppercase no-underline hover:underline">Posts</a>
-              </Link>
-            </li>
-            <li className="mr-4">
-              <Link href="/tags">
-                <a className="uppercase no-underline hover:underline">Tags</a>
-              </Link>
-            </li>
-            <li className="mr-4">
-              <Link href="/categories">
-                <a className="uppercase no-underline hover:underline">
-                  Categories
-                </a>
-              </Link>
-            </li>
+            {headerLinks.map(({ href, title }) => (
+              <li key={href + title} className="mr-4">
+                <Link href={href}>
+                  <a className="uppercase no-underline hover:underline">
+                    {title}
+                  </a>
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
         {!isHomepage && (
