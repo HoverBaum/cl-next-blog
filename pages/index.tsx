@@ -5,6 +5,7 @@ import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
 import { FeaturedPost } from 'components/Posts/FeaturedPost'
 import { css } from '@emotion/react'
+import { RecentTalks } from 'components/Home/RecentTalks'
 
 export async function getStaticProps() {
   const posts = allPosts
@@ -60,6 +61,9 @@ const Home = ({ posts }: { posts: Post[] }) => {
           For more about me please visit:{' '}
           <a href="https://hendrikwallbaum.de/">hendrikwallbaum.de</a>.
         </p>
+
+        <SmallTitle>Latest Talk</SmallTitle>
+        <RecentTalks />
       </Wrapper>
     </div>
   )
