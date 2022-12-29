@@ -6,6 +6,7 @@ import { Wrapper } from 'components/Wrapper'
 import { FeaturedPost } from 'components/Posts/FeaturedPost'
 import { css } from '@emotion/react'
 import { RecentTalks } from 'components/Home/RecentTalks'
+import { MeIntro } from 'components/MeIntro'
 
 export async function getStaticProps() {
   const posts = allPosts
@@ -32,6 +33,8 @@ const Home = ({ posts }: { posts: Post[] }) => {
       </Head>
 
       <Wrapper>
+        <MeIntro />
+
         <SmallTitle>Current post</SmallTitle>
         <FeaturedPost post={posts[0]} variant="big" />
 
