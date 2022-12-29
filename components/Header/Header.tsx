@@ -54,7 +54,7 @@ export const Header = () => {
   }, [])
 
   return (
-    <header className="mb-[10vh]">
+    <header className="mb-[5vh]">
       <hgroup id="headerGroup" className="text-center mb-6 mt-6">
         <div className="flex justify-center items-baseline">
           <img
@@ -82,7 +82,7 @@ export const Header = () => {
             </h2>
           )} */}
 
-        <h4 className="font-noto font-light mt-1">
+        <h4 className="font-notoSans font-light mt-1">
           Ein Baum und seine Abenteuer
         </h4>
       </hgroup>
