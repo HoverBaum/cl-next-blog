@@ -25,6 +25,11 @@
   src: url('/fonts/NotoSerif-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Keycaps';
+  src: url('/fonts/keycapsregular.ttf');
+}
+
 html,
 body {
   padding: 0;
