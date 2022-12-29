@@ -65,7 +65,6 @@ module.exports = {
         noto: ['Noto Serif', 'serif'],
         notoSans: ['Noto Sans', 'sans-serif'],
         simonetta: ['Simonetta-Black', 'serif'],
-        keycaps: ['Keycaps', 'sans-serif'],
       },
     },
   },

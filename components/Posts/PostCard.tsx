@@ -27,12 +27,7 @@ export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
     >
       <h3 className="mt-0">
         <Link href={slug}>
-          <a>
-            <span className="font-keycaps text-7xl">
-              {title.substring(0, 1)}
-            </span>
-            {title.substring(1)}
-          </a>
+          <a>{title}</a>
         </Link>
       </h3>
       <PostMeta post={post} />
