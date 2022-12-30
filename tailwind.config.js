@@ -28,7 +28,7 @@ module.exports = {
       colors: {
         primary: {
           DEFAULT: '#378acd',
-          dark: '0073b9',
+          dark: '#0073b9',
           50: '#80cfff',
           100: '#80cfff',
           200: '#80cfff',
@@ -54,7 +54,7 @@ module.exports = {
         },
         border: {
           DEFAULT: '#b6bdc226',
-          dark: 'b7bcbf26',
+          dark: '#b7bcbf26',
         },
         text: {
           DEFAULT: '#364149',
@@ -66,6 +66,15 @@ module.exports = {
         notoSans: ['Noto Sans', 'sans-serif'],
         simonetta: ['Simonetta-Black', 'serif'],
       },
+    },
+    keyframes: {
+      wiggle: {
+        '0%, 100%': { transform: 'rotate(-6deg)' },
+        '50%': { transform: 'rotate(6deg)' },
+      },
+    },
+    animation: {
+      wiggle: 'wiggle 1s ease-in-out infinite',
     },
   },
   plugins: [],
