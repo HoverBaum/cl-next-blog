@@ -55,16 +55,6 @@ const Home = ({ posts }: { posts: Post[] }) => {
           <FeaturedPost post={posts[2]} variant="small" />
         </div>
 
-        <SmallTitle>This is me</SmallTitle>
-        <p>
-          Hi, I am Hendrik. Webdev for fun and passionate about knowledge
-          sharing.
-        </p>
-        <p>
-          For more about me please visit:{' '}
-          <a href="https://hendrikwallbaum.de/">hendrikwallbaum.de</a>.
-        </p>
-
         <SmallTitle>Latest Talk</SmallTitle>
         <RecentTalks />
       </Wrapper>

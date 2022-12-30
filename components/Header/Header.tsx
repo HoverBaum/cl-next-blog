@@ -71,16 +71,6 @@ export const Header = () => {
             className="h-12"
           />
         </div>
-        {/* {isHomepage && (
-            <Title>
-              <Link href="/">Hendriks Blog</Link>
-            </Title>
-          )}
-          {!isHomepage && (
-            <h2 className="font-simonetta text-primary dark:text-primary-dark">
-              <Link href="/">Hendriks Blog</Link>
-            </h2>
-          )} */}
 
         <h4 className="font-notoSans font-light mt-1">
           Ein Baum und seine Abenteuer
@@ -113,12 +103,9 @@ export const Header = () => {
         <Ruler className="my-0" />
       </div>
       {!isHomepage && (
-        <>
-          <Ruler />
-          <div className="mt-1">
-            <Breadcrums />
-          </div>
-        </>
+        <Wrapper>
+          <Breadcrums />
+        </Wrapper>
       )}
     </header>
   )
