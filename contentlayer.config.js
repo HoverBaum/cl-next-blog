@@ -54,7 +54,7 @@ export const Post = defineDocumentType(() => ({
             return acc
           } else return acc.concat(line)
         }, [])
-        const excerptMDX = excerpt.join('\n')
+        const excerptMDX = excerpt.join('\n\n')
         const compiledExcerpt = await bundleMDX({
           source: excerptMDX,
         })
