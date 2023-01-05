@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { Paragraph as BaumParagraph } from 'components/baum-ui'
 import React, { PropsWithChildren } from 'react'
 
 export const Paragraph: React.FC<PropsWithChildren<unknown>> = ({
@@ -18,5 +16,5 @@ export const Paragraph: React.FC<PropsWithChildren<unknown>> = ({
     }
   }
 
-  return <p>{children}</p>
+  return <p className="text-justify max-w-[70ch] mx-auto">{children}</p>
 }
