@@ -3,7 +3,7 @@ import { WigglingEmoji } from './WigglingEmoji'
 export const MeIntro = () => {
   // A card with sharp corners that has a quote about me and a picture.
   return (
-    <div className="relative h-full p-4 bg-surface dark:bg-surface-dark border-2 border-border dark:border-border-dark shadow-xl">
+    <div className="relative h-full p-4 border-2 border-border dark:border-border-dark ">
       <div className="flex justify-between">
         <div className="w-full r-4 pl-4">
           <p className="text-2xl pr-4">
