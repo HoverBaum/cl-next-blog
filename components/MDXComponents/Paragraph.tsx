@@ -16,5 +16,5 @@ export const Paragraph: React.FC<PropsWithChildren<unknown>> = ({
     }
   }
 
-  return <p className="text-justify max-w-[70ch] mx-auto">{children}</p>
+  return <p className="text-justify max-w-p mx-auto">{children}</p>
 }

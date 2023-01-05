@@ -6,6 +6,9 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    maxWidth: {
+      p: '70ch',
+    },
     // https://www.modularscale.com/?1&rem&1.25
     spacing: {
       px: '1px',
