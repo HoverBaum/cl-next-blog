@@ -5,7 +5,7 @@ import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
 import { FeaturedPost } from 'components/Posts/FeaturedPost'
 import { css } from '@emotion/react'
-import { RecentTalks } from 'components/Home/RecentTalks'
+import { RecentTalks } from 'components/Talks/RecentTalks'
 import { MeIntro } from 'components/MeIntro'
 
 export async function getStaticProps() {

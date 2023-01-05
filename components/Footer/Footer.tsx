@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 const footerLinks: NavLink[] = [
   ...headerLinks,
+  { href: '/talks', title: 'Talks' },
   { href: 'https://hendrikwallbaum.de/impressum.html', title: 'Impressum' },
 ]
 

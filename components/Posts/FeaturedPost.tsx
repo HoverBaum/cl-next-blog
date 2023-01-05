@@ -33,9 +33,9 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
       One div creates the space, the other positions the link. */}
       {variant === 'small' && <div className="h-8"></div>}
       <div
-        className={`${variant === 'small' && 'absolute bottom-4'} ${
-          variant === 'big' && 'max-w-p mx-auto'
-        }`}
+        className={`text-center w-full ${
+          variant === 'small' && 'absolute bottom-4'
+        } ${variant === 'big' && 'max-w-p mx-auto'}`}
       >
         <Link href={post.slug}>…continue reading</Link>
       </div>

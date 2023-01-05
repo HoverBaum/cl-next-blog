@@ -1,3 +1,4 @@
+import { Card } from 'components/Card'
 import { Post } from 'contentlayer/generated'
 import Link from 'next/link'
 import { PropsWithChildren } from 'react'
@@ -18,20 +19,21 @@ export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
 }) => {
   const { title, slug } = post
   return (
-    <article
-      className={`relative h-full rounded ${
-        flat
-          ? 'bg-background dark:bg-background-dark'
-          : 'bg-surface dark:bg-surface-dark border-2 border-border dark:border-border-dark shadow-xl p-4'
-      }`}
-    >
-      <h3 className="mt-0 h-[2.1em] overflow-y-clip">
-        <Link href={slug}>
-          <a>{title}</a>
-        </Link>
-      </h3>
-      <PostMeta post={post} />
-      {children}
+    <article>
+      <Card
+        className={`h-full relative ${
+          flat &&
+          'bg-background dark:bg-background-dark border-none shadow-none'
+        }`}
+      >
+        <h3 className="mt-0 h-[2.1em] overflow-y-clip">
+          <Link href={slug}>
+            <a>{title}</a>
+          </Link>
+        </h3>
+        <PostMeta post={post} />
+        {children}
+      </Card>
     </article>
   )
 }
