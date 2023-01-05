@@ -38,8 +38,10 @@ export const Header = () => {
       }
     }
     document.addEventListener('scroll', handler)
+    document.addEventListener('navigate', handler)
     return () => {
       document.removeEventListener('scroll', handler)
+      document.removeEventListener('navigate', handler)
     }
   }, [scrollThreshold])
 
