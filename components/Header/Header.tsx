@@ -44,7 +44,7 @@ export const Header = () => {
           <img
             src="/images/assets/HolstenLine-dark.png"
             alt="Holsten Line"
-            className="h-12"
+            className="h-12 hidden md:block"
           />
           <Title>
             <Link href="/">Hendriks Blog</Link>
@@ -52,7 +52,7 @@ export const Header = () => {
           <img
             src="/images/assets/HolstenLine-dark.png"
             alt="Holsten Line"
-            className="h-12"
+            className="h-12 hidden md:block"
           />
         </div>
 
