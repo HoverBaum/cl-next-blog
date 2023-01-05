@@ -26,7 +26,7 @@ export const PostCard: React.FC<PropsWithChildren<PostCardProps>> = ({
           'bg-background dark:bg-background-dark border-none shadow-none'
         }`}
       >
-        <h3 className="mt-0 h-[2.1em] overflow-y-clip">
+        <h3 className="mt-0 ">
           <Link href={slug}>
             <a>{title}</a>
           </Link>
