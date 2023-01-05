@@ -7,6 +7,7 @@ import { FeaturedPost } from 'components/Posts/FeaturedPost'
 import { css } from '@emotion/react'
 import { RecentTalks } from 'components/Talks/RecentTalks'
 import { MeIntro } from 'components/MeIntro'
+import Link from 'next/link'
 
 export async function getStaticProps() {
   const posts = allPosts
@@ -40,6 +41,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
 
         <SmallTitle>Recent posts</SmallTitle>
         <div
+          className="mb-6"
           css={css`
             display: grid;
             grid-template-columns: repeat(1, 1fr);
@@ -54,6 +56,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
           <FeaturedPost post={posts[1]} variant="small" />
           <FeaturedPost post={posts[2]} variant="small" />
         </div>
+        <Link href="/posts">All Posts</Link>
 
         <SmallTitle>Latest Talk</SmallTitle>
         <RecentTalks />
