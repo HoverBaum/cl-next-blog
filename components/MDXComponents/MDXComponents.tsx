@@ -14,4 +14,5 @@ export const MDXComponents = {
       <Ruler className="-mt-3" />
     </>
   ),
+  hr: () => <Ruler className="my-6" />,
 }

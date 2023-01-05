@@ -18,5 +18,5 @@ export const Paragraph: React.FC<PropsWithChildren<unknown>> = ({
     }
   }
 
-  return <BaumParagraph>{children}</BaumParagraph>
+  return <p>{children}</p>
 }
