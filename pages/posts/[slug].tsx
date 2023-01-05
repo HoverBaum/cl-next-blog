@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { allPosts, Post } from 'contentlayer/generated'
 import { BlogPost } from 'components/Posts/BlogPost'
 import { Wrapper } from 'components/Wrapper'
+import { AuthorCard } from 'components/AuthorCard'
 
 export async function getStaticPaths() {
   const paths: string[] = allPosts.map((post) => post.slug)
@@ -35,6 +36,7 @@ const DocLayout = ({ post }: { post: Post }) => {
       </Head>
       <Wrapper>
         <BlogPost post={post} />
+        <AuthorCard />
       </Wrapper>
     </>
   )

@@ -4,7 +4,6 @@ import { useKBar } from 'kbar'
 import Link from 'next/link'
 
 const footerLinks: NavLink[] = [
-  { href: '/', title: 'Home' },
   ...headerLinks,
   { href: 'https://hendrikwallbaum.de/impressum.html', title: 'Impressum' },
 ]

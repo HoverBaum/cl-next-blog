@@ -4,7 +4,8 @@ import { Ruler } from 'components/Ruler'
 import { Wrapper } from 'components/Wrapper'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useScrollFix } from './useScrollFix'
 
 export type NavLink = {
   href: string
@@ -23,35 +24,15 @@ export const headerLinks: NavLink[] = [
 ]
 
 export const Header = () => {
-  const [isFixed, setIsFixed] = useState(false)
-  const [scrollThreshold, setScrollThreshold] = useState(500)
+  const navRef = useRef<HTMLDivElement>(null)
+  const { isFixed } = useScrollFix(navRef)
   const [sideNavHeight, setSideNavHeight] = useState(200)
   const router = useRouter()
   const isHomepage = router.pathname === '/'
 
+  // Remember the sideNavs height.
   useEffect(() => {
-    const handler = () => {
-      if (window.scrollY > scrollThreshold) {
-        setIsFixed(true)
-      } else {
-        setIsFixed(false)
-      }
-    }
-    document.addEventListener('scroll', handler)
-    document.addEventListener('navigate', handler)
-    return () => {
-      document.removeEventListener('scroll', handler)
-      document.removeEventListener('navigate', handler)
-    }
-  }, [scrollThreshold])
-
-  useEffect(() => {
-    // Read the Y position on page of sideNav and store it in threshold.
     const sideNav = document.getElementById('sideNav')
-    const sideNavTop = sideNav?.getBoundingClientRect().top ?? 500
-    setScrollThreshold(sideNavTop)
-
-    // Remember the sideNavs height.
     const sideNavHeight = sideNav?.clientHeight ?? 200
     setSideNavHeight(sideNavHeight)
   }, [])
@@ -82,7 +63,8 @@ export const Header = () => {
       {isFixed && <div style={{ height: sideNavHeight }}></div>}
       <div
         id="sideNav"
-        className={`bg-background dark:bg-background-dark w-full z-50 ${
+        ref={navRef}
+        className={`bg-background dark:bg-background-dark w-full z-50  ${
           isFixed ? 'fixed top-0 left-0 ' : ''
         }`}
       >
