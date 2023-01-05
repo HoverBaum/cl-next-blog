@@ -2,6 +2,7 @@ import { Title } from 'components/baum-ui'
 import { Breadcrums } from 'components/Breadcrums'
 import { Ruler } from 'components/Ruler'
 import { Wrapper } from 'components/Wrapper'
+import { useKBar } from 'kbar'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
@@ -28,6 +29,7 @@ export const Header = () => {
   const { isFixed } = useScrollFix(navRef)
   const [sideNavHeight, setSideNavHeight] = useState(200)
   const router = useRouter()
+  const { query } = useKBar()
   const isHomepage = router.pathname === '/'
 
   // Remember the sideNavs height.
@@ -81,6 +83,27 @@ export const Header = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <div
+                  onClick={() => query.toggle()}
+                  className="place-items-center h-full text-text dark:text-text-dark cursor-pointer flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 ml-0.5 hover:stroke-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </div>
+              </li>
             </ul>
           </nav>
         </Wrapper>
