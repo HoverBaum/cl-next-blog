@@ -10,7 +10,10 @@ export const Anchor = ({ id, children }: AnchorProps) => {
     <div className="absolute -translate-x-full ">
       <div className="absolute -top-10" id={id}></div>
 
-      <a className="text-text/30 text-[0.5em]" href={`#${id}`}>
+      <a
+        className="text-text/30 dark:text-text-dark/30 text-[0.5em]"
+        href={`#${id}`}
+      >
         {children}
       </a>
     </div>
