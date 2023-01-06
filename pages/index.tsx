@@ -58,7 +58,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
         </div>
         <Link href="/posts">All Posts</Link>
 
-        <SmallTitle>Latest Talk</SmallTitle>
+        <SmallTitle>Latest Talks</SmallTitle>
         <RecentTalks />
       </Wrapper>
     </div>

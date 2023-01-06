@@ -7,7 +7,6 @@ import { Wrapper } from 'components/Wrapper'
 import { postsByDateDesc } from 'utils/sort'
 import { FeaturedPost } from 'components/Posts/FeaturedPost'
 import { categoriesFromPosts, CategoryType } from 'utils/categoriesFromPosts'
-import { Headline, Paragraph } from 'components/baum-ui'
 import Link from 'next/link'
 
 export async function getStaticPaths() {
@@ -52,7 +51,7 @@ const CategoryLayout = ({
         <title>{category.name}</title>
       </Head>
       <Wrapper>
-        <Headline>{category.name}</Headline>
+        <h1>{category.name}</h1>
 
         {posts.map((post, index) => (
           <div
@@ -75,10 +74,10 @@ const CategoryLayout = ({
             margin-top: 4rem;
           `}
         >
-          <Paragraph>
+          <p>
             End of "{category.name}", back to{' '}
             <Link href="/categories">all categoires</Link>.
-          </Paragraph>
+          </p>
         </div>
       </Wrapper>
     </>

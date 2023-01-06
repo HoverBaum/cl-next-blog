@@ -6,7 +6,6 @@ import { Wrapper } from 'components/Wrapper'
 import { tagsFromPosts, TagType } from 'utils/tagsFromPosts'
 import { postsByDateDesc } from 'utils/sort'
 import { FeaturedPost } from 'components/Posts/FeaturedPost'
-import { Headline } from 'components/baum-ui'
 
 export async function getStaticPaths() {
   const tags = tagsFromPosts(allPosts)
@@ -42,7 +41,7 @@ const TagLayout = ({ posts, tag }: { posts: Post[]; tag: TagType }) => {
         <title>{tag.tag}</title>
       </Head>
       <Wrapper>
-        <Headline>{tag.tag}</Headline>
+        <h1>{tag.tag}</h1>
 
         {posts.map((post, index) => (
           <div

@@ -4,7 +4,6 @@ import { compareDesc } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
 import Link from 'next/link'
-import { Headline } from 'components/baum-ui'
 import { categoriesFromPosts, CategoryType } from 'utils/categoriesFromPosts'
 
 export async function getStaticProps() {
@@ -29,7 +28,7 @@ const Categories = ({
       </Head>
 
       <Wrapper>
-        <Headline>Categories</Headline>
+        <h1>Categories</h1>
         {categories.map((category) => (
           <div key={category.name}>
             <h4>

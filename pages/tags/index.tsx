@@ -5,7 +5,6 @@ import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
 import Link from 'next/link'
 import { tagsFromPosts, TagType } from 'utils/tagsFromPosts'
-import { Headline } from 'components/baum-ui'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -23,7 +22,7 @@ const Tags = ({ posts, tags }: { posts: Post[]; tags: TagType[] }) => {
       </Head>
 
       <Wrapper>
-        <Headline>Tags</Headline>
+        <h1>Tags</h1>
         {tags.map((tag) => (
           <div key={tag.name}>
             <h4>

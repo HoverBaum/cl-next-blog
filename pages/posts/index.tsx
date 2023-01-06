@@ -4,7 +4,6 @@ import { compareDesc } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
 import { css } from '@emotion/react'
-import { Headline } from 'components/baum-ui'
 import { FeaturedPost } from 'components/Posts/FeaturedPost'
 
 export async function getStaticProps() {
@@ -22,7 +21,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
       </Head>
 
       <Wrapper>
-        <Headline>All {posts.length} posts</Headline>
+        <h1>All {posts.length} posts</h1>
         <div>
           {posts.map((post, index) => (
             <div

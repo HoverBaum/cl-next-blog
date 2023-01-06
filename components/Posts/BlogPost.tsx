@@ -2,7 +2,6 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { Post as ContentlayerPost } from 'contentlayer/generated'
 import { ComponentType } from 'react'
 import { MDXComponents } from '../MDXComponents/MDXComponents'
-import { Headline } from '../baum-ui'
 import { PostMeta } from './PostMeta'
 import { Ruler } from 'components/Ruler'
 
@@ -15,7 +14,7 @@ export const BlogPost: ComponentType<PostProps> = ({ post }) => {
 
   return (
     <article className="pb-7">
-      <Headline>{post.title}</Headline>
+      <h1>{post.title}</h1>
       <PostMeta post={post} />
       <Ruler />
       <MDXContent components={MDXComponents} />

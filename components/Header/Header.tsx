@@ -1,4 +1,3 @@
-import { Title } from 'components/baum-ui'
 import { Breadcrums } from 'components/Breadcrums'
 import { Search } from 'components/Icons/Search'
 import { Ruler } from 'components/Ruler'
@@ -49,9 +48,9 @@ export const Header = () => {
             alt="Holsten Line"
             className="h-12 hidden md:block"
           />
-          <Title>
+          <h1 className="text-primary dark:text-primary-dark">
             <Link href="/">Hendriks Blog</Link>
-          </Title>
+          </h1>
           <img
             src="/images/assets/HolstenLine-dark.png"
             alt="Holsten Line"
