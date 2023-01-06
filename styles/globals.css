@@ -80,4 +80,8 @@ body {
   ::selection {
     @apply bg-accent dark:bg-accent-dark text-white;
   }
+
+  .hover-shadow:hover {
+    @apply shadow-[3px_4px_0px_0px_rgba(0,0,0,0.3)] shadow-primary dark:shadow-primary-dark;
+  }
 }

@@ -7,7 +7,7 @@ import { FeaturedPost } from 'components/Posts/FeaturedPost'
 import { css } from '@emotion/react'
 import { RecentTalks } from 'components/Talks/RecentTalks'
 import { MeIntro } from 'components/MeIntro'
-import Link from 'next/link'
+import { LinkButton } from 'components/LinkButton'
 
 export async function getStaticProps() {
   const posts = allPosts
@@ -56,7 +56,8 @@ const Home = ({ posts }: { posts: Post[] }) => {
           <FeaturedPost post={posts[1]} variant="small" />
           <FeaturedPost post={posts[2]} variant="small" />
         </div>
-        <Link href="/posts">All Posts</Link>
+
+        <LinkButton href="/posts">All Posts</LinkButton>
 
         <SmallTitle>Latest Talks</SmallTitle>
         <RecentTalks />
