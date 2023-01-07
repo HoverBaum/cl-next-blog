@@ -9,6 +9,7 @@ import { RecentTalks } from 'components/Talks/RecentTalks'
 import { MeIntro } from 'components/MeIntro'
 import { LinkButton } from 'components/LinkButton'
 import { NextSteps } from 'components/NextSteps/NextSteps'
+import { Button } from 'components/Button'
 
 export async function getStaticProps() {
   const posts = allPosts
@@ -65,6 +66,18 @@ const Home = ({ posts }: { posts: Post[] }) => {
 
         <SmallTitle>Where to go next</SmallTitle>
         <NextSteps />
+        <Button
+          className="mt-8"
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth',
+            })
+          }
+        >
+          To top
+        </Button>
       </Wrapper>
     </div>
   )
