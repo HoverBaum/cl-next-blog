@@ -6,11 +6,11 @@
  */
 
 import { Img } from 'components/MDXComponents/Img'
-import { MDXComponents } from 'components/MDXComponents/MDXComponents'
 import { PostCard } from './PostCard'
 import { Post } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Link from 'next/link'
+import { FeaturesMDXComponents } from './FeaturedMDXComponents'
 
 type FeaturedPostProps = {
   post: Post
@@ -27,7 +27,7 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
       {variant === 'big' && post.firstImage && (
         <Img src={post.firstImage.src} alt={post.firstImage.alt} />
       )}
-      <MDXContent components={MDXComponents} />
+      <MDXContent components={FeaturesMDXComponents} />
 
       {/* Adding the read more always at the bottom and same bottom.
       One div creates the space, the other positions the link. */}
