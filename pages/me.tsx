@@ -9,7 +9,12 @@ const Me = () => {
       </Head>
 
       <Wrapper>
-        <h1>About me</h1>
+        <h1>Hendrik Wallbaum</h1>
+        <h4 className="mt-0 mb-8">Webdev. Intraperneur. Roleplayer.</h4>
+        <p>
+          I am a JavaScript Enthusiast, developer for fun, intrapreneur and
+          passionate RPG player.
+        </p>
       </Wrapper>
     </div>
   )
