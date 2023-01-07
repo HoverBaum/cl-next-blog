@@ -22,7 +22,7 @@ export const tagsFromPosts = (posts: Post[]): TagType[] => {
           acc[tag] = {
             name: tag,
             count: 0,
-            slug: `/tags/${stringToSlug(tag)}`,
+            slug: `/posts/tags/${stringToSlug(tag)}`,
             tag: `# ${tag}`,
           }
         }

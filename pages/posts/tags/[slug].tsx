@@ -20,7 +20,7 @@ export async function getStaticProps(ctx: { params: any }) {
   const slugs = Array.isArray(ctx.params.slug)
     ? ctx.params.slug
     : [ctx.params.slug]
-  const slug = `/tags/${slugs.join('/')}`
+  const slug = `/posts/tags/${slugs.join('/')}`
   const tags = tagsFromPosts(allPosts)
   const tag = tags.find((tag) => tag.slug === slug)
   if (!tag) return { props: {} }

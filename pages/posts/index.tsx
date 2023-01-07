@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import Head from 'next/head'
+import Link from 'next/link'
 import { compareDesc } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
 import { css } from '@emotion/react'
 import { FeaturedPost } from 'components/Posts/FeaturedPost'
+import { LinkButton } from 'components/LinkButton'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -22,6 +24,10 @@ const Home = ({ posts }: { posts: Post[] }) => {
 
       <Wrapper>
         <h1>All {posts.length} posts</h1>
+        <div className="mt-4">
+          <LinkButton href="/posts/tags">Explore Tags</LinkButton>
+          <LinkButton href="/posts/categories">Explore Categories</LinkButton>
+        </div>
         <div>
           {posts.map((post, index) => (
             <div

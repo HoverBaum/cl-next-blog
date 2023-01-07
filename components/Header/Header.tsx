@@ -20,8 +20,7 @@ export const headerLinks: NavLink[] = [
   },
   { href: '/posts', title: 'Posts' },
   { href: '/me', title: 'About Me' },
-  { href: '/tags', title: 'Tags' },
-  { href: '/categories', title: 'Categories' },
+  { href: '/talks', title: 'Talks' },
 ]
 
 export const Header = () => {

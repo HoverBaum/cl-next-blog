@@ -20,14 +20,20 @@ export const useKBarActions = () => {
         id: 'devbaumPosts',
         name: 'Dev Posts (devbaum)',
         section: 'Most used',
-        perform: () => router.push('/categories/devbaum'),
+        perform: () => router.push('/posts/categories/devbaum'),
       },
       { id: 'openPost', section: 'Most used', name: '⎇ Open Post' },
       {
         id: 'cateogires',
         name: 'Categories',
         section: 'Most used',
-        perform: () => router.push('/categories'),
+        perform: () => router.push('/posts/categories'),
+      },
+      {
+        id: 'tags',
+        name: 'Tags',
+        section: 'Most used',
+        perform: () => router.push('/posts/tags'),
       },
       {
         id: 'posts',

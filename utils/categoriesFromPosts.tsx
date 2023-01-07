@@ -20,7 +20,7 @@ export const categoriesFromPosts = (posts: Post[]) => {
           acc[category] = {
             name: category,
             count: 0,
-            slug: `/categories/${stringToSlug(category)}`,
+            slug: `/posts/categories/${stringToSlug(category)}`,
           }
         }
         acc[category].count++
