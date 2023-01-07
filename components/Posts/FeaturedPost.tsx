@@ -23,7 +23,7 @@ export const FeaturedPost: React.FC<FeaturedPostProps> = ({
 }) => {
   const MDXContent = useMDXComponent(post.excerpt.code)
   return (
-    <PostCard flat={variant === 'big'} post={post}>
+    <PostCard post={post}>
       {variant === 'big' && post.firstImage && (
         <Img src={post.firstImage.src} alt={post.firstImage.alt} />
       )}
