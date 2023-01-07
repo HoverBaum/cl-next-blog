@@ -1,5 +1,4 @@
 import { Ruler } from 'components/Ruler'
-import { Anchor } from './Anchor'
 import { Img } from './Img'
 import { MDXLink } from './MDXLink'
 import { Paragraph } from './Paragraph'
@@ -9,14 +8,11 @@ export const MDXComponents = {
   img: Img,
   p: Paragraph,
   a: MDXLink,
-  h2: (props: any) => (
-    <h2 className="relative" {...props}>
-      <Anchor id={props.children}>##</Anchor> {props.children}
-    </h2>
-  ),
+  h2: (props: any) => <h2 {...props}>{props.children}</h2>,
   h3: (props: any) => (
-    <h3 className="relative" {...props}>
-      <Anchor id={props.children}>###</Anchor> {props.children}
+    // TODO: Find a better way to make this headline and paragraphs the same width.
+    <h3 className="max-w-[782px] mx-auto" {...props}>
+      {props.children}
     </h3>
   ),
   hr: () => <Ruler className="my-6" />,
