@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { LinkButton } from 'components/LinkButton'
 import { talks } from './allTalks'
 import { TalkCard } from './TalkCard'
 
@@ -10,7 +10,7 @@ export const RecentTalks = () => {
           <TalkCard key={talk.title + talk.year} talk={talk} />
         ))}
       </div>
-      <Link href="/talks">All talks</Link>
+      <LinkButton href="/talks">All talks</LinkButton>
     </div>
   )
 }

@@ -8,6 +8,7 @@ import { css } from '@emotion/react'
 import { RecentTalks } from 'components/Talks/RecentTalks'
 import { MeIntro } from 'components/MeIntro'
 import { LinkButton } from 'components/LinkButton'
+import { NextSteps } from 'components/NextSteps/NextSteps'
 
 export async function getStaticProps() {
   const posts = allPosts
@@ -61,6 +62,9 @@ const Home = ({ posts }: { posts: Post[] }) => {
 
         <SmallTitle>Latest Talks</SmallTitle>
         <RecentTalks />
+
+        <SmallTitle>Where to go next</SmallTitle>
+        <NextSteps />
       </Wrapper>
     </div>
   )
