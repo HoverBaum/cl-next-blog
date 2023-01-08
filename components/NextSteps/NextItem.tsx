@@ -16,7 +16,7 @@ export const NextItem = ({ href, icon, title }: NextItemsProps) => {
     >
       <div className="md:flex justify-between">
         <div className="w-full">
-          <span className="text-6xl block text-center">{icon}</span>
+          <span className="text-6xl block text-center font-emoji">{icon}</span>
           <span className="mt-4 text-2xl block text-center">{title}</span>
         </div>
       </div>

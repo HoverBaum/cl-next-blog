@@ -68,12 +68,13 @@ module.exports = {
         noto: ['Noto Serif', 'serif'],
         notoSans: ['Noto Sans', 'sans-serif'],
         simonetta: ['Simonetta-Black', 'serif'],
+        emoji: ['Noto Emoji', 'sans-serif'],
       },
     },
     keyframes: {
       wiggle: {
-        '0%, 100%': { transform: 'rotate(-6deg)' },
-        '50%': { transform: 'rotate(6deg)' },
+        '0%, 100%': { transform: 'rotate(-9deg)' },
+        '50%': { transform: 'rotate(9deg)' },
       },
     },
     animation: {
