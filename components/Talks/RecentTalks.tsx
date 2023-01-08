@@ -6,7 +6,7 @@ export const RecentTalks = () => {
   return (
     <div>
       <div>
-        {talks.slice(0, 3).map((talk) => (
+        {talks.slice(0, 2).map((talk) => (
           <TalkCard key={talk.title + talk.year} talk={talk} />
         ))}
       </div>
