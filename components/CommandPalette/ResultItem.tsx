@@ -16,7 +16,7 @@ export const ResultItem = React.forwardRef(
     return (
       <div
         ref={ref}
-        className={`px-4 py-1 border-l-2 dark:border-background-dark ${
+        className={`px-4 py-1 border-l-2 cursor-pointer dark:border-background-dark ${
           active ? 'bg-primary-50/20 border-text dark:border-primary-300' : ''
         }`}
       >
