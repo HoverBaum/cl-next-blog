@@ -23,3 +23,5 @@ export const enableCurrentMode = (): void => {
 }
 
 // TODO: implement a hook that listens for changes on local storage and prefers color scheme to always provide the current color mode.
+// Probably switch to a context approach where we have a theme context that provides a central place to get the info which one we are using
+// and also a central place to update.

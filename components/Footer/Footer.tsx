@@ -41,7 +41,7 @@ export const Footer = () => {
               <input
                 // You can't tab this!
                 tabIndex={-1}
-                className="peer h-full w-full outline-none text-sm text-text dark:text-text-dark px-2"
+                className="peer h-full w-full outline-none text-sm bg-surface dark:bg-surface-dark text-text dark:text-text-dark px-2"
                 type="text"
                 id="search"
                 placeholder="Search something... (cmd + K)"

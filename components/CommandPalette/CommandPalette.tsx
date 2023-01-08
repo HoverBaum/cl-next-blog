@@ -9,7 +9,7 @@ export const CommandPalette = () => {
         {/* Centers the content */}
         <KBarAnimator className="max-w-p w-full bg-surface dark:bg-surface-dark rounded-lg overflow-hidden border-border dark:border-border-dark shadow-lg">
           {/* Handles the show/hide and height animations */}
-          <KBarSearch className="px-4 py-1 w-full outline-none border-0 border-b-2 " />
+          <KBarSearch className="px-4 py-1 w-full outline-none border-0 border-b-2 bg-background dark:bg-background-dark" />
           <Results />
         </KBarAnimator>
       </KBarPositioner>
