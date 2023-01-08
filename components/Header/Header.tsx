@@ -30,6 +30,12 @@ export const Header = () => {
   const router = useRouter()
   const { query } = useKBar()
   const isHomepage = router.pathname === '/'
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    setIsDark(isDark)
+  }, [])
 
   // Remember the sideNavs height.
   useEffect(() => {
@@ -43,7 +49,7 @@ export const Header = () => {
       <hgroup id="headerGroup" className="text-center mb-6 mt-6">
         <div className="flex justify-center items-baseline">
           <img
-            src="/images/assets/HolstenLine-dark.png"
+            src={`/images/assets/HolstenLine${isDark ? '-dark' : ''}.png`}
             alt="Holsten Line"
             className="h-12 hidden md:block"
           />
@@ -51,7 +57,7 @@ export const Header = () => {
             <Link href="/">Hendriks Blog</Link>
           </h1>
           <img
-            src="/images/assets/HolstenLine-dark.png"
+            src={`/images/assets/HolstenLine${isDark ? '-dark' : ''}.png`}
             alt="Holsten Line"
             className="h-12 hidden md:block"
           />
