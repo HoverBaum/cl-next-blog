@@ -8,7 +8,7 @@ export const Button = ({ children, onClick, className }: ButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`hover-shadow m-2 inline-block cursor-pointer font-semibold rounded-sm outline-none px-4 py-2 border border-primary dark:border-primary-dark bg-background dark:bg-background-dark ${className}`}
+      className={`hover-shadow m-2 inline-block cursor-pointer font-semibold rounded-sm outline-none px-4 py-2 border-2 border-primary dark:border-primary-dark bg-background dark:bg-background-dark ${className}`}
     >
       {children}
     </button>

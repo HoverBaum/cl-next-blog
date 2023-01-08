@@ -56,7 +56,7 @@ module.exports = {
           dark: '#22272a',
         },
         border: {
-          DEFAULT: '#b6bdc226',
+          DEFAULT: '#b6bdc24D',
           dark: '#b7bcbf26',
         },
         text: {

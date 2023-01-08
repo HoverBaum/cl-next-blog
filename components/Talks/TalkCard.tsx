@@ -5,7 +5,7 @@ export const TalkCard = ({ talk }: { talk: TalkType }) => {
   const { title, subtitle, description, year, links } = talk
 
   return (
-    <Card className="mb-8 relative">
+    <Card className="mb-6 relative">
       <hgroup>
         <h3 className="text-4xl mt-0 ">{title}</h3>
         <h4 className="text-xl mt-0">{subtitle}</h4>
