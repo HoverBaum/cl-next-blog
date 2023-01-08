@@ -37,8 +37,6 @@ body {
   font-family: 'Noto Sans', sans-serif;
   font-weight: 300;
   font-size: 20px;
-  color: var(--text);
-  background-color: var(--background);
 }
 
 * {
@@ -46,7 +44,6 @@ body {
 }
 
 @layer components {
-  html,
   body {
     @apply text-text dark:text-text-dark bg-background dark:bg-background-dark;
   }

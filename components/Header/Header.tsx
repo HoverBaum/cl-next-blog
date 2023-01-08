@@ -6,6 +6,8 @@ import { useKBar } from 'kbar'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
+import { isDarkMode } from 'utils/colorMode'
+import { ModeSwitch } from './ModeSwitch'
 import { useScrollFix } from './useScrollFix'
 
 export type NavLink = {
@@ -33,8 +35,7 @@ export const Header = () => {
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    setIsDark(isDark)
+    setIsDark(isDarkMode())
   }, [])
 
   // Remember the sideNavs height.
@@ -95,6 +96,10 @@ export const Header = () => {
                 >
                   <Search className="h-4 w-4 ml-0.5 hover:stroke-primary" />
                 </div>
+              </li>
+              <li className="ml-2 border-l-2 border-border dark:border-border-dark"></li>
+              <li className="grid place-items-center ml-2">
+                <ModeSwitch />
               </li>
             </ul>
           </nav>
