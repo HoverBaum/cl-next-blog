@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export const WigglingEmoji = ({ children }: { children: string }) => {
   const [isWiggling, setIsWiggling] = useState(false)
-  const [id] = useState(Math.random() * 1000 + Date.now() + '')
+  const ref = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    const element = document.getElementById(id)
+    const element = ref.current
     if (!element) return
     const handler = () => {
       setIsWiggling(true)
@@ -15,11 +15,11 @@ export const WigglingEmoji = ({ children }: { children: string }) => {
     return () => {
       element.removeEventListener('mouseenter', handler)
     }
-  }, [])
+  }, [ref])
 
   return (
     <span
-      id={id}
+      ref={ref}
       className={`${isWiggling && 'animate-wiggle'} inline-block font-emoji`}
     >
       {children}

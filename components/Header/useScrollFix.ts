@@ -20,7 +20,6 @@ export const useScrollFix = (
       const sideNavTop =
         sideNav?.getBoundingClientRect().top ?? defaultThreshold
       if (sideNavTop > 0) {
-        console.log('Setting threshold', sideNavTop)
         setScrollThreshold(sideNavTop)
       }
     }
