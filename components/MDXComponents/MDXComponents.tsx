@@ -11,7 +11,7 @@ export const MDXComponents = {
   h2: (props: any) => <h2 {...props}>{props.children}</h2>,
   h3: (props: any) => (
     // TODO: Find a better way to make this headline and paragraphs the same width.
-    <h3 className="max-w-[782px] mx-auto" {...props}>
+    <h3 className="max-w-[751px] mx-auto" {...props}>
       {props.children}
     </h3>
   ),
