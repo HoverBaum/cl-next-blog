@@ -15,5 +15,11 @@ export const MDXComponents = {
       {props.children}
     </h3>
   ),
+  ol: (props: any) => (
+    <ol className="list-decimal max-w-p mx-auto pl-6" {...props} />
+  ),
+  ul: (props: any) => (
+    <ol className="list-disc max-w-p mx-auto pl-6" {...props} />
+  ),
   hr: () => <Ruler className="my-6" />,
 }
