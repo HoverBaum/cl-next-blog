@@ -6,7 +6,8 @@ import Link from 'next/link'
 
 const footerLinks: NavLink[] = [
   ...headerLinks,
-  { href: '/talks', title: 'Talks' },
+  { href: '/posts/tags', title: 'Tags' },
+  { href: '/posts/categories', title: 'Categories' },
   { href: 'https://hendrikwallbaum.de/impressum.html', title: 'Impressum' },
 ]
 
@@ -16,18 +17,19 @@ export const Footer = () => {
     <footer className="mt-[5vh] py-6 bg-surface dark:bg-surface-dark border-t-2 border-t-border dark:border-t-border-dark">
       <Wrapper>
         <div className="mb-4 grid grid-cols-1 md:grid-cols-2">
-          <ul className="grid grid-cols-1 p-0 list-none">
-            <li>
-              <h4 className="mb-1">Links</h4>
-            </li>
-            {footerLinks.map(({ href, title }) => (
-              <li key={href + title} className="mb-1">
-                <Link href={href}>
-                  <a className="no-underline hover:underline">{title}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div>
+            <h4 className="mb-1">Links</h4>
+
+            <ul className="grid md:grid-cols-2 p-0 list-none">
+              {footerLinks.map(({ href, title }) => (
+                <li key={href + title} className="mb-1">
+                  <Link href={href}>
+                    <a className="no-underline hover:underline">{title}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div>
             <h4 className="mb-1">Search</h4>
