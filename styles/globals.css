@@ -72,6 +72,12 @@ body {
     @apply my-4;
   }
 
+  /* This overwrites certain styling of Paragraphs to enable us to style blockquotes.*/
+  article blockquote p {
+    @apply my-0 font-noto w-full !important;
+    max-width: 100% !important;
+  }
+
   h1 a,
   h2 a,
   h3 a,
