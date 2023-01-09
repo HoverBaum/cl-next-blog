@@ -1,3 +1,4 @@
+import { Emoji } from 'components/Emoji'
 import { headerLinks, NavLink } from 'components/Header/Header'
 import { Search } from 'components/Icons/Search'
 import { Wrapper } from 'components/Wrapper'
@@ -57,7 +58,8 @@ export const Footer = () => {
 
         <p className="text-center">
           <small>
-            Blog by <a href="https://hendrikwallbaum.de/">Hendrik Wallbaum</a>
+            Created with <Emoji>🎉</Emoji> by{' '}
+            <Link href="/me">Hendrik Wallbaum</Link>
           </small>
         </p>
       </Wrapper>

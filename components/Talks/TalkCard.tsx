@@ -1,4 +1,5 @@
 import { Card } from 'components/Card'
+import { Emoji } from 'components/Emoji'
 import { TalkType } from './allTalks'
 
 export const TalkCard = ({ talk }: { talk: TalkType }) => {
@@ -8,7 +9,7 @@ export const TalkCard = ({ talk }: { talk: TalkType }) => {
     <Card className="mb-6 relative">
       <hgroup>
         <h3 className="text-4xl mt-0 ">
-          <span className="font-emoji">{title.substring(0, 2)}</span>
+          <Emoji>{title.substring(0, 2)}</Emoji>
           {title.substring(2)}
         </h3>
         <h4 className="text-xl mt-0">{subtitle}</h4>
