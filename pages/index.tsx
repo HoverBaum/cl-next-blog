@@ -7,6 +7,7 @@ import { RecentTalks } from 'components/Talks/RecentTalks'
 import { MeIntro } from 'components/MeIntro'
 import { LinkButton } from 'components/LinkButton'
 import { NextSteps } from 'components/NextSteps/NextSteps'
+import { SmallTitle } from 'components/SmallTitle'
 
 export async function getStaticProps() {
   const posts = allPosts
@@ -15,14 +16,6 @@ export async function getStaticProps() {
     })
     .slice(0, 3)
   return { props: { posts } }
-}
-
-const SmallTitle = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <h4 className="mt-10 mb-4 text-primary-600 dark:text-primary-dark font-simonetta">
-      {children}
-    </h4>
-  )
 }
 
 const Home = ({ posts }: { posts: Post[] }) => {
@@ -40,8 +33,8 @@ const Home = ({ posts }: { posts: Post[] }) => {
 
         <SmallTitle>Recent posts</SmallTitle>
         <div className="mb-6 grid md:grid-cols-2 gap-6">
-          <FeaturedPost post={posts[1]} variant="small" />
-          <FeaturedPost post={posts[2]} variant="small" />
+          <FeaturedPost post={posts[1]} variant="big" />
+          <FeaturedPost post={posts[2]} variant="big" />
         </div>
 
         <LinkButton href="/posts">All Posts</LinkButton>

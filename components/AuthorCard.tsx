@@ -1,3 +1,5 @@
+import { SmallTitle } from './SmallTitle'
+
 const MyImage = ({ className }: { className?: string }) => (
   <img
     className={`h-[10rem] border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark ${className}`}
@@ -12,9 +14,7 @@ export const AuthorCard = () => {
     <div className="p-4 border-2 border-border dark:border-border-dark max-w-[45rem] mx-auto">
       <div className="md:flex justify-between ">
         <div>
-          <span className="font-simonetta text-primary dark:text-primary-dark text-2xl">
-            Author
-          </span>
+          <SmallTitle className="mt-0 text-2xl">Author</SmallTitle>
           <MyImage className="md:hidden" />
           <p className="pr-4 max-w-[60ch]">
             Hendrik Is a JavaScript Enthusiast and developer for the fun of it!

@@ -1,7 +1,12 @@
 import React, { PropsWithChildren } from 'react'
 
-export const Paragraph: React.FC<PropsWithChildren<unknown>> = ({
+type ParagraphProps = {
+  className?: string
+}
+
+export const Paragraph: React.FC<PropsWithChildren<ParagraphProps>> = ({
   children,
+  className,
 }) => {
   if (typeof children === 'object' && children) {
     const isImage =
@@ -17,6 +22,8 @@ export const Paragraph: React.FC<PropsWithChildren<unknown>> = ({
   }
 
   return (
-    <p className="text-justify font-notoSans max-w-p mx-auto">{children}</p>
+    <p className={`text-justify font-notoSans max-w-p mx-auto ${className}`}>
+      {children}
+    </p>
   )
 }

@@ -4,6 +4,9 @@ import { allPosts, Post } from 'contentlayer/generated'
 import { BlogPost } from 'components/Posts/BlogPost'
 import { Wrapper } from 'components/Wrapper'
 import { AuthorCard } from 'components/AuthorCard'
+import { recommandedPosts } from 'utils/postRecommandation'
+import { RelatedPost } from 'components/Posts/RelatedPost'
+import { SmallTitle } from 'components/SmallTitle'
 
 export async function getStaticPaths() {
   const paths: string[] = allPosts.map((post) => post.slug)
@@ -20,14 +23,22 @@ export async function getStaticProps(ctx: { params: any }) {
   const slug = `/posts/${slugs.join('/')}`
   const post = allPosts.find((post) => post.slug === slug)
   if (!post) return { props: {} }
+  const relatedPosts = recommandedPosts(post, allPosts)
   return {
     props: {
       post,
+      relatedPosts,
     },
   }
 }
 
-const DocLayout = ({ post }: { post: Post }) => {
+const DocLayout = ({
+  post,
+  relatedPosts,
+}: {
+  post: Post
+  relatedPosts: Post[]
+}) => {
   if (!post) return <p>Error</p>
   return (
     <>
@@ -37,6 +48,12 @@ const DocLayout = ({ post }: { post: Post }) => {
       <Wrapper>
         <BlogPost post={post} />
         <AuthorCard />
+        <SmallTitle>Related posts</SmallTitle>
+        <div className="my-6 grid md:grid-cols-3 gap-6">
+          {relatedPosts.map((post) => (
+            <RelatedPost key={post.slug} post={post} />
+          ))}
+        </div>
       </Wrapper>
     </>
   )
