@@ -7,6 +7,7 @@ import { Wrapper } from 'components/Wrapper'
 import { css } from '@emotion/react'
 import { FeaturedPost } from 'components/Posts/FeaturedPost'
 import { LinkButton } from 'components/LinkButton'
+import { NextSteps } from 'components/NextSteps/NextSteps'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -45,6 +46,8 @@ const Home = ({ posts }: { posts: Post[] }) => {
             </div>
           ))}
         </div>
+
+        <NextSteps />
       </Wrapper>
     </div>
   )

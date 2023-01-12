@@ -3,6 +3,7 @@ import { Wrapper } from 'components/Wrapper'
 import { TalkCard } from 'components/Talks/TalkCard'
 import { talks } from 'components/Talks/allTalks'
 import Link from 'next/link'
+import { NextSteps } from 'components/NextSteps/NextSteps'
 
 const Talks = () => {
   return (
@@ -18,7 +19,7 @@ const Talks = () => {
           <TalkCard talk={talk} key={talk.title + talk.year} />
         ))}
 
-        <Link href={'/'}>Back Home</Link>
+        <NextSteps />
       </Wrapper>
     </div>
   )
