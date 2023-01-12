@@ -10,8 +10,8 @@ export type PostMetaProps = {
 export const PostMeta: React.FC<PostMetaProps> = ({ post }) => {
   const { tags, categories, date } = post
   return (
-    <div className="mb-4 text-sm md:flex flex-row justify-between">
-      <div>
+    <div className="mb-4 text-sm ">
+      <div className="md:flex flex-row flex-wrap justify-between">
         <div>
           {categories &&
             categories.length > 0 &&
@@ -25,21 +25,21 @@ export const PostMeta: React.FC<PostMetaProps> = ({ post }) => {
               </span>
             ))}
         </div>
-        <div>
-          {tags &&
-            tags.length > 0 &&
-            tags.map((tag) => (
-              <span key={tag} className="mr-0.5">
-                <Link href={`/tags/${stringToSlug(tag)}`}>
-                  <a className="no-underline hover:underline">{`#${tag}`}</a>
-                </Link>
-              </span>
-            ))}
-        </div>
+        {!!date && (
+          <time dateTime={date}>{format(parseISO(date), 'LLLL d, yyyy')}</time>
+        )}
       </div>
-      {!!date && (
-        <time dateTime={date}>{format(parseISO(date), 'LLLL d, yyyy')}</time>
-      )}
+      <div className="flex flex-row flex-wrap">
+        {tags &&
+          tags.length > 0 &&
+          tags.map((tag) => (
+            <span key={tag} className="mr-0.5">
+              <Link href={`/tags/${stringToSlug(tag)}`}>
+                <a className="no-underline hover:underline">{`#${tag}`}</a>
+              </Link>
+            </span>
+          ))}
+      </div>
     </div>
   )
 }

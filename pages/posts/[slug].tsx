@@ -48,7 +48,7 @@ const DocLayout = ({
       <Wrapper>
         <BlogPost post={post} />
         <AuthorCard />
-        <SmallTitle>Related posts</SmallTitle>
+        <SmallTitle>Read next</SmallTitle>
         <div className="my-6 grid md:grid-cols-3 gap-6">
           {relatedPosts.map((post) => (
             <RelatedPost key={post.slug} post={post} />
