@@ -8,6 +8,7 @@ import { MeIntro } from 'components/MeIntro'
 import { LinkButton } from 'components/LinkButton'
 import { NextSteps } from 'components/NextSteps/NextSteps'
 import { SmallTitle } from 'components/SmallTitle'
+import { FeaturedProjects } from 'components/Projects/FeaturedProjects'
 
 export async function getStaticProps() {
   const posts = allPosts
@@ -42,7 +43,8 @@ const Home = ({ posts }: { posts: Post[] }) => {
         <SmallTitle>Latest Talks</SmallTitle>
         <RecentTalks />
 
-        <SmallTitle>Where to go next</SmallTitle>
+        <FeaturedProjects />
+
         <NextSteps />
       </Wrapper>
     </div>
