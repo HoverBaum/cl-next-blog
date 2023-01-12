@@ -43,13 +43,12 @@ export const recommandedPosts = (primaryPost: Post, posts: Post[]) => {
     }))
     .sort((a, b) => b.relevanceScore - a.relevanceScore)
     .slice(0, 2) as Post[]
-  // Find the most recent post not this one and not in the list of related posts.
-  // Also not the current post, as we have that on the homepage.
+
+  // Find the most recent post, not yet recommanded.
   const recentPost = posts
     .sort(postsByDateDesc)
     .find(
-      (post, index) =>
-        index !== 0 &&
+      (post) =>
         post._id !== primaryPost._id &&
         !recommandedPosts.find((p) => p._id === post._id)
     )

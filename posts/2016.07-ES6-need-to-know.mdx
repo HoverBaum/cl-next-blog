@@ -14,7 +14,7 @@ ES6 is out, browser support is actually decent and if that is not enough for you
 
 {/* <!-- more --> */}
 
-# Let there be Const
+## Let there be Const
 
 **Scope** in JavaScript come unfamiliar to most. Because we have a thing called _"variable hosting"_ that pulls all variables out and defines them at the top of their Scope. Their Scope being either the global one or the first surrounding function. The classic example here is a for loop.
 
@@ -63,7 +63,7 @@ obj.awesome = true     //also okay
 obj = []               //NOPE, this is an error
 ```
 
-# Arrow Functions
+## Arrow Functions
 
 Do you remember the good old `function` keyword?
 
@@ -105,7 +105,7 @@ Did you notice how you have to wrap the Objects in `()` to get them to work with
 
 Did I mention that Arrow Functions also keep the current Scope? So `this` inside an Arrow Function will be the same as outside of it. Just a thing to keep in mind.
 
-# Destructuring
+## Destructuring
 
 We can now get Objects out of other. Mainly we use this for imports and exports (coming up next, only in this blogpost) but you could also use it on Objects or to get named parameters for functions.
 
@@ -122,7 +122,7 @@ function foo ({greeting, name}) {
 foo({name: 'HoverBaum', greeting: 'Hello'})
 ```
 
-# Modules
+## Modules
 
 Victory dance here with big celebration! We finally get native modules. Now if only we could all use them and they were compatible with node. But they are super awesome. We can now `import` things from modules that `exported` them.
 
@@ -149,7 +149,7 @@ export const a = 1
 export const b = 2
 ```
 
-# Template String
+## Template String
 
 This is another _"OHHH my god why didn't we have this before???!?"_. Because we all remember building String with variables in them. now we can do it using "\`" and `${}`.
 
@@ -161,7 +161,7 @@ function greet(greeting, name) {
 
 If this does not seriously excite you... then go back and build a few dozen websites without it!
 
-# Default Parameters
+## Default Parameters
 
 Read the first sentence from the last paragraph again ^^
 
@@ -187,7 +187,7 @@ function greeti(greeting = 'Hello', name = 'Friend') {
 
 We saved a total of six lines of code! Is that not amazing?
 
-# Object.assign
+## Object.assign
 
 If you read my [React post](/2016/07/21/Why-and-how-to-ReactJS/) you will have already seen this a lot. Using `Object.assign` allows us to create a new Object and pass in other Objects. What? Examples:
 
@@ -211,7 +211,7 @@ The important thing here is that we create an entirely new Object. You call the 
 
 This is useful to create immutable data stores where you want to not modify your stored data or state but create a new one. Thus enabling you to remember the old one and jump back to it.
 
-# Property shorthands
+## Property shorthands
 
 Yet another feature to save lines of code and possibly confuse people are Property Shorthands. If you want to pass `name` into and object as that objects `object.name` property you can just put it there.
 
@@ -229,7 +229,7 @@ const es6Obj = {
 }
 ```
 
-# Further reading
+## Further reading
 
 Here are a few links to good references and further reading.
 
