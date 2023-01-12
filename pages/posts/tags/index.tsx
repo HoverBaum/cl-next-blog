@@ -18,7 +18,7 @@ const Tags = ({ posts, tags }: { posts: Post[]; tags: TagType[] }) => {
   return (
     <div>
       <Head>
-        <title>Building Hendriks new blog</title>
+        <title>Hendriks Blog | Tags</title>
       </Head>
 
       <Wrapper>

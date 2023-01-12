@@ -19,7 +19,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
   return (
     <div>
       <Head>
-        <title>Blog | All posts</title>
+        <title>Hendriks Posts</title>
       </Head>
 
       <Wrapper>

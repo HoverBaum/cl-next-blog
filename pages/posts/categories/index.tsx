@@ -24,7 +24,7 @@ const Categories = ({
   return (
     <div>
       <Head>
-        <title>Blog | Categories</title>
+        <title>Hendriks Blog | Categories</title>
       </Head>
 
       <Wrapper>

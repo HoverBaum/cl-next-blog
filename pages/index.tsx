@@ -23,7 +23,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
   return (
     <div>
       <Head>
-        <title>Building Hendriks new blog</title>
+        <title>Hendriks Blog</title>
       </Head>
 
       <Wrapper>
