@@ -1,5 +1,5 @@
 import { Breadcrums } from 'components/Breadcrums'
-import { Search } from 'components/Icons/Search'
+import { SearchIcon } from 'components/Icons/SearchIcon'
 import { Ruler } from 'components/Ruler'
 import { Wrapper } from 'components/Wrapper'
 import { useKBar } from 'kbar'
@@ -94,7 +94,7 @@ export const Header = () => {
                   onClick={() => query.toggle()}
                   className="place-items-center h-full text-text dark:text-text-dark cursor-pointer flex"
                 >
-                  <Search className="h-4 w-4 ml-0.5 hover:stroke-primary" />
+                  <SearchIcon className="h-4 w-4 ml-0.5 hover:stroke-primary" />
                 </div>
               </li>
               <li className="ml-2 border-l-2 border-border dark:border-border-dark"></li>

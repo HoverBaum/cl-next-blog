@@ -1,6 +1,6 @@
 import { Emoji } from 'components/Emoji'
 import { headerLinks, NavLink } from 'components/Header/Header'
-import { Search } from 'components/Icons/Search'
+import { SearchIcon } from 'components/Icons/SearchIcon'
 import { Wrapper } from 'components/Wrapper'
 import { useKBar } from 'kbar'
 import Link from 'next/link'
@@ -36,7 +36,7 @@ export const Footer = () => {
             <h4 className="mb-1">Search</h4>
             <div className="relative flex items-center w-full h-8 rounded-lg bg-background dark:bg-background-dark overflow-hidden border border-border">
               <div className="grid place-items-center h-full w-12 text-text dark:text-text-dark">
-                <Search className="h-6 w-6" />
+                <SearchIcon className="h-6 w-6" />
               </div>
 
               <input

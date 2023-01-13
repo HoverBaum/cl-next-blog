@@ -8,6 +8,10 @@ import { css } from '@emotion/react'
 import { PostCard } from 'components/Posts/PostCard'
 import { LinkButton } from 'components/LinkButton'
 import { NextSteps } from 'components/NextSteps/NextSteps'
+import { Button } from 'components/Button'
+import { SearchIcon } from 'components/Icons/SearchIcon'
+import { useKBar } from 'kbar'
+import { useSyncExternalStore } from 'react'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -17,6 +21,12 @@ export async function getStaticProps() {
 }
 
 const Home = ({ posts }: { posts: Post[] }) => {
+  const { query } = useKBar()
+  const searchPosts = () => {
+    query.toggle()
+    query.setCurrentRootAction('openPost')
+  }
+
   return (
     <div>
       <Head>
@@ -28,6 +38,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
         <div className="mt-4">
           <LinkButton href="/posts/tags">Explore Tags</LinkButton>
           <LinkButton href="/posts/categories">Explore Categories</LinkButton>
+          <Button onClick={searchPosts}>Search posts</Button>
         </div>
         <div>
           {posts.map((post, index) => (
