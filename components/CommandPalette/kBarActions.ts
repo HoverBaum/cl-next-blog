@@ -3,6 +3,7 @@ import { Action } from 'kbar'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { categoriesFromPosts } from 'utils/categoriesFromPosts'
+import { tagsFromPosts } from 'utils/tagsFromPosts'
 import { postsByDateDesc } from '../../utils/sort'
 
 export const useKBarActions = () => {
@@ -41,12 +42,26 @@ export const useKBarActions = () => {
         section: 'Most used',
         perform: () => router.push('/posts'),
       },
+      {
+        id: 'aboutme',
+        name: 'About Me',
+        section: 'Most used',
+        perform: () => router.push('/me'),
+      },
     ]
       .concat(
         categoriesFromPosts(allPosts).map(({ slug, name }) => ({
           id: slug,
           name,
           section: 'Categories',
+          perform: () => router.push(slug),
+        }))
+      )
+      .concat(
+        tagsFromPosts(allPosts).map(({ slug, name }) => ({
+          id: slug,
+          name,
+          section: 'Tags',
           perform: () => router.push(slug),
         }))
       )
