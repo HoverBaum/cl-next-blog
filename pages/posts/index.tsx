@@ -1,17 +1,12 @@
-/** @jsxImportSource @emotion/react */
 import Head from 'next/head'
-import Link from 'next/link'
 import { compareDesc } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
-import { css } from '@emotion/react'
 import { PostCard } from 'components/Posts/PostCard'
 import { LinkButton } from 'components/LinkButton'
 import { NextSteps } from 'components/NextSteps/NextSteps'
 import { Button } from 'components/Button'
-import { SearchIcon } from 'components/Icons/SearchIcon'
 import { useKBar } from 'kbar'
-import { useSyncExternalStore } from 'react'
 import { NextHome } from 'components/NextSteps/NextHome'
 import { NextAboutMe } from 'components/NextSteps/NextAboutMe'
 import { NextTalks } from 'components/NextSteps/NextTalks'
@@ -45,13 +40,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
         </div>
         <div>
           {posts.map((post, index) => (
-            <div
-              css={css`
-                margin-bottom: 2rem;
-                margin-top: 2rem;
-              `}
-              key={post._id}
-            >
+            <div className="my-8" key={post._id}>
               <PostCard
                 key={post._id}
                 post={post}

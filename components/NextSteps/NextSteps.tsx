@@ -9,7 +9,7 @@ export const NextSteps = ({ children }: NextStepsProps) => {
     <section>
       <SmallTitle>Where to go next</SmallTitle>
       <div
-        className={`grid ${
+        className={`grid grid-cols-2 ${
           children.length % 4 === 0 ? 'md:grid-cols-4' : 'md:grid-cols-3'
         } gap-4`}
       >
