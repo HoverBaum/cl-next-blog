@@ -1,3 +1,4 @@
+import { Emoji } from 'components/Emoji'
 import { useRouter } from 'next/router'
 
 type NextItemsProps = {
@@ -16,7 +17,7 @@ export const NextItem = ({ href, icon, title }: NextItemsProps) => {
     >
       <div className="md:flex justify-between">
         <div className="w-full">
-          <span className="text-6xl block text-center font-emoji">{icon}</span>
+          <Emoji className="text-6xl block text-center">{icon}</Emoji>
           <span className="mt-4 text-2xl block text-center">{title}</span>
         </div>
       </div>

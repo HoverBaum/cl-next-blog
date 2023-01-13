@@ -20,7 +20,9 @@ export const WigglingEmoji = ({ children }: { children: string }) => {
   return (
     <span
       ref={ref}
-      className={`${isWiggling && 'animate-wiggle'} inline-block font-emoji`}
+      className={`${
+        isWiggling && 'animate-wiggle'
+      } inline-block font-emoji text-primary dark:text-primary-dark`}
     >
       {children}
     </span>
