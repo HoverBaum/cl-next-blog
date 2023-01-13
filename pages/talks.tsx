@@ -4,6 +4,9 @@ import { TalkCard } from 'components/Talks/TalkCard'
 import { talks } from 'components/Talks/allTalks'
 import Link from 'next/link'
 import { NextSteps } from 'components/NextSteps/NextSteps'
+import { NextHome } from 'components/NextSteps/NextHome'
+import { NextAboutMe } from 'components/NextSteps/NextAboutMe'
+import { NextPosts } from 'components/NextSteps/NextPosts'
 
 const Talks = () => {
   return (
@@ -19,7 +22,11 @@ const Talks = () => {
           <TalkCard talk={talk} key={talk.title + talk.year} />
         ))}
 
-        <NextSteps />
+        <NextSteps>
+          <NextHome />
+          <NextAboutMe />
+          <NextPosts />
+        </NextSteps>
       </Wrapper>
     </div>
   )

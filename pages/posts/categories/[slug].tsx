@@ -8,6 +8,11 @@ import { postsByDateDesc } from 'utils/sort'
 import { PostCard } from 'components/Posts/PostCard'
 import { categoriesFromPosts, CategoryType } from 'utils/categoriesFromPosts'
 import Link from 'next/link'
+import { NextSteps } from 'components/NextSteps/NextSteps'
+import { NextCategories } from 'components/NextSteps/NextCategories'
+import { NextPosts } from 'components/NextSteps/NextPosts'
+import { NextAboutMe } from 'components/NextSteps/NextAboutMe'
+import { NextHome } from 'components/NextSteps/NextHome'
 
 export async function getStaticPaths() {
   const categories = categoriesFromPosts(allPosts)
@@ -69,16 +74,12 @@ const CategoryLayout = ({
           </div>
         ))}
 
-        <div
-          css={css`
-            margin-top: 4rem;
-          `}
-        >
-          <p>
-            End of "{category.name}", back to{' '}
-            <Link href="/categories">all categoires</Link>.
-          </p>
-        </div>
+        <NextSteps>
+          <NextCategories />
+          <NextPosts />
+          <NextAboutMe />
+          <NextHome />
+        </NextSteps>
       </Wrapper>
     </>
   )

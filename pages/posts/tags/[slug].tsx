@@ -6,6 +6,11 @@ import { Wrapper } from 'components/Wrapper'
 import { tagsFromPosts, TagType } from 'utils/tagsFromPosts'
 import { postsByDateDesc } from 'utils/sort'
 import { PostCard } from 'components/Posts/PostCard'
+import { NextSteps } from 'components/NextSteps/NextSteps'
+import { NextTags } from 'components/NextSteps/NextTags'
+import { NextPosts } from 'components/NextSteps/NextPosts'
+import { NextAboutMe } from 'components/NextSteps/NextAboutMe'
+import { NextHome } from 'components/NextSteps/NextHome'
 
 export async function getStaticPaths() {
   const tags = tagsFromPosts(allPosts)
@@ -58,6 +63,13 @@ const TagLayout = ({ posts, tag }: { posts: Post[]; tag: TagType }) => {
             />
           </div>
         ))}
+
+        <NextSteps>
+          <NextTags />
+          <NextPosts />
+          <NextAboutMe />
+          <NextHome />
+        </NextSteps>
       </Wrapper>
     </>
   )

@@ -9,6 +9,9 @@ import { LinkButton } from 'components/LinkButton'
 import { NextSteps } from 'components/NextSteps/NextSteps'
 import { SmallTitle } from 'components/SmallTitle'
 import { FeaturedProjects } from 'components/Projects/FeaturedProjects'
+import { NextAboutMe } from 'components/NextSteps/NextAboutMe'
+import { NextTalks } from 'components/NextSteps/NextTalks'
+import { NextPosts } from 'components/NextSteps/NextPosts'
 
 export async function getStaticProps() {
   const posts = allPosts
@@ -45,7 +48,11 @@ const Home = ({ posts }: { posts: Post[] }) => {
 
         <FeaturedProjects />
 
-        <NextSteps />
+        <NextSteps>
+          <NextAboutMe />
+          <NextPosts />
+          <NextTalks />
+        </NextSteps>
       </Wrapper>
     </div>
   )

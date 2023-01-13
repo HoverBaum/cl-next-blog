@@ -12,6 +12,9 @@ import { Button } from 'components/Button'
 import { SearchIcon } from 'components/Icons/SearchIcon'
 import { useKBar } from 'kbar'
 import { useSyncExternalStore } from 'react'
+import { NextHome } from 'components/NextSteps/NextHome'
+import { NextAboutMe } from 'components/NextSteps/NextAboutMe'
+import { NextTalks } from 'components/NextSteps/NextTalks'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -58,7 +61,11 @@ const Home = ({ posts }: { posts: Post[] }) => {
           ))}
         </div>
 
-        <NextSteps />
+        <NextSteps>
+          <NextHome />
+          <NextAboutMe />
+          <NextTalks />
+        </NextSteps>
       </Wrapper>
     </div>
   )

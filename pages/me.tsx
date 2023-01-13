@@ -1,3 +1,8 @@
+import { NextHome } from 'components/NextSteps/NextHome'
+import { NextPosts } from 'components/NextSteps/NextPosts'
+import { NextProjects } from 'components/NextSteps/NextProjects'
+import { NextSteps } from 'components/NextSteps/NextSteps'
+import { NextTalks } from 'components/NextSteps/NextTalks'
 import { Wrapper } from 'components/Wrapper'
 import Head from 'next/head'
 
@@ -15,6 +20,13 @@ const Me = () => {
           I am a JavaScript Enthusiast, developer for fun, intrapreneur and
           passionate RPG player.
         </p>
+
+        <NextSteps>
+          <NextHome />
+          <NextProjects />
+          <NextPosts />
+          <NextTalks />
+        </NextSteps>
       </Wrapper>
     </div>
   )

@@ -5,6 +5,10 @@ import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
 import Link from 'next/link'
 import { categoriesFromPosts, CategoryType } from 'utils/categoriesFromPosts'
+import { NextSteps } from 'components/NextSteps/NextSteps'
+import { NextPosts } from 'components/NextSteps/NextPosts'
+import { NextAboutMe } from 'components/NextSteps/NextAboutMe'
+import { NextHome } from 'components/NextSteps/NextHome'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -38,6 +42,12 @@ const Categories = ({
             </h4>
           </div>
         ))}
+
+        <NextSteps>
+          <NextPosts />
+          <NextAboutMe />
+          <NextHome />
+        </NextSteps>
       </Wrapper>
     </div>
   )
