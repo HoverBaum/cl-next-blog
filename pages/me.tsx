@@ -21,6 +21,18 @@ const Me = () => {
           passionate RPG player.
         </p>
 
+        <p>
+          During the day I work as a Staff Engineer, Engineering Manager or
+          Frontend Architect building applications throughout many industries. I
+          enjoy getting an overview, shaping visions and teaching my juniors.
+        </p>
+
+        <p>
+          In the past I have spoken at Code.Talks, Hamburgs largets developer
+          conference and multiple MeetUps. Together with Netlight I am also a
+          regular host for MeetUps in Hamburg.
+        </p>
+
         <NextSteps>
           <NextHome />
           <NextProjects />
