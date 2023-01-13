@@ -5,7 +5,7 @@ import { compareDesc } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
 import { css } from '@emotion/react'
-import { FeaturedPost } from 'components/Posts/FeaturedPost'
+import { PostCard } from 'components/Posts/PostCard'
 import { LinkButton } from 'components/LinkButton'
 import { NextSteps } from 'components/NextSteps/NextSteps'
 
@@ -38,7 +38,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
               `}
               key={post._id}
             >
-              <FeaturedPost
+              <PostCard
                 key={post._id}
                 post={post}
                 variant={index === 0 ? 'big' : 'small'}

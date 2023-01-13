@@ -13,13 +13,13 @@ import { MDXComponents as DefaultMDXComponent } from 'components/MDXComponents/M
 import { Card } from 'components/Card'
 import { PostMeta } from './PostMeta'
 
-type FeaturedPostProps = {
+type PostCardProps = {
   post: Post
   variant?: 'big' | 'small' | 'compact'
   MDXComponents?: any
 }
 
-export const FeaturedPost: React.FC<FeaturedPostProps> = ({
+export const PostCard: React.FC<PostCardProps> = ({
   post,
   variant = 'small',
   MDXComponents = DefaultMDXComponent,

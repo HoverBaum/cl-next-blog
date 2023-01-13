@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { compareDesc } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
 import { Wrapper } from 'components/Wrapper'
-import { FeaturedPost } from 'components/Posts/FeaturedPost'
+import { PostCard } from 'components/Posts/PostCard'
 import { RecentTalks } from 'components/Talks/RecentTalks'
 import { MeIntro } from 'components/MeIntro'
 import { LinkButton } from 'components/LinkButton'
@@ -30,12 +30,12 @@ const Home = ({ posts }: { posts: Post[] }) => {
         <MeIntro />
 
         <SmallTitle>Current post</SmallTitle>
-        <FeaturedPost post={posts[0]} variant="big" />
+        <PostCard post={posts[0]} variant="big" />
 
         <SmallTitle>Recent posts</SmallTitle>
         <div className="mb-6 grid md:grid-cols-2 gap-6">
-          <FeaturedPost post={posts[1]} variant="big" />
-          <FeaturedPost post={posts[2]} variant="big" />
+          <PostCard post={posts[1]} variant="big" />
+          <PostCard post={posts[2]} variant="big" />
         </div>
 
         <LinkButton href="/posts">All Posts</LinkButton>

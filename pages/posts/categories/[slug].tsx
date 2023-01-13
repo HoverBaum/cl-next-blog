@@ -5,7 +5,7 @@ import { allPosts, Post } from 'contentlayer/generated'
 import { css } from '@emotion/react'
 import { Wrapper } from 'components/Wrapper'
 import { postsByDateDesc } from 'utils/sort'
-import { FeaturedPost } from 'components/Posts/FeaturedPost'
+import { PostCard } from 'components/Posts/PostCard'
 import { categoriesFromPosts, CategoryType } from 'utils/categoriesFromPosts'
 import Link from 'next/link'
 
@@ -61,7 +61,7 @@ const CategoryLayout = ({
             `}
             key={post._id}
           >
-            <FeaturedPost
+            <PostCard
               key={post._id}
               post={post}
               variant={index === 0 ? 'big' : 'small'}

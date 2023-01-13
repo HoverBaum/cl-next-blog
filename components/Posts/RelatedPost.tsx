@@ -1,7 +1,7 @@
 import { MDXComponents } from 'components/MDXComponents/MDXComponents'
 import { Paragraph } from 'components/MDXComponents/Paragraph'
 import { Post } from 'contentlayer/generated'
-import { FeaturedPost } from './FeaturedPost'
+import { PostCard } from './PostCard'
 
 const RelatedMDXComponents = {
   ...MDXComponents,
@@ -13,7 +13,7 @@ const RelatedMDXComponents = {
 
 export const RelatedPost = ({ post }: { post: Post }) => {
   return (
-    <FeaturedPost
+    <PostCard
       post={post}
       variant="compact"
       MDXComponents={RelatedMDXComponents}

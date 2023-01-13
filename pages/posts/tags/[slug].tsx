@@ -5,7 +5,7 @@ import { css } from '@emotion/react'
 import { Wrapper } from 'components/Wrapper'
 import { tagsFromPosts, TagType } from 'utils/tagsFromPosts'
 import { postsByDateDesc } from 'utils/sort'
-import { FeaturedPost } from 'components/Posts/FeaturedPost'
+import { PostCard } from 'components/Posts/PostCard'
 
 export async function getStaticPaths() {
   const tags = tagsFromPosts(allPosts)
@@ -51,7 +51,7 @@ const TagLayout = ({ posts, tag }: { posts: Post[]; tag: TagType }) => {
             `}
             key={post._id}
           >
-            <FeaturedPost
+            <PostCard
               key={post._id}
               post={post}
               variant={index === 0 ? 'big' : 'small'}
