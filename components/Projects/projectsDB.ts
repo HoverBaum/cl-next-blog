@@ -17,7 +17,7 @@ export const projectsDB: ProjectType[] = [
     subtitle: 'Interactive Fiction Game',
     description:
       'Web based game where you as the protagonist go on a journey to find the mythical sword. Can you become the next king?',
-    image: '/images/projects/placeholder.png',
+    image: '/images/projects/the_sword.jpg',
     links: [
       {
         url: 'https://hoverbaum.itch.io/the-sword',
@@ -30,7 +30,7 @@ export const projectsDB: ProjectType[] = [
     subtitle: 'Hexo Theme',
     description:
       'Simple, text focussed blogging theme for static site generator Hexo.',
-    image: '/images/projects/placeholder.png',
+    image: '/images/projects/meilidu.jpg',
     links: [
       {
         url: 'https://meilidu.github.io/',
@@ -43,7 +43,7 @@ export const projectsDB: ProjectType[] = [
     subtitle: 'HTML5 Games',
     description:
       'A collection of JavaScript based games to play right in your browser.',
-    image: '/images/projects/placeholder.png',
+    image: '/images/projects/browserbasedgames.jpg',
     links: [
       {
         url: 'http://browserbasedgames.net/',
@@ -55,7 +55,7 @@ export const projectsDB: ProjectType[] = [
     title: 'BlankUp',
     subtitle: 'Markdown Editor',
     description: 'Clean, cross plattform Markdown Editor based on Electron.',
-    image: '/images/projects/placeholder.png',
+    image: '/images/projects/blankUp.png',
     links: [
       { url: 'https://hoverbaum.github.io/BlankUp-Electron/', text: 'BlankUp' },
     ],
@@ -65,7 +65,7 @@ export const projectsDB: ProjectType[] = [
     subtitle: 'Community Tool',
     description:
       'Wishlist League of Legends skins and get notified when it goes on sale.',
-    image: '/images/projects/placeholder.png',
+    image: '/images/projects/lolwishes.jpg',
     links: [],
   },
 ]
