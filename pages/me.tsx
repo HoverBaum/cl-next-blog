@@ -16,22 +16,36 @@ const Me = () => {
       <Wrapper>
         <h1>Hendrik Wallbaum</h1>
         <h4 className="mt-0 mb-8">Webdev. Intraperneur. Roleplayer.</h4>
-        <p>
-          I am a JavaScript Enthusiast, developer for fun, intrapreneur and
-          passionate RPG player.
-        </p>
+        <div className="md:grid grid-cols-3 gap-6">
+          <div className="col-span-2">
+            <p>
+              I am a JavaScript Enthusiast, developer for fun, intrapreneur and
+              passionate RPG player.
+            </p>
 
-        <p>
-          During the day I work as a Staff Engineer, Engineering Manager or
-          Frontend Architect building applications throughout many industries. I
-          enjoy getting an overview, shaping visions and teaching my juniors.
-        </p>
+            <p>
+              During the day I work as a Staff Engineer, Engineering Manager or
+              Frontend Architect building applications throughout many
+              industries. I enjoy getting an overview, shaping visions and
+              teaching my juniors.
+            </p>
 
-        <p>
-          In the past I have spoken at Code.Talks, Hamburgs largets developer
-          conference and multiple MeetUps. Together with Netlight I am also a
-          regular host for MeetUps in Hamburg.
-        </p>
+            <p>
+              In the past I have spoken at Code.Talks, Hamburgs largets
+              developer conference and multiple MeetUps. Together with Netlight
+              I am also a regular host for MeetUps in Hamburg.
+            </p>
+          </div>
+          <figure>
+            <img
+              src="/images/assets/hendrik.jpeg"
+              alt="Hendrik during a trip through the fjords."
+            />
+            <figcaption className="text-sm">
+              Hendrik during a trip through the fjords of Norway.
+            </figcaption>
+          </figure>
+        </div>
 
         <NextSteps>
           <NextHome />
