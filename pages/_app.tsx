@@ -26,6 +26,16 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [])
 
+  // Include web monetization on all but localhost.
+  useEffect(() => {
+    if (window.location.hostname !== 'localhost') {
+      const meta = document.createElement('meta')
+      meta.name = 'monetization'
+      meta.content = '$ilp.uphold.com/DbnmiKGQ4Khj'
+      document.head.appendChild(meta)
+    }
+  }, [])
+
   const { kBarActions } = useKBarActions()
   return (
     <KBarProvider actions={kBarActions}>
