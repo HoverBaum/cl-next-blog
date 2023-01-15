@@ -15,6 +15,17 @@ function MyApp({ Component, pageProps }: AppProps) {
     enableCurrentMode()
   }, [])
 
+  // Include tracking on all but localhost.
+  useEffect(() => {
+    if (window.location.hostname !== 'localhost') {
+      const script = document.createElement('script')
+      script.src = 'https://app.neoanalytics.de/neoClient.js'
+      script.async = true
+      script.defer = true
+      document.head.appendChild(script)
+    }
+  }, [])
+
   const { kBarActions } = useKBarActions()
   return (
     <KBarProvider actions={kBarActions}>
