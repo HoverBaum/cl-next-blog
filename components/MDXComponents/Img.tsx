@@ -2,8 +2,8 @@
 import { ComponentType } from 'react'
 
 type ImgProps = {
-  src: string
-  alt: string
+  src?: string
+  alt?: string
   limitHeight?: boolean
 }
 

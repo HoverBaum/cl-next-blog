@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react'
 
 type MDXLinkProps = {
-  href: string
+  href?: string
 }
 
 export const MDXLink: React.FC<PropsWithChildren<MDXLinkProps>> = ({
