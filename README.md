@@ -7,6 +7,15 @@ Shades generator: https://mdigi.tools/color-shades/#0073b9
 
 ## Todo
 
+Mobil
+- search navigation, I want to go back
+
+- project in footer, footer in general
+- links to social media
+- align buttons on home centeral for mobile
+
+- Run Lighthouse and work on score
+
 - Maybe filter options for /posts. Posibility to filter for certain tags, categories, search terms or date ranges would be amazing.
 - Maybe shortcut to cmd+K search posts from /posts.
 - Maybe turn theme into a context? Would be great to always knwo whats up and coudl listen to changes in prefers-color-scheme, could also sync across open tabs. But might be an optimization we don't need. Right now for header images but that will be solved with using SVGs. This would also enable the site to react to system color scheme changes.
