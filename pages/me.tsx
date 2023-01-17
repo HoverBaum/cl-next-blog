@@ -38,8 +38,9 @@ const Me = () => {
           </div>
           <figure>
             <img
-              src="/images/assets/hendrik.jpeg"
+              src="/images/assets/hendrik.jpg"
               alt="Hendrik during a trip through the fjords."
+              className="mb-2 border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark"
             />
             <figcaption className="text-sm">
               Hendrik during a trip through the fjords of Norway.
