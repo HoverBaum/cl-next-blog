@@ -83,7 +83,7 @@ export const Header = () => {
               {headerLinks.map(({ href, title }) => (
                 <li key={href + title} className="mr-4">
                   <Link href={href}>
-                    <a className="uppercase no-underline hover:underline">
+                    <a className="uppercase no-underline hover:underline focus:no-underline focus:text-text dark:focus:text-text-dark ">
                       {title}
                     </a>
                   </Link>
