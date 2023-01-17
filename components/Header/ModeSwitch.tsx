@@ -53,7 +53,7 @@ export const ModeSwitch = () => {
       {isOpen && (
         <div
           ref={ref}
-          className="absolute top-[130%] left-1/2 -translate-x-1/2 py-0.5 bg-surface dark:bg-surface-dark border border-border shadow-md "
+          className="absolute top-[130%] left-full -translate-x-full md:left-1/2 md:-translate-x-1/2 py-0.5 bg-surface dark:bg-surface-dark border border-border shadow-md "
         >
           <ul className="cursor-pointer">
             <li
