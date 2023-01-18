@@ -5,28 +5,33 @@
 @font-face {
   font-family: 'Simonetta-Black';
   src: url('/fonts/Simonetta-Black.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Simonetta';
   src: url('/fonts/Simonetta-Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Noto Sans';
   font-weight: 100 900;
   src: url('/fonts/NotoSansDisplay-VariableFont_wdth,wght.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Noto Serif';
   src: url('/fonts/NotoSerif-Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Noto Emoji';
   font-weight: 100 900;
   src: url('/fonts/NotoEmoji-VariableFont_wght.ttf');
+  font-display: swap;
 }
 
 html,
