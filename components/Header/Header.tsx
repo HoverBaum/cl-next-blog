@@ -13,16 +13,18 @@ import { useScrollFix } from './useScrollFix'
 export type NavLink = {
   href: string
   title: string
+  icon?: string
 }
 
 export const headerLinks: NavLink[] = [
   {
     href: '/',
     title: 'Home',
+    icon: '🏠',
   },
-  { href: '/posts', title: 'Posts' },
-  { href: '/me', title: 'About Me' },
-  { href: '/talks', title: 'Talks' },
+  { href: '/posts', title: 'Posts', icon: '📖' },
+  { href: '/me', title: 'About Me', icon: '🧑‍💻' },
+  { href: '/talks', title: 'Talks', icon: '🎙️' },
 ]
 
 export const Header = () => {

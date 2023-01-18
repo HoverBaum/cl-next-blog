@@ -9,6 +9,7 @@ const footerLinks: NavLink[] = [
   ...headerLinks,
   { href: '/posts/tags', title: 'Tags' },
   { href: '/posts/categories', title: 'Categories' },
+  { href: '/projects', title: 'Projects' },
   { href: 'https://hendrikwallbaum.de/impressum.html', title: 'Impressum' },
 ]
 

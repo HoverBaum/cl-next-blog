@@ -16,6 +16,7 @@ Mobil
 
 - Run Lighthouse and work on score
 
+- Maybe replace navigation links with icons on mobile to prevent multi-line navigation.
 - Maybe filter options for /posts. Posibility to filter for certain tags, categories, search terms or date ranges would be amazing.
 - Maybe shortcut to cmd+K search posts from /posts.
 - Maybe turn theme into a context? Would be great to always knwo whats up and coudl listen to changes in prefers-color-scheme, could also sync across open tabs. But might be an optimization we don't need. Right now for header images but that will be solved with using SVGs. This would also enable the site to react to system color scheme changes.
