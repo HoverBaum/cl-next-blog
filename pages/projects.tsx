@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { Wrapper } from 'components/Wrapper'
-import Link from 'next/link'
 import { projectsDB } from 'components/Projects/projectsDB'
 import { ProjectCard } from 'components/Projects/ProjectCard'
 import { NextSteps } from 'components/NextSteps/NextSteps'

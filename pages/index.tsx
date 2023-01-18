@@ -40,8 +40,9 @@ const Home = ({ posts }: { posts: Post[] }) => {
           <PostCard post={posts[1]} variant="big" />
           <PostCard post={posts[2]} variant="big" />
         </div>
-
-        <LinkButton href="/posts">All Posts</LinkButton>
+        <div className="grid place-items-center md:place-items-start">
+          <LinkButton href="/posts">All Posts</LinkButton>
+        </div>
 
         <SmallTitle>Latest Talks</SmallTitle>
         <RecentTalks />

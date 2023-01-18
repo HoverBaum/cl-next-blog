@@ -12,7 +12,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       <h4 className="text-lg mt-0">{project.subtitle}</h4>
       <img src={project.image} alt={project.title} className="mx-auto my-6" />
       <p className="flex-grow">{project.description}</p>
-      <div className="flex flex-row flex-wrap">
+      <div className="grid place-items-center md:place-items-start">
         {project.links.map((link) => (
           <a
             target="_blank"

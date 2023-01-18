@@ -12,9 +12,11 @@ export const FeaturedProjects = () => {
           <ProjectCard project={project} key={project.title} />
         ))}
       </div>
-      <LinkButton className="mt-8" href="/projects">
-        All Projects
-      </LinkButton>
+      <div className="grid place-items-center md:place-items-start">
+        <LinkButton className="mt-8" href="/projects">
+          All Projects
+        </LinkButton>
+      </div>
     </section>
   )
 }

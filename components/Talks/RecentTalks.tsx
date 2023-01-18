@@ -10,7 +10,9 @@ export const RecentTalks = () => {
           <TalkCard key={talk.title + talk.year} talk={talk} />
         ))}
       </div>
-      <LinkButton href="/talks">All talks</LinkButton>
+      <div className="grid place-items-center md:place-items-start">
+        <LinkButton href="/talks">All talks</LinkButton>
+      </div>
     </div>
   )
 }

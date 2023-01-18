@@ -9,7 +9,6 @@ Shades generator: https://mdigi.tools/color-shades/#0073b9
 
 Mobil
 - search navigation, I want to go back
-- align buttons on home centeral for mobile
 
 - Run Lighthouse and work on score
 
