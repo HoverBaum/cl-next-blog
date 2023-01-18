@@ -1,6 +1,7 @@
 import { Breadcrums } from 'components/Breadcrums'
 import { Emoji } from 'components/Emoji'
 import { SearchIcon } from 'components/Icons/SearchIcon'
+import { BarsIcon } from 'components/Icons/BarsIcon'
 import { Ruler } from 'components/Ruler'
 import { Wrapper } from 'components/Wrapper'
 import { useKBar } from 'kbar'
@@ -10,6 +11,7 @@ import { useEffect, useRef, useState } from 'react'
 import { isDarkMode } from 'utils/colorMode'
 import { ModeSwitch } from './ModeSwitch'
 import { useScrollFix } from './useScrollFix'
+import { BurgerMenu } from './BurgerMenu'
 
 export type NavLink = {
   href: string
@@ -82,29 +84,36 @@ export const Header = () => {
         <Ruler className="my-0" />
         <Wrapper>
           <nav className="py-4 flex justify-center">
-            <ul className="flex flex-wrap p-0 list-none">
-              {headerLinks.map(({ href, title, icon }) => (
-                <li key={href + title} className="mr-4">
-                  <Link href={href}>
-                    <a className="uppercase no-underline hover:underline focus:no-underline focus:text-text dark:focus:text-text-dark ">
-                      <Emoji className="sm:hidden">{icon}</Emoji>
-                      <span className="hidden sm:inline">{title}</span>
-                    </a>
-                  </Link>
+            <ul className="flex flex-wrap justify-between md:justify-center p-0 list-none w-full">
+              <li className="grid place-items-center md:hidden relative">
+                <BurgerMenu links={headerLinks} />
+              </li>
+              <div className="flex">
+                {headerLinks.map(({ href, title, icon }) => (
+                  <li key={href + title} className="mx-1">
+                    <Link href={href}>
+                      <a className="uppercase no-underline hover:underline focus:no-underline focus:text-text dark:focus:text-text-dark ">
+                        <Emoji className="sm:hidden">{icon}</Emoji>
+                        <span className="hidden sm:inline">{title}</span>
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </div>
+              <div className="flex md:ml-6">
+                <li>
+                  <div
+                    onClick={() => query.toggle()}
+                    className="place-items-center h-full text-text dark:text-text-dark cursor-pointer flex"
+                  >
+                    <SearchIcon className="h-4 w-4 ml-0.5 hover:stroke-primary" />
+                  </div>
                 </li>
-              ))}
-              <li>
-                <div
-                  onClick={() => query.toggle()}
-                  className="ml-4 place-items-center h-full text-text dark:text-text-dark cursor-pointer flex"
-                >
-                  <SearchIcon className="h-4 w-4 ml-0.5 hover:stroke-primary" />
-                </div>
-              </li>
-              <li className="ml-2 border-l-2 border-border dark:border-border-dark"></li>
-              <li className="grid place-items-center ml-2">
-                <ModeSwitch />
-              </li>
+                <li className="ml-2 border-l-2 border-border dark:border-border-dark"></li>
+                <li className="grid place-items-center ml-2">
+                  <ModeSwitch />
+                </li>
+              </div>
             </ul>
           </nav>
         </Wrapper>
