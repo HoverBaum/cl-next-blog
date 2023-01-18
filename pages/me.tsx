@@ -1,8 +1,13 @@
+import { DevToIcon } from 'components/Icons/social/DevToIcon'
+import { GitHubIcon } from 'components/Icons/social/GitHubIcon'
+import { LinkedInIcon } from 'components/Icons/social/LinkedInIcon'
+import { TwitterIcon } from 'components/Icons/social/TwitterIcon'
 import { NextHome } from 'components/NextSteps/NextHome'
 import { NextPosts } from 'components/NextSteps/NextPosts'
 import { NextProjects } from 'components/NextSteps/NextProjects'
 import { NextSteps } from 'components/NextSteps/NextSteps'
 import { NextTalks } from 'components/NextSteps/NextTalks'
+import { SocialLink } from 'components/SocialLink'
 import { Wrapper } from 'components/Wrapper'
 import Head from 'next/head'
 
@@ -10,7 +15,7 @@ const Me = () => {
   return (
     <div>
       <Head>
-        <title>Building Hendriks new blog</title>
+        <title>Hendrik Wallbaum</title>
       </Head>
 
       <Wrapper>
@@ -35,6 +40,35 @@ const Me = () => {
               developer conference and multiple MeetUps. Together with Netlight
               I am also a regular host for MeetUps in Hamburg.
             </p>
+
+            <h2 className="text-3xl mt-8 mb-0">Connect</h2>
+            <p className="mt-2">
+              <a href="mailto:mail@hendrikwallbaum.de">
+                mail@hendrikwallbaum.de
+              </a>
+            </p>
+            <ul className="flex">
+              <li className="mr-2">
+                <SocialLink href="https://github.com/HoverBaum">
+                  <GitHubIcon className="w-6 h-6 " />
+                </SocialLink>
+              </li>
+              <li className="mr-2">
+                <SocialLink href="https://twitter.com/HoverBaum">
+                  <TwitterIcon className="w-6 h-6 " />
+                </SocialLink>
+              </li>
+              <li className="mr-2">
+                <SocialLink href="https://dev.to/hoverbaum">
+                  <DevToIcon className="w-6 h-6 " />
+                </SocialLink>
+              </li>
+              <li className="mr-2">
+                <SocialLink href="https://www.linkedin.com/in/hendrik-wallbaum-196432113/">
+                  <LinkedInIcon className="w-6 h-6 " />
+                </SocialLink>
+              </li>
+            </ul>
           </div>
           <figure>
             <img
