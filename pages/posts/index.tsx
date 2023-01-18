@@ -32,7 +32,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
       </Head>
 
       <Wrapper>
-        <h1>All {posts.length} posts</h1>
+        <h1>All posts</h1>
         <div className="mt-4">
           <LinkButton href="/posts/tags">Explore Tags</LinkButton>
           <LinkButton href="/posts/categories">Explore Categories</LinkButton>
@@ -41,11 +41,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
         <div>
           {posts.map((post, index) => (
             <div className="my-8" key={post._id}>
-              <PostCard
-                key={post._id}
-                post={post}
-                variant={index === 0 ? 'big' : 'small'}
-              />
+              <PostCard key={post._id} post={post} />
             </div>
           ))}
         </div>

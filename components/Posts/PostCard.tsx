@@ -15,13 +15,13 @@ import { PostMeta } from './PostMeta'
 
 type PostCardProps = {
   post: Post
-  variant?: 'big' | 'small' | 'compact'
+  variant?: 'default' | 'compact'
   MDXOverwrites?: any
 }
 
 export const PostCard: React.FC<PostCardProps> = ({
   post,
-  variant = 'small',
+  variant = 'default',
   MDXOverwrites,
 }) => {
   const MDXContent = useMDXComponent(post.excerpt.code)
@@ -43,7 +43,7 @@ export const PostCard: React.FC<PostCardProps> = ({
         </Link>
       </h3>
       <PostMeta post={post} />
-      {(variant === 'big' || variant == 'compact') && post.firstImage && (
+      {post.firstImage && (
         <Img src={post.firstImage.src} alt={post.firstImage.alt} />
       )}
       <MDXContent components={mergedComponetns} />
