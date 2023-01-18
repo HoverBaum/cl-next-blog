@@ -23,12 +23,11 @@ export const BlogPost: ComponentType<PostProps> = ({ post }) => {
       <PostMeta post={post} />
       {isConsideredOutdated && (
         <Alert>
-          This Post is over three years old!
-          <br />
-          It's information or views might be outdated. Please take caution.
+          This Post is over three years old! It's information or views might be
+          outdated.
         </Alert>
       )}
-      <Ruler />
+      {!isConsideredOutdated && <Ruler />}
       <MDXContent components={MDXComponents} />
     </article>
   )
