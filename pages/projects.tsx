@@ -16,13 +16,14 @@ const Talks = () => {
 
       <Wrapper>
         <h1 className="mb-8">All Projects</h1>
+      </Wrapper>
 
-        <div className="grid md:grid-cols-2 gap-8 justify-items-center mb-8">
-          {projectsDB.map((project) => (
-            <ProjectCard project={project} key={project.title} />
-          ))}
-        </div>
-
+      <div className="grid md:grid-cols-3 gap-6 justify-items-center mb-8 max-w-[60rem] mx-auto">
+        {projectsDB.map((project) => (
+          <ProjectCard project={project} key={project.title} />
+        ))}
+      </div>
+      <Wrapper>
         <NextSteps>
           <NextHome />
           <NextAboutMe />

@@ -55,7 +55,7 @@ export const projectsDB: ProjectType[] = [
     title: 'BlankUp',
     subtitle: 'Markdown Editor',
     description: 'Clean, cross plattform Markdown Editor based on Electron.',
-    image: '/images/projects/blankUp.png',
+    image: '/images/projects/blankUp.jpg',
     links: [
       { url: 'https://hoverbaum.github.io/BlankUp-Electron/', text: 'BlankUp' },
     ],

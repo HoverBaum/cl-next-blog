@@ -7,7 +7,7 @@ export const FeaturedProjects = () => {
   return (
     <section>
       <SmallTitle>Projects</SmallTitle>
-      <div className="grid md:grid-cols-2 justify-items-center gap-4">
+      <div className="grid md:grid-cols-2 justify-items-start gap-4">
         {projectsDB.slice(0, 2).map((project) => (
           <ProjectCard project={project} key={project.title} />
         ))}

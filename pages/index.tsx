@@ -33,12 +33,12 @@ const Home = ({ posts }: { posts: Post[] }) => {
         <MeIntro />
 
         <SmallTitle>Current post</SmallTitle>
-        <PostCard post={posts[0]} variant="big" />
+        <PostCard post={posts[0]} />
 
         <SmallTitle>Recent posts</SmallTitle>
         <div className="mb-6 grid md:grid-cols-2 gap-6">
-          <PostCard post={posts[1]} variant="big" />
-          <PostCard post={posts[2]} variant="big" />
+          <PostCard post={posts[1]} />
+          <PostCard post={posts[2]} />
         </div>
         <div className="grid place-items-center md:place-items-start">
           <LinkButton href="/posts">All Posts</LinkButton>
