@@ -1,4 +1,5 @@
 import { Breadcrums } from 'components/Breadcrums'
+import { Emoji } from 'components/Emoji'
 import { SearchIcon } from 'components/Icons/SearchIcon'
 import { Ruler } from 'components/Ruler'
 import { Wrapper } from 'components/Wrapper'
@@ -82,11 +83,12 @@ export const Header = () => {
         <Wrapper>
           <nav className="py-4 flex justify-center">
             <ul className="flex flex-wrap p-0 list-none">
-              {headerLinks.map(({ href, title }) => (
+              {headerLinks.map(({ href, title, icon }) => (
                 <li key={href + title} className="mr-4">
                   <Link href={href}>
                     <a className="uppercase no-underline hover:underline focus:no-underline focus:text-text dark:focus:text-text-dark ">
-                      {title}
+                      <Emoji className="sm:hidden">{icon}</Emoji>
+                      <span className="hidden sm:inline">{title}</span>
                     </a>
                   </Link>
                 </li>
@@ -94,7 +96,7 @@ export const Header = () => {
               <li>
                 <div
                   onClick={() => query.toggle()}
-                  className="place-items-center h-full text-text dark:text-text-dark cursor-pointer flex"
+                  className="ml-4 place-items-center h-full text-text dark:text-text-dark cursor-pointer flex"
                 >
                   <SearchIcon className="h-4 w-4 ml-0.5 hover:stroke-primary" />
                 </div>
