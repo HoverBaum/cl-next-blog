@@ -16,6 +16,7 @@ import { BurgerMenu } from './BurgerMenu'
 export type NavLink = {
   href: string
   title: string
+  hideOnMobile?: boolean
   icon?: string
 }
 
@@ -26,7 +27,7 @@ export const headerLinks: NavLink[] = [
     icon: '🏠',
   },
   { href: '/posts', title: 'Posts', icon: '📖' },
-  { href: '/me', title: 'About Me', icon: '🧑‍💻' },
+  { href: '/me', title: 'About Me', icon: '🧑‍💻', hideOnMobile: true },
   { href: '/talks', title: 'Talks', icon: '🎙️' },
 ]
 
@@ -89,12 +90,14 @@ export const Header = () => {
                 <BurgerMenu links={headerLinks} />
               </li>
               <div className="flex">
-                {headerLinks.map(({ href, title, icon }) => (
-                  <li key={href + title} className="mx-1">
+                {headerLinks.map(({ href, title, hideOnMobile }) => (
+                  <li
+                    key={href + title}
+                    className={`mx-1 ${hideOnMobile ? 'hidden md:block' : ''}`}
+                  >
                     <Link href={href}>
                       <a className="uppercase no-underline hover:underline focus:no-underline focus:text-text dark:focus:text-text-dark ">
-                        <Emoji className="sm:hidden">{icon}</Emoji>
-                        <span className="hidden sm:inline">{title}</span>
+                        {title}
                       </a>
                     </Link>
                   </li>
