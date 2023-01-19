@@ -23,8 +23,8 @@ export const BlogPost: ComponentType<PostProps> = ({ post }) => {
       <PostMeta post={post} />
       {isConsideredOutdated && (
         <Alert>
-          This Post is over three years old! It's information or views might be
-          outdated.
+          {`This Post is over three years old! It's information or views might be
+          outdated.`}
         </Alert>
       )}
       {!isConsideredOutdated && <Ruler />}

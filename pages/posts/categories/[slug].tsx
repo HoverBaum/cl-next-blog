@@ -1,13 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-/** @jsxImportSource @emotion/react */
 import Head from 'next/head'
 import { allPosts, Post } from 'contentlayer/generated'
-import { css } from '@emotion/react'
 import { Wrapper } from 'components/Wrapper'
 import { postsByDateDesc } from 'utils/sort'
 import { PostCard } from 'components/Posts/PostCard'
 import { categoriesFromPosts, CategoryType } from 'utils/categoriesFromPosts'
-import Link from 'next/link'
 import { NextSteps } from 'components/NextSteps/NextSteps'
 import { NextCategories } from 'components/NextSteps/NextCategories'
 import { NextPosts } from 'components/NextSteps/NextPosts'
@@ -59,13 +56,7 @@ const CategoryLayout = ({
         <h1>{category.name}</h1>
 
         {posts.map((post, index) => (
-          <div
-            css={css`
-              margin-bottom: 2rem;
-              margin-top: 2rem;
-            `}
-            key={post._id}
-          >
+          <div className="my-6" key={post._id}>
             <PostCard key={post._id} post={post} />
           </div>
         ))}

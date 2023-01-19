@@ -1,7 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import Head from 'next/head'
 import { allPosts, Post } from 'contentlayer/generated'
-import { css } from '@emotion/react'
 import { Wrapper } from 'components/Wrapper'
 import { tagsFromPosts, TagType } from 'utils/tagsFromPosts'
 import { postsByDateDesc } from 'utils/sort'
@@ -49,13 +47,7 @@ const TagLayout = ({ posts, tag }: { posts: Post[]; tag: TagType }) => {
         <h1>{tag.tag}</h1>
 
         {posts.map((post, index) => (
-          <div
-            css={css`
-              margin-bottom: 2rem;
-              margin-top: 2rem;
-            `}
-            key={post._id}
-          >
+          <div className="my-6" key={post._id}>
             <PostCard key={post._id} post={post} />
           </div>
         ))}

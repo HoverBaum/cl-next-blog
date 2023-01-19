@@ -20,12 +20,7 @@ export const ProjectCard = ({
       <p className="flex-grow">{project.description}</p>
       <div className="grid place-items-center md:place-items-start">
         {project.links.map((link) => (
-          <a
-            target="_blank"
-            rel="nofollow"
-            href={link.url}
-            key={link.url + link.text}
-          >
+          <a href={link.url} key={link.url + link.text}>
             {link.text}
           </a>
         ))}

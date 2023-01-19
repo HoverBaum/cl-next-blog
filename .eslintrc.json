@@ -1,4 +1,6 @@
 {
   "extends": "next/core-web-vitals",
-  "react/no-unknown-property": ["error", { "ignore": ["css"] }]
+  "rules": {
+    "react-hooks/exhaustive-deps": "off"
+  }
 }

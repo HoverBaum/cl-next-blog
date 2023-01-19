@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { SmallTitle } from './SmallTitle'
 
 const MyImage = ({ className }: { className?: string }) => (
@@ -22,7 +23,7 @@ export const AuthorCard = () => {
             He writes about webdev, technologie, personal thoughts and anything
             he finds interesting.
           </p>
-          <a href="/me">More about Hendrik</a>
+          <Link href="/me">More about Hendrik</Link>
         </div>
         <MyImage className="hidden md:block" />
       </div>

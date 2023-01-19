@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { WigglingEmoji } from './WigglingEmoji'
 
 export const MeIntro = () => {
@@ -12,7 +13,7 @@ export const MeIntro = () => {
             <br />I write about webdev, technologie, personal thoughts and
             anything I find interesting. «
           </p>
-          <a href="/me">More about me</a>
+          <Link href="/me">More about me</Link>
         </div>
         <img
           className="mt-4 md:mt-0 w-full md:w-auto md:h-[10rem] border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark"
