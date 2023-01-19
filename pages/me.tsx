@@ -10,6 +10,7 @@ import { NextTalks } from 'components/NextSteps/NextTalks'
 import { SocialLink } from 'components/SocialLink'
 import { Wrapper } from 'components/Wrapper'
 import Head from 'next/head'
+import Image from 'next/image'
 
 const Me = () => {
   return (
@@ -71,11 +72,14 @@ const Me = () => {
             </ul>
           </div>
           <figure>
-            <img
-              src="/images/assets/hendrik.jpg"
-              alt="Hendrik during a trip through the fjords."
-              className="mb-2 border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark"
-            />
+            <div className="mb-2 text-[0] border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark">
+              <Image
+                src="/images/assets/hendrik.jpg"
+                alt="Hendrik during a trip through the fjords."
+                width={500}
+                height={757}
+              />
+            </div>
             <figcaption className="text-sm">
               Hendrik during a trip through the fjords of Norway.
             </figcaption>

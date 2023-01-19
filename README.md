@@ -7,10 +7,9 @@ Shades generator: https://mdigi.tools/color-shades/#0073b9
 
 ## Todo
 
-Mobil
-- search navigation, I want to go back
+- Improve image handling
 
-- Run Lighthouse and work on score
+- Custom 404 page
 
 - Maybe filter options for /posts. Posibility to filter for certain tags, categories, search terms or date ranges would be amazing.
 - Maybe shortcut to cmd+K search posts from /posts.
