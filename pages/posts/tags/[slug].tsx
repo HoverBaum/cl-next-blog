@@ -56,11 +56,7 @@ const TagLayout = ({ posts, tag }: { posts: Post[]; tag: TagType }) => {
             `}
             key={post._id}
           >
-            <PostCard
-              key={post._id}
-              post={post}
-              variant={index === 0 ? 'big' : 'small'}
-            />
+            <PostCard key={post._id} post={post} />
           </div>
         ))}
 
