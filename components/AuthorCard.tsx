@@ -1,12 +1,20 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { SmallTitle } from './SmallTitle'
 
 const MyImage = ({ className }: { className?: string }) => (
-  <img
-    className={`h-[10rem] border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark ${className}`}
-    src="/images/assets/portrait.jpg"
-    alt="Hendrik"
-  />
+  <div>
+    <span
+      className={`max-w-[80%] md:max-w-[300px] text-[0] inline-block border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark ${className}`}
+    >
+      <Image
+        src="/images/assets/portrait.jpg"
+        alt="Hendrik"
+        width={180}
+        height={180}
+      />
+    </span>
+  </div>
 )
 
 export const AuthorCard = () => {
