@@ -1,5 +1,5 @@
 import { Card } from 'components/Card'
-import Image from "next/image";
+import Image from 'next/image'
 import { ProjectType } from './projectsDB'
 
 type ProjectCardProps = {
@@ -22,10 +22,7 @@ export const ProjectCard = ({
             alt={project.title}
             width="500"
             height="375"
-            style={{
-              maxWidth: "100%",
-              height: "auto"
-            }} />
+          />
         </div>
       )}
       <p className="flex-grow">{project.description}</p>
@@ -37,5 +34,5 @@ export const ProjectCard = ({
         ))}
       </div>
     </Card>
-  );
+  )
 }

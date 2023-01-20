@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 import Link from 'next/link'
 import { WigglingEmoji } from './WigglingEmoji'
 import ProfilePicture from '../public/images/assets/portrait.jpg'
@@ -17,20 +17,16 @@ export const MeIntro = () => {
           </p>
           <Link href="/me">More about me</Link>
         </div>
-        <div className="flex md:block flex-row justify-center mt-4 md:mt-0">
-          <span className="max-w-[80%] md:max-w-[300px] text-[0] inline-block border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark">
-            <Image
-              src={ProfilePicture}
-              width={300}
-              height={300}
-              alt="Hendrik"
-              style={{
-                maxWidth: "100%",
-                height: "auto"
-              }} />
-          </span>
+        <div className="flex md:block flex-row justify-center mt-4 md:mt-0 max-w-[80%] md:max-w-[300px] mx-auto">
+          <Image
+            src={ProfilePicture}
+            width={300}
+            height={300}
+            alt="Hendrik"
+            className="border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark"
+          />
         </div>
       </div>
     </div>
-  );
+  )
 }

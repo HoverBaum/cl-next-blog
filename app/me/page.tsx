@@ -66,19 +66,15 @@ export default function Me() {
               </li>
             </ul>
           </div>
-          <figure>
-            <div className="mb-2 text-[0] border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark">
-              <Image
-                src="/images/assets/hendrik.jpg"
-                alt="Hendrik during a trip through the fjords."
-                width={500}
-                height={757}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
-              />
-            </div>
+          <figure className="flex md:block flex-col items-center mt-4 md:mt-0 mx-auto">
+            <Image
+              src="/images/assets/hendrik.jpg"
+              alt="Hendrik during a trip through the fjords."
+              width={500}
+              height={757}
+              className="w-[50%] sm:w-full mb-2 border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark"
+            />
+
             <figcaption className="text-sm">
               Hendrik during a trip through the fjords of Norway.
             </figcaption>

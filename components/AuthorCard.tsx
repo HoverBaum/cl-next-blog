@@ -3,22 +3,16 @@ import Link from 'next/link'
 import { SmallTitle } from './SmallTitle'
 
 const MyImage = ({ className }: { className?: string }) => (
-  <div>
-    <span
-      className={`max-w-[80%] md:max-w-[300px] text-[0] inline-block border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark ${className}`}
-    >
-      <Image
-        src="/images/assets/portrait.jpg"
-        alt="Hendrik"
-        width={180}
-        height={180}
-      />
-    </span>
-  </div>
+  <Image
+    src="/images/assets/portrait.jpg"
+    alt="Hendrik"
+    width={180}
+    height={180}
+    className={`border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark ${className}`}
+  />
 )
 
 export const AuthorCard = () => {
-  // A card with sharp corners that has a quote about me and a picture.
   return (
     <div className="p-4 border-2 border-border dark:border-border-dark max-w-[45rem] mx-auto">
       <div className="md:flex justify-between ">
@@ -26,12 +20,12 @@ export const AuthorCard = () => {
           <SmallTitle className="mt-0 text-2xl">Author</SmallTitle>
           <MyImage className="md:hidden" />
           <p className="pr-4 max-w-[60ch]">
-            Hendrik Is a JavaScript Enthusiast and developer for the fun of it!
+            I am a JavaScript Enthusiast and developer for the fun of it!
             <br />
-            He writes about webdev, technologie, personal thoughts and anything
-            he finds interesting.
+            Here I write about webdev, technology, personal thoughts and
+            anything I finds interesting.
           </p>
-          <Link href="/me">More about Hendrik</Link>
+          <Link href="/me">More about me</Link>
         </div>
         <MyImage className="hidden md:block" />
       </div>
