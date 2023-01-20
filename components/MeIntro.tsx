@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link'
 import { WigglingEmoji } from './WigglingEmoji'
 import ProfilePicture from '../public/images/assets/portrait.jpg'
@@ -24,10 +24,13 @@ export const MeIntro = () => {
               width={300}
               height={300}
               alt="Hendrik"
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
           </span>
         </div>
       </div>
     </div>
-  )
+  );
 }

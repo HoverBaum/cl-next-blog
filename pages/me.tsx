@@ -10,7 +10,7 @@ import { NextTalks } from 'components/NextSteps/NextTalks'
 import { SocialLink } from 'components/SocialLink'
 import { Wrapper } from 'components/Wrapper'
 import Head from 'next/head'
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 const Me = () => {
   return (
@@ -78,7 +78,10 @@ const Me = () => {
                 alt="Hendrik during a trip through the fjords."
                 width={500}
                 height={757}
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </div>
             <figcaption className="text-sm">
               Hendrik during a trip through the fjords of Norway.
@@ -94,7 +97,7 @@ const Me = () => {
         </NextSteps>
       </Wrapper>
     </div>
-  )
+  );
 }
 
 export default Me
