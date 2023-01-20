@@ -43,6 +43,12 @@ export const useKBarActions = () => {
         perform: () => router.push('/posts'),
       },
       {
+        id: 'projects',
+        name: 'My Projects',
+        section: 'Most used',
+        perform: () => router.push('/projects'),
+      },
+      {
         id: 'aboutme',
         name: 'About Me',
         section: 'Most used',
