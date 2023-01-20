@@ -10,8 +10,8 @@ import { categoriesFromPosts } from 'utils/categoriesFromPosts'
 import { postsByDateDesc } from 'utils/sort'
 
 export function generateStaticParams() {
-  const tags = categoriesFromPosts(allPosts)
-  const paths = tags.map((category) => ({
+  const categories = categoriesFromPosts(allPosts)
+  const paths = categories.map((category) => ({
     categorySlug: category.categorySlug,
   }))
   return paths

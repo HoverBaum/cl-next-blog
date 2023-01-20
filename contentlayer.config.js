@@ -38,6 +38,11 @@ export const Post = defineDocumentType(() => ({
           .toLowerCase()
           .replace('ä', 'ae')}`,
     },
+    postSlug: {
+      type: 'string',
+      resolve: (post) =>
+        `${post.title.replace(/\s/g, '-').toLowerCase().replace('ä', 'ae')}`,
+    },
     excerpt: {
       type: 'json',
       resolve: async (post) => {

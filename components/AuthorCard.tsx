@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 import Link from 'next/link'
 import { SmallTitle } from './SmallTitle'
 
@@ -12,10 +12,7 @@ const MyImage = ({ className }: { className?: string }) => (
         alt="Hendrik"
         width={180}
         height={180}
-        style={{
-          maxWidth: "100%",
-          height: "auto"
-        }} />
+      />
     </span>
   </div>
 )
