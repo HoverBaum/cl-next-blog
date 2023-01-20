@@ -18,7 +18,7 @@ const Talks = () => {
         <h1 className="mb-8">All Projects</h1>
       </Wrapper>
 
-      <div className="grid md:grid-cols-3 gap-6 justify-items-center mb-8 max-w-[60rem] mx-auto">
+      <div className="px-2 grid md:grid-cols-3 gap-6 justify-items-center mb-8 max-w-[60rem] mx-auto">
         {projectsDB.map((project) => (
           <ProjectCard project={project} key={project.title} />
         ))}
