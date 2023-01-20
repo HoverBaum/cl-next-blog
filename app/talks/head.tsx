@@ -1,10 +1,10 @@
-import { SharedHead } from './SharedHead'
+import { SharedHead } from '../SharedHead'
 
 export default function Head() {
   return (
     <>
       <SharedHead />
-      <title>Hendriks Blog</title>
+      <title>Hendriks Talks</title>
     </>
   )
 }

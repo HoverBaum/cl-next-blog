@@ -1,19 +1,14 @@
-import Head from 'next/head'
-import { Wrapper } from 'components/Wrapper'
-import { projectsDB } from 'components/Projects/projectsDB'
-import { ProjectCard } from 'components/Projects/ProjectCard'
-import { NextSteps } from 'components/NextSteps/NextSteps'
-import { NextHome } from 'components/NextSteps/NextHome'
 import { NextAboutMe } from 'components/NextSteps/NextAboutMe'
+import { NextHome } from 'components/NextSteps/NextHome'
 import { NextPosts } from 'components/NextSteps/NextPosts'
+import { NextSteps } from 'components/NextSteps/NextSteps'
+import { ProjectCard } from 'components/Projects/ProjectCard'
+import { projectsDB } from 'components/Projects/projectsDB'
+import { Wrapper } from 'components/Wrapper'
 
-const Talks = () => {
+export default function Projects() {
   return (
     <div>
-      <Head>
-        <title>Hendriks Projects</title>
-      </Head>
-
       <Wrapper>
         <h1 className="mb-8">All Projects</h1>
       </Wrapper>
@@ -33,5 +28,3 @@ const Talks = () => {
     </div>
   )
 }
-
-export default Talks
