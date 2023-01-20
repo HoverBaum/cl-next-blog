@@ -31,11 +31,12 @@ export const BurgerMenu = ({ links }: BurgerMenuProps) => {
               <ul>
                 {links.map((link) => (
                   <li key={link.href} className="mb-2">
-                    <Link href={link.href}>
-                      <a className="flex items-center space-x-2 no-underline">
-                        <Emoji>{link.icon}</Emoji>
-                        <span>{link.title}</span>
-                      </a>
+                    <Link
+                      href={link.href}
+                      className="flex items-center space-x-2 no-underline"
+                    >
+                      <Emoji>{link.icon}</Emoji>
+                      <span>{link.title}</span>
                     </Link>
                   </li>
                 ))}

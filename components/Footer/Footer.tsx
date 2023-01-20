@@ -25,8 +25,8 @@ export const Footer = () => {
             <ul className="grid md:grid-cols-2 p-0 list-none">
               {footerLinks.map(({ href, title }) => (
                 <li key={href + title} className="mb-1">
-                  <Link href={href}>
-                    <a className="no-underline hover:underline">{title}</a>
+                  <Link href={href} className="no-underline hover:underline">
+                    {title}
                   </Link>
                 </li>
               ))}

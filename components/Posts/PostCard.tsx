@@ -38,9 +38,7 @@ export const PostCard: React.FC<PostCardProps> = ({
   return (
     <Card className={`h-full relative break-words`}>
       <h3 className={`mt-0 ${variant === 'compact' ? 'text-3xl' : ''}`}>
-        <Link href={slug}>
-          <a>{title}</a>
-        </Link>
+        <Link href={slug}>{title}</Link>
       </h3>
       <PostMeta post={post} />
       {post.firstImage && (

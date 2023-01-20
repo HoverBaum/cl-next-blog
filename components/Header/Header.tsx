@@ -95,10 +95,11 @@ export const Header = () => {
                     key={href + title}
                     className={`mx-1 ${hideOnMobile ? 'hidden md:block' : ''}`}
                   >
-                    <Link href={href}>
-                      <a className="uppercase no-underline hover:underline focus:no-underline focus:text-text dark:focus:text-text-dark ">
-                        {title}
-                      </a>
+                    <Link
+                      href={href}
+                      className="uppercase no-underline hover:underline focus:no-underline focus:text-text dark:focus:text-text-dark "
+                    >
+                      {title}
                     </Link>
                   </li>
                 ))}
