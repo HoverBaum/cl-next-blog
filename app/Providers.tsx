@@ -1,12 +1,31 @@
 'use client'
 
+import { BlogAction } from 'components/CommandPalette/generateBlogActions'
 import { useKBarActions } from 'components/CommandPalette/useKBarActions'
 import { KBarProvider } from 'kbar'
-import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { useEffect, useMemo } from 'react'
 import { enableCurrentMode } from 'utils/colorMode'
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export function Providers({
+  children,
+  blogActions,
+}: {
+  children: React.ReactNode
+  blogActions: BlogAction[]
+}) {
   const { kBarActions } = useKBarActions()
+  const router = useRouter()
+  const allActions = useMemo(
+    () => [
+      ...kBarActions,
+      ...blogActions.map((action) => ({
+        ...action,
+        perform: () => router.push(action.href),
+      })),
+    ],
+    [kBarActions]
+  )
 
   useEffect(() => {
     enableCurrentMode()
@@ -23,5 +42,5 @@ export function Providers({ children }: { children: React.ReactNode }) {
     }
   }, [])
 
-  return <KBarProvider actions={kBarActions}>{children}</KBarProvider>
+  return <KBarProvider actions={allActions}>{children}</KBarProvider>
 }

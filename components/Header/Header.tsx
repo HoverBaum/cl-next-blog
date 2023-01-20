@@ -19,7 +19,7 @@ export const Header = () => {
   const { isFixed } = useScrollFix(navRef)
   const [sideNavHeight, setSideNavHeight] = useState(200)
 
-  const { toggle } = useCommandPalette()
+  const { openKBar } = useCommandPalette()
   const pathname = usePathname()
   const isHomepage = pathname === '/'
   const [isDark, setIsDark] = useState(false)
@@ -91,7 +91,7 @@ export const Header = () => {
               <div className="flex md:ml-6">
                 <li>
                   <div
-                    onClick={toggle}
+                    onClick={() => openKBar()}
                     className="place-items-center h-full text-text dark:text-text-dark cursor-pointer flex"
                   >
                     <SearchIcon className="h-4 w-4 ml-0.5 hover:stroke-primary" />

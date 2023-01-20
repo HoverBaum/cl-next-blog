@@ -4,7 +4,7 @@ import { useCommandPalette } from 'components/CommandPalette/useCommandPalette'
 import { SearchIcon } from 'components/Icons/SearchIcon'
 
 export const FooterSearch = () => {
-  const { toggle } = useCommandPalette()
+  const { openKBar } = useCommandPalette()
 
   return (
     <div className="relative flex items-center w-full h-8 rounded-lg bg-background dark:bg-background-dark overflow-hidden border border-border">
@@ -22,7 +22,7 @@ export const FooterSearch = () => {
         onClick={(e) => {
           //@ts-ignore
           e.target.blur()
-          toggle()
+          openKBar()
         }}
       />
     </div>

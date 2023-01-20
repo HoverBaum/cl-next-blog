@@ -52,23 +52,5 @@ export const useKBarActions = () => {
     [router]
   )
 
-  // // Load more actions async so that initial package stays small.
-  // // This includes all post, categories and tags.
-  // useEffect(() => {
-  //   console.log('effect')
-  //   const fetchMoreActions = async () => {
-  //     const moreActions = await fetch('/api/kbar-actions')
-  //     const moreActionsJson = (await moreActions.json()) as BackendKBarAction[]
-  //     setKBarActions((prevActions) => [
-  //       ...prevActions,
-  //       ...moreActionsJson.map((action) => ({
-  //         ...action,
-  //         perform: () => router.push(action.href),
-  //       })),
-  //     ])
-  //   }
-  //   fetchMoreActions()
-  // }, [])
-
   return { kBarActions }
 }

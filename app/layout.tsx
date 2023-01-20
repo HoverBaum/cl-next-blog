@@ -1,4 +1,5 @@
 import { CommandPalette } from 'components/CommandPalette/CommandPalette'
+import { generateBlogActions } from 'components/CommandPalette/generateBlogActions'
 import { Footer } from 'components/Footer/Footer'
 import { Header } from 'components/Header/Header'
 
@@ -13,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>
+        <Providers blogActions={generateBlogActions()}>
           <CommandPalette />
           <Header />
           <main>{children}</main>
