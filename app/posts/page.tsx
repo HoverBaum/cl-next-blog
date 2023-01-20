@@ -7,6 +7,7 @@ import { PostCard } from 'components/Posts/PostCard'
 import { Wrapper } from 'components/Wrapper'
 import { allPosts } from 'contentlayer/generated'
 import { postsByDateDesc } from 'utils/sort'
+import { SearchPostsButton } from './SearchPostsButton'
 
 export default function PostsPage() {
   const posts = allPosts.sort(postsByDateDesc)
@@ -17,7 +18,7 @@ export default function PostsPage() {
       <div className="mt-4">
         <LinkButton href="/posts/tags">Explore Tags</LinkButton>
         <LinkButton href="/posts/categories">Explore Categories</LinkButton>
-        {/* <Button onClick={searchPosts}>Search posts</Button> */}
+        <SearchPostsButton />
       </div>
       <div>
         {posts.map((post) => (

@@ -9,7 +9,7 @@ Shades generator: https://mdigi.tools/color-shades/#0073b9
 
 - Improve image handling
 
-- Custom 404 page
+- Custom 404 page - waiting on Next13 to support it.
 
 - Maybe filter options for /posts. Posibility to filter for certain tags, categories, search terms or date ranges would be amazing.
 - Maybe shortcut to cmd+K search posts from /posts.
