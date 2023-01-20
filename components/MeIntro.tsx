@@ -24,6 +24,7 @@ export const MeIntro = () => {
             height={300}
             alt="Hendrik"
             className="border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark"
+            priority
           />
         </div>
       </div>
