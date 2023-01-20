@@ -13,6 +13,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* We will optimistically switch to dark mode for systemt hat prefer it. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        if(window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.classList.add('dark')
+        `,
+          }}
+        />
+      </head>
       <body>
         <Providers blogActions={generateBlogActions()}>
           <CommandPalette />
