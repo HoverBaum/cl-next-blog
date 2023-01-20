@@ -1,10 +1,10 @@
 'use client'
 
+import { useCommandPalette } from 'components/CommandPalette/useCommandPalette'
 import { SearchIcon } from 'components/Icons/SearchIcon'
-import { useKBar } from 'kbar'
 
 export const FooterSearch = () => {
-  const { query } = useKBar()
+  const { toggle } = useCommandPalette()
 
   return (
     <div className="relative flex items-center w-full h-8 rounded-lg bg-background dark:bg-background-dark overflow-hidden border border-border">
@@ -22,7 +22,7 @@ export const FooterSearch = () => {
         onClick={(e) => {
           //@ts-ignore
           e.target.blur()
-          query.toggle()
+          toggle()
         }}
       />
     </div>

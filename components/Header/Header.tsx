@@ -4,7 +4,6 @@ import { Breadcrums } from 'components/Breadcrums'
 import { SearchIcon } from 'components/Icons/SearchIcon'
 import { Ruler } from 'components/Ruler'
 import { Wrapper } from 'components/Wrapper'
-import { useKBar } from 'kbar'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
@@ -13,13 +12,14 @@ import { ModeSwitch } from './ModeSwitch'
 import { useScrollFix } from './useScrollFix'
 import { BurgerMenu } from './BurgerMenu'
 import { headerLinks } from './headerLinks'
+import { useCommandPalette } from 'components/CommandPalette/useCommandPalette'
 
 export const Header = () => {
   const navRef = useRef<HTMLDivElement>(null)
   const { isFixed } = useScrollFix(navRef)
   const [sideNavHeight, setSideNavHeight] = useState(200)
 
-  const { query } = useKBar()
+  const { toggle } = useCommandPalette()
   const pathname = usePathname()
   const isHomepage = pathname === '/'
   const [isDark, setIsDark] = useState(false)
@@ -91,7 +91,7 @@ export const Header = () => {
               <div className="flex md:ml-6">
                 <li>
                   <div
-                    onClick={() => query.toggle()}
+                    onClick={toggle}
                     className="place-items-center h-full text-text dark:text-text-dark cursor-pointer flex"
                   >
                     <SearchIcon className="h-4 w-4 ml-0.5 hover:stroke-primary" />

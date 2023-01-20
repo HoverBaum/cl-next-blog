@@ -1,13 +1,12 @@
 'use client'
 
 import { Button } from 'components/Button'
-import { useKBar } from 'kbar'
+import { useCommandPalette } from 'components/CommandPalette/useCommandPalette'
 
 export const SearchPostsButton = () => {
-  const { query } = useKBar()
+  const { toggle } = useCommandPalette()
   const searchPosts = () => {
-    query.toggle()
-    query.setCurrentRootAction('openPost')
+    toggle('openPost')
   }
 
   return <Button onClick={searchPosts}>Search Posts</Button>

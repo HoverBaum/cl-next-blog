@@ -1,11 +1,18 @@
 import { withContentlayer } from 'next-contentlayer'
+import withBundleAnalyzer from '@next/bundle-analyzer'
 
-export default withContentlayer({
-  reactStrictMode: true,
-  images: {
-    domains: ['storage.googleapis.com'],
-  },
-  experimental: {
-    appDir: true,
-  },
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
 })
+
+export default bundleAnalyzer(
+  withContentlayer({
+    reactStrictMode: true,
+    images: {
+      domains: ['storage.googleapis.com'],
+    },
+    experimental: {
+      appDir: true,
+    },
+  })
+)

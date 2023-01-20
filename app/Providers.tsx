@@ -1,6 +1,6 @@
 'use client'
 
-import { useKBarActions } from 'components/CommandPalette/kBarActions'
+import { useKBarActions } from 'components/CommandPalette/useKBarActions'
 import { KBarProvider } from 'kbar'
 import { useEffect } from 'react'
 import { enableCurrentMode } from 'utils/colorMode'

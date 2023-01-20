@@ -1,16 +1,10 @@
-import { allPosts } from 'contentlayer/generated'
-import { Action } from 'kbar'
 import { useRouter } from 'next/navigation'
 import { useMemo } from 'react'
-import { categoriesFromPosts } from 'utils/categoriesFromPosts'
-import { tagsFromPosts } from 'utils/tagsFromPosts'
-import { postsByDateDesc } from '../../utils/sort'
 
 export const useKBarActions = () => {
   const router = useRouter()
-
-  const kBarActions: Action[] = useMemo(() => {
-    return [
+  const kBarActions = useMemo(
+    () => [
       {
         id: 'home',
         name: 'Home',
@@ -54,32 +48,27 @@ export const useKBarActions = () => {
         section: 'Most used',
         perform: () => router.push('/me'),
       },
-    ]
-      .concat(
-        categoriesFromPosts(allPosts).map(({ slug, name }) => ({
-          id: slug,
-          name,
-          section: 'Categories',
-          perform: () => router.push(slug),
-        }))
-      )
-      .concat(
-        tagsFromPosts(allPosts).map(({ slug, name }) => ({
-          id: slug,
-          name,
-          section: 'Tags',
-          perform: () => router.push(slug),
-        }))
-      )
-      .concat(
-        allPosts.sort(postsByDateDesc).map(({ _id, title, slug }) => ({
-          id: _id,
-          name: title,
-          section: 'Posts',
-          parent: 'openPost',
-          perform: () => router.push(slug),
-        }))
-      )
-  }, [router])
+    ],
+    [router]
+  )
+
+  // // Load more actions async so that initial package stays small.
+  // // This includes all post, categories and tags.
+  // useEffect(() => {
+  //   console.log('effect')
+  //   const fetchMoreActions = async () => {
+  //     const moreActions = await fetch('/api/kbar-actions')
+  //     const moreActionsJson = (await moreActions.json()) as BackendKBarAction[]
+  //     setKBarActions((prevActions) => [
+  //       ...prevActions,
+  //       ...moreActionsJson.map((action) => ({
+  //         ...action,
+  //         perform: () => router.push(action.href),
+  //       })),
+  //     ])
+  //   }
+  //   fetchMoreActions()
+  // }, [])
+
   return { kBarActions }
 }
