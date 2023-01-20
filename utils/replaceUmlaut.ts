@@ -24,5 +24,5 @@ export const replaceUmlaut = (str: string) => {
     .replace(
       new RegExp('[' + Object.keys(umlautMap).join('|') + ']', 'g'),
       (a) => umlautMap[a]
-    )
+    );
 }

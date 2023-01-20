@@ -4,5 +4,5 @@
  * @returns URL friendly slug.
  */
 export const stringToSlug = (str: string): string => {
-  return str.replace(/\s/g, '-').toLowerCase().replace('ä', 'ae')
+  return str.replace(/\s/g, '-').toLowerCase().replace('ä', 'ae');
 }

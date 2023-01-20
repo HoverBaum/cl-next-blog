@@ -10,7 +10,7 @@ import { NextTalks } from 'components/NextSteps/NextTalks'
 import { SocialLink } from 'components/SocialLink'
 import { Wrapper } from 'components/Wrapper'
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from "next/legacy/image";
 
 const Me = () => {
   return (

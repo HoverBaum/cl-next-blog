@@ -1,5 +1,5 @@
 import { Card } from 'components/Card'
-import Image from 'next/image'
+import Image from "next/legacy/image";
 import { ProjectType } from './projectsDB'
 
 type ProjectCardProps = {
