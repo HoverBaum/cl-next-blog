@@ -7,6 +7,7 @@ export type TagType = {
   // With leading #
   tag: string
   count: number
+  tagSlug: string
 }
 
 /**
@@ -22,6 +23,7 @@ export const tagsFromPosts = (posts: Post[]): TagType[] => {
           acc[tag] = {
             name: tag,
             count: 0,
+            tagSlug: stringToSlug(tag),
             slug: `/posts/tags/${stringToSlug(tag)}`,
             tag: `# ${tag}`,
           }
