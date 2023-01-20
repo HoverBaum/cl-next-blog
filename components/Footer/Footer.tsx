@@ -1,9 +1,10 @@
 import { Emoji } from 'components/Emoji'
-import { headerLinks, NavLink } from 'components/Header/Header'
+import { headerLinks, NavLink } from 'components/Header/headerLinks'
 import { SearchIcon } from 'components/Icons/SearchIcon'
 import { Wrapper } from 'components/Wrapper'
-import { useKBar } from 'kbar'
+// import { useKBar } from 'kbar'
 import Link from 'next/link'
+import { FooterSearch } from './FooterSearch'
 
 const footerLinks: NavLink[] = [
   ...headerLinks,
@@ -14,7 +15,7 @@ const footerLinks: NavLink[] = [
 ]
 
 export const Footer = () => {
-  const { query } = useKBar()
+  // const { query } = useKBar()
   return (
     <footer className="mt-[5vh] py-6 bg-surface dark:bg-surface-dark border-t-2 border-t-border dark:border-t-border-dark">
       <Wrapper>
@@ -35,7 +36,7 @@ export const Footer = () => {
 
           <div>
             <h4 className="mb-1">Search</h4>
-            <div className="relative flex items-center w-full h-8 rounded-lg bg-background dark:bg-background-dark overflow-hidden border border-border">
+            {/* <div className="relative flex items-center w-full h-8 rounded-lg bg-background dark:bg-background-dark overflow-hidden border border-border">
               <div className="grid place-items-center h-full w-12 text-text dark:text-text-dark">
                 <SearchIcon className="h-6 w-6" />
               </div>
@@ -47,13 +48,14 @@ export const Footer = () => {
                 type="text"
                 id="search"
                 placeholder="Search something... (cmd + K)"
-                onClick={(e) => {
-                  //@ts-ignore
-                  e.target.blur()
-                  query.toggle()
-                }}
+                // onClick={(e) => {
+                //   //@ts-ignore
+                //   e.target.blur()
+                //   query.toggle()
+                // }}
               />
-            </div>
+            </div> */}
+            <FooterSearch />
           </div>
         </div>
 

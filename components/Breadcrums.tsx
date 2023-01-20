@@ -1,10 +1,13 @@
+'use client'
+
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 
 export const Breadcrums = () => {
-  const route = useRouter()
+  let pathname = usePathname()
+  if (!pathname) pathname = '/'
   // Path with last element removed.
-  const path = route.asPath.replace(/\/[^/]*$/, '')
+  const path = pathname.replace(/\/[^/]*$/, '')
   const parts = path.split('/').filter((part) => part !== '')
   const crumbs = [
     {

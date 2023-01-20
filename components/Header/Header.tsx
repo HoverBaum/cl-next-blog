@@ -1,43 +1,27 @@
+'use client'
+
 import { Breadcrums } from 'components/Breadcrums'
-import { Emoji } from 'components/Emoji'
 import { SearchIcon } from 'components/Icons/SearchIcon'
-import { BarsIcon } from 'components/Icons/BarsIcon'
 import { Ruler } from 'components/Ruler'
 import { Wrapper } from 'components/Wrapper'
 import { useKBar } from 'kbar'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { isDarkMode } from 'utils/colorMode'
 import { ModeSwitch } from './ModeSwitch'
 import { useScrollFix } from './useScrollFix'
 import { BurgerMenu } from './BurgerMenu'
-
-export type NavLink = {
-  href: string
-  title: string
-  hideOnMobile?: boolean
-  icon?: string
-}
-
-export const headerLinks: NavLink[] = [
-  {
-    href: '/',
-    title: 'Home',
-    icon: '🏠',
-  },
-  { href: '/posts', title: 'Posts', icon: '📖' },
-  { href: '/me', title: 'About Me', icon: '🧑‍💻', hideOnMobile: true },
-  { href: '/talks', title: 'Talks', icon: '🎙️' },
-]
+import { headerLinks } from './headerLinks'
 
 export const Header = () => {
   const navRef = useRef<HTMLDivElement>(null)
   const { isFixed } = useScrollFix(navRef)
   const [sideNavHeight, setSideNavHeight] = useState(200)
-  const router = useRouter()
+
   const { query } = useKBar()
-  const isHomepage = router.pathname === '/'
+  const pathname = usePathname()
+  const isHomepage = pathname === '/'
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {

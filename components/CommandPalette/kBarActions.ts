@@ -1,6 +1,6 @@
 import { allPosts } from 'contentlayer/generated'
 import { Action } from 'kbar'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useMemo } from 'react'
 import { categoriesFromPosts } from 'utils/categoriesFromPosts'
 import { tagsFromPosts } from 'utils/tagsFromPosts'

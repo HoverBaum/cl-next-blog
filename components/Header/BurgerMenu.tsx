@@ -2,24 +2,24 @@ import { Card } from 'components/Card'
 import { Emoji } from 'components/Emoji'
 import { BarsIcon } from 'components/Icons/BarsIcon'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { useOnOutsideClick } from 'utils/hooks/useOnOutsideClick'
-import { NavLink } from './Header'
+import { NavLink } from './headerLinks'
 
 type BurgerMenuProps = {
   links: NavLink[]
 }
 
 export const BurgerMenu = ({ links }: BurgerMenuProps) => {
-  const router = useRouter()
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   useOnOutsideClick(ref, () => setIsOpen(false))
 
   useEffect(() => {
     setIsOpen(false)
-  }, [router.pathname])
+  }, [pathname])
 
   return (
     <div className="relative">

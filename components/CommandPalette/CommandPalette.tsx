@@ -1,3 +1,5 @@
+'use client'
+
 import { KBarAnimator, KBarPortal, KBarPositioner, KBarSearch } from 'kbar'
 import { Results } from './Results'
 

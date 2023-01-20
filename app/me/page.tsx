@@ -9,16 +9,11 @@ import { NextSteps } from 'components/NextSteps/NextSteps'
 import { NextTalks } from 'components/NextSteps/NextTalks'
 import { SocialLink } from 'components/SocialLink'
 import { Wrapper } from 'components/Wrapper'
-import Head from 'next/head'
-import Image from "next/image";
+import Image from 'next/image'
 
-const Me = () => {
+export default function Me() {
   return (
     <div>
-      <Head>
-        <title>Hendrik Wallbaum</title>
-      </Head>
-
       <Wrapper>
         <h1>Hendrik Wallbaum</h1>
         <h4 className="mt-0 mb-8">Webdev. Intraperneur. Roleplayer.</h4>
@@ -79,9 +74,10 @@ const Me = () => {
                 width={500}
                 height={757}
                 style={{
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
+              />
             </div>
             <figcaption className="text-sm">
               Hendrik during a trip through the fjords of Norway.
@@ -97,7 +93,5 @@ const Me = () => {
         </NextSteps>
       </Wrapper>
     </div>
-  );
+  )
 }
-
-export default Me

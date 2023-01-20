@@ -1,5 +1,5 @@
 import { Emoji } from 'components/Emoji'
-import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 type NextItemsProps = {
   title: string
@@ -8,12 +8,10 @@ type NextItemsProps = {
 }
 
 export const NextItem = ({ href, icon, title }: NextItemsProps) => {
-  const router = useRouter()
-
   return (
-    <div
-      onClick={() => router.push(href)}
-      className="p-4 border-2 border-border dark:border-border-dark cursor-pointer hover:bg-surface dark:hover:bg-surface-dark hover:shadow-md"
+    <Link
+      href={href}
+      className="no-underline hover:no-underline py-6 border-2 border-border dark:border-border-dark cursor-pointer hover:bg-surface dark:hover:bg-surface-dark hover:shadow-md"
     >
       <div className="md:flex justify-between">
         <div className="w-full">
@@ -21,6 +19,6 @@ export const NextItem = ({ href, icon, title }: NextItemsProps) => {
           <span className="mt-4 text-2xl block text-center">{title}</span>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
