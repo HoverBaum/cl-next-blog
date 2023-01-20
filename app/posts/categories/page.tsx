@@ -6,21 +6,23 @@ import { Wrapper } from 'components/Wrapper'
 import { allPosts } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
 import Link from 'next/link'
-import { tagsFromPosts } from 'utils/tagsFromPosts'
+import { categoriesFromPosts } from 'utils/categoriesFromPosts'
 
-export default function TagsPage() {
+export default function CategoriesPage() {
   const posts = allPosts.sort((a, b) => {
     return compareDesc(new Date(a.date), new Date(b.date))
   })
-  const tags = tagsFromPosts(posts)
+  const categories = categoriesFromPosts(posts)
 
   return (
     <Wrapper>
-      <h1>Tags</h1>
-      {tags.map((tag) => (
-        <div key={tag.name}>
+      <h1>Categories</h1>
+      {categories.map((category) => (
+        <div key={category.name}>
           <h4>
-            <Link href={tag.slug}>{`${tag.tag} - ${tag.count}`}</Link>
+            <Link
+              href={category.slug}
+            >{`${category.name} - ${category.count}`}</Link>
           </h4>
         </div>
       ))}

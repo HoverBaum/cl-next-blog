@@ -5,6 +5,7 @@ export type CategoryType = {
   name: string
   count: number
   slug: string
+  categorySlug: string
 }
 
 /**
@@ -20,6 +21,7 @@ export const categoriesFromPosts = (posts: Post[]) => {
           acc[category] = {
             name: category,
             count: 0,
+            categorySlug: stringToSlug(category),
             slug: `/posts/categories/${stringToSlug(category)}`,
           }
         }
