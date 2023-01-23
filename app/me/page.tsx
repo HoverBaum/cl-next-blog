@@ -7,6 +7,7 @@ import { NextPosts } from 'components/NextSteps/NextPosts'
 import { NextProjects } from 'components/NextSteps/NextProjects'
 import { NextSteps } from 'components/NextSteps/NextSteps'
 import { NextTalks } from 'components/NextSteps/NextTalks'
+import { FeaturedProjects } from 'components/Projects/FeaturedProjects'
 import { SocialLink } from 'components/SocialLink'
 import { Wrapper } from 'components/Wrapper'
 import Image from 'next/image'
@@ -84,6 +85,8 @@ export default function Me() {
             </figcaption>
           </figure>
         </div>
+
+        <FeaturedProjects />
 
         <NextSteps>
           <NextHome />
