@@ -37,7 +37,10 @@ export default function Me() {
               I am also a regular host for MeetUps in Hamburg.
             </p>
 
-            <h2 className="text-3xl mt-8 mb-0">Connect</h2>
+            <h2 className="text-3xl mt-8 mb-0 relative">
+              <a id="contact" className="absolute -top-[4rem]"></a>
+              Connect
+            </h2>
             <p className="mt-2">
               <a href="mailto:mail@hendrikwallbaum.de">
                 mail@hendrikwallbaum.de
@@ -73,6 +76,7 @@ export default function Me() {
               width={500}
               height={757}
               className="w-[50%] sm:w-full mb-2 border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark"
+              priority
             />
 
             <figcaption className="text-sm">

@@ -39,10 +39,16 @@ export const Footer = () => {
           </div>
         </div>
 
-        <p className="text-center">
+        <p className="text-center mb-0 mt-6">
           <small>
             Created with <Emoji>🎉</Emoji> by{' '}
             <Link href="/me">Hendrik Wallbaum</Link>
+          </small>
+        </p>
+        <p className="text-center mt-0">
+          <small>
+            Feedback about this site or any post?{' '}
+            <a href="/me#contact">Reach Out!</a>
           </small>
         </p>
       </Wrapper>
