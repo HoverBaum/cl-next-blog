@@ -1,40 +1,20 @@
+import { ColorModeSelection } from 'app/ClientContext/ColorMode/ColorModeContext'
+import { useColorMode } from 'app/ClientContext/ColorMode/useColorMode'
 import { ComputerIcon } from 'components/Icons/ComputerIcon'
 import { MoonIcon } from 'components/Icons/MoonIcon'
 import { SunIcon } from 'components/Icons/SunIcon'
-import { useState, useRef, useEffect } from 'react'
-import { enableCurrentMode } from 'utils/colorMode'
+import { useState, useRef } from 'react'
 import { useOnOutsideClick } from 'utils/hooks/useOnOutsideClick'
-
-type ModeType = 'light' | 'dark' | 'system'
 
 export const ModeSwitch = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedMode, setSelectedMode] = useState<ModeType>('system')
   const ref = useRef<HTMLDivElement>(null)
   useOnOutsideClick(ref, () => setIsOpen(false))
+  const { setSelectedMode, selectedMode } = useColorMode()
 
-  // initially determine current mode.
-  useEffect(() => {
-    let mode: ModeType = 'system'
-    if (localStorage.theme === 'dark') mode = 'dark'
-    if (localStorage.theme === 'light') mode = 'light'
-    setSelectedMode(mode)
-  }, [])
-
-  const selectMode = (mode: ModeType) => {
+  const selectMode = (mode: ColorModeSelection) => {
     setSelectedMode(mode)
     setIsOpen(false)
-
-    // Setting theme according to Tailwind docs: https://tailwindcss.com/docs/dark-mode#supporting-system-preference-and-manual-selection
-    if (mode === 'light') {
-      localStorage.theme = 'light'
-    } else if (mode === 'dark') {
-      localStorage.theme = 'dark'
-    } else {
-      localStorage.removeItem('theme')
-    }
-
-    enableCurrentMode()
   }
 
   return (

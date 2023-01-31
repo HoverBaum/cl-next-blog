@@ -5,7 +5,7 @@ import { useKBarActions } from 'components/CommandPalette/useKBarActions'
 import { KBarProvider } from 'kbar'
 import { useRouter } from 'next/navigation'
 import { useEffect, useMemo } from 'react'
-import { enableCurrentMode } from 'utils/colorMode'
+import { ColorModeProvider } from './ColorMode/ColorModeContext'
 
 export function Providers({
   children,
@@ -27,10 +27,6 @@ export function Providers({
     [kBarActions]
   )
 
-  useEffect(() => {
-    enableCurrentMode()
-  }, [])
-
   // Include tracking on all but localhost.
   useEffect(() => {
     if (window.location.hostname !== 'localhost') {
@@ -42,5 +38,9 @@ export function Providers({
     }
   }, [])
 
-  return <KBarProvider actions={allActions}>{children}</KBarProvider>
+  return (
+    <ColorModeProvider>
+      <KBarProvider actions={allActions}>{children}</KBarProvider>
+    </ColorModeProvider>
+  )
 }
