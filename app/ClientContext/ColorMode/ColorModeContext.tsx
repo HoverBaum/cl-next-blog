@@ -18,8 +18,6 @@ const defaultValue: ColorModeContextValue = {
 
 export const ColorModeContext = createContext(defaultValue)
 
-const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-
 export const ColorModeProvider = ({
   children,
 }: {
@@ -58,6 +56,8 @@ export const ColorModeProvider = ({
     // Set mode to either 'light' or 'dark' to use within the website.
     const mode = enableCurrentMode()
     setMode(mode)
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
     // If we are in system mode, we need to listen for changes on the media query.
     if (selectedMode === 'system') {
