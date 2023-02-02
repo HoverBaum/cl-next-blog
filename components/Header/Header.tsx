@@ -6,13 +6,13 @@ import { Ruler } from 'components/Ruler'
 import { Wrapper } from 'components/Wrapper'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useRef, useState } from 'react'
-import { isDarkMode } from 'app/ClientContext/ColorMode/colorMode'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { ModeSwitch } from './ModeSwitch'
 import { useScrollFix } from './useScrollFix'
 import { BurgerMenu } from './BurgerMenu'
 import { headerLinks } from './headerLinks'
 import { useCommandPalette } from 'components/CommandPalette/useCommandPalette'
+import { useColorMode } from 'app/ClientContext/ColorMode/useColorMode'
 
 export const Header = () => {
   const navRef = useRef<HTMLDivElement>(null)
@@ -22,11 +22,9 @@ export const Header = () => {
   const { openKBar } = useCommandPalette()
   const pathname = usePathname()
   const isHomepage = pathname === '/'
-  const [isDark, setIsDark] = useState(false)
+  const { mode } = useColorMode()
 
-  useEffect(() => {
-    setIsDark(isDarkMode())
-  }, [])
+  const isDark = useMemo(() => mode === 'dark', [mode])
 
   // Remember the sideNavs height.
   useEffect(() => {
