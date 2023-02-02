@@ -35,12 +35,12 @@ export const Header = () => {
 
   return (
     <header className="mb-[5vh]">
-      <hgroup id="headerGroup" className="text-center mb-6 mt-6">
+      <hgroup id="headerGroup" className="text-center mb-6 mt-9">
         <div className="flex justify-center items-baseline">
           <img
             src={`/images/assets/HolstenLine${isDark ? '-dark' : ''}.png`}
             alt="Holsten Line"
-            className="h-12 hidden md:block"
+            className="h-12 hidden "
           />
           <h1 className="text-primary dark:text-primary-dark">
             <Link href="/">Hendriks Blog</Link>
@@ -48,7 +48,7 @@ export const Header = () => {
           <img
             src={`/images/assets/HolstenLine${isDark ? '-dark' : ''}.png`}
             alt="Holsten Line"
-            className="h-12 hidden md:block"
+            className="h-12 hidden "
           />
         </div>
 
