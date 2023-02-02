@@ -42,13 +42,15 @@ export const Footer = () => {
         <p className="text-center mb-0 mt-6">
           <small>
             Created with <Emoji>🎉</Emoji> by{' '}
-            <Link href="/me">Hendrik Wallbaum</Link>
+            <Link href="/me">Hendrik Wallbaum</Link> | Content and website
+            created by a real Human.
           </small>
         </p>
         <p className="text-center mt-0">
           <small>
             Feedback about this site or any post?{' '}
-            <a href="/me#contact">Reach Out!</a>
+            <a href="/me#contact">Reach Out!</a> | Source on{' '}
+            <Link href="https://github.com/HoverBaum/cl-next-blog">GitHub</Link>
           </small>
         </p>
       </Wrapper>
