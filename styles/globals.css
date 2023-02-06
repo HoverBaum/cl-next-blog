@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'hljs.css';
+
 @font-face {
   font-family: 'Simonetta-Black';
   src: url('/fonts/Simonetta-Black.ttf');
@@ -97,5 +99,9 @@ body {
 
   .hover-shadow:hover {
     @apply shadow-[3px_4px_0px_0px_rgba(0,0,0,0.3)] shadow-primary dark:shadow-primary-dark;
+  }
+
+  pre {
+    @apply bg-surface dark:bg-surface-dark p-1;
   }
 }

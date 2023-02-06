@@ -148,7 +148,4 @@
 
 pre {
   overflow-x: auto;
-  background-color: var(--surface);
-  padding: 0.5rem;
-  border: var(--border);
 }
