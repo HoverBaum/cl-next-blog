@@ -6,7 +6,8 @@
     "dev": "next dev --port=4242",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "redirects": "cd scripts && deno run --allow-read --allow-write redirects.ts && cd .."
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",

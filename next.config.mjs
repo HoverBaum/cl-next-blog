@@ -1,5 +1,6 @@
 import { withContentlayer } from 'next-contentlayer'
 import withBundleAnalyzer from '@next/bundle-analyzer'
+import oldBlogRedirects from './scripts/redirects.json' assert { type: 'json' }
 
 const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
@@ -13,6 +14,9 @@ export default bundleAnalyzer(
     },
     experimental: {
       appDir: true,
+    },
+    redirects: () => {
+      return oldBlogRedirects
     },
   })
 )

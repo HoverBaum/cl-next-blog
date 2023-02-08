@@ -35,13 +35,18 @@ export const Post = defineDocumentType(() => ({
       resolve: (post) =>
         `/posts/${post.title
           .replace(/\s/g, '-')
+          .replace(':', '')
           .toLowerCase()
           .replace('ä', 'ae')}`,
     },
     postSlug: {
       type: 'string',
       resolve: (post) =>
-        `${post.title.replace(/\s/g, '-').toLowerCase().replace('ä', 'ae')}`,
+        `${post.title
+          .replace(/\s/g, '-')
+          .replace(':', '')
+          .toLowerCase()
+          .replace('ä', 'ae')}`,
     },
     excerpt: {
       type: 'json',
