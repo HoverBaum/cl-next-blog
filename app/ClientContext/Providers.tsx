@@ -27,9 +27,9 @@ export function Providers({
     [kBarActions]
   )
 
-  // Include tracking on all but localhost.
+  // Include tracking only on prod.
   useEffect(() => {
-    if (window.location.hostname !== 'localhost') {
+    if (window.location.hostname === 'hoverbaum.net') {
       const script = document.createElement('script')
       script.src = 'https://app.neoanalytics.de/neoClient.js'
       script.async = true
