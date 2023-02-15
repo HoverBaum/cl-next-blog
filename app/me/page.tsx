@@ -76,7 +76,7 @@ export default function Me() {
               alt="Hendrik during a trip through the fjords."
               width={500}
               height={757}
-              className="w-[50%] sm:w-full mb-2 border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark"
+              className="w-[50%] sm:w-full mb-2 border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark bg-[#daddda]"
               priority
             />
 

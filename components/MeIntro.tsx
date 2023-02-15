@@ -17,13 +17,13 @@ export const MeIntro = () => {
           </p>
           <Link href="/me">More about me</Link>
         </div>
-        <div className="flex md:block flex-row justify-center mt-4 md:mt-0 max-w-[80%] md:max-w-[300px] mx-auto">
+        <div className="flex md:block flex-row justify-center mt-4 md:mt-0 max-w-[80%] md:max-w-[300px] mx-auto ">
           <Image
             src={ProfilePicture}
             width={300}
             height={300}
             alt="Hendrik"
-            className="border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark"
+            className="border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark bg-[#c1d4e2]"
             priority
           />
         </div>
