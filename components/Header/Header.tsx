@@ -64,7 +64,7 @@ export const Header = () => {
           isFixed ? 'fixed top-0 left-0 ' : ''
         }`}
       >
-        <Ruler className="my-0" />
+        {!isFixed && <Ruler className="my-0" />}
         <Wrapper>
           <nav className="py-4 flex justify-center">
             <ul className="flex flex-wrap justify-between md:justify-center p-0 list-none w-full">
