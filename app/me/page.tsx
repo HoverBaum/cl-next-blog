@@ -42,11 +42,7 @@ export default function Me() {
               <a id="contact" className="absolute -top-[4rem]"></a>
               Connect
             </h2>
-            <p className="mt-2">
-              <a href="mailto:mail@hendrikwallbaum.de">
-                mail@hendrikwallbaum.de
-              </a>
-            </p>
+            <p className="mt-2">mail[at]hendrikwallbaum.de</p>
             <ul className="flex">
               <li className="mr-2">
                 <SocialLink href="https://github.com/HoverBaum">
