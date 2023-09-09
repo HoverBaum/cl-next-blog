@@ -1,0 +1,85 @@
+---
+title: Finding great prompts for Stable Diffusion
+tags:
+  - GenerativeAI
+  - StableDiffusion
+  - AI
+categories:
+  - General
+date: 2023-03-17
+---
+
+"Prompt Engineering", the art of finding the best prompt to create the picture you are imagining through Text-To-Image AI like Stable-Diffusion has already become an established field. Today I wanna share my workflow to finding better prompts by using Automatic1111s web ui for Stable-Diffusion, wildcards and SD Params Explorer.
+
+Through this blogpost we will work towards
+
+## When to apply this
+
+A word of caution!
+
+This technique is not for starting out and getting from nowhere to good. It might do that for you but it is meant to take you from good to amazing results and will perform best if applied to this use-case.
+
+We will not start out with "just" stable diffusion but already add an Embedding to get the base quality of our images up. The Embedding we use here is [dgtlv2](https://civitai.com/models/11642/digital-diffusion-21). Place it in the "Embeddings" folder of your web-ui installation.
+
+## The Base
+
+It all starts with a simple idea. Today I would love to create a portrait to inspire my new Shadowrun (Cyberpunk Pen&Paper) character. As I want to play a male character, our "base prompt" will be:
+
+> portrait of a man, cyberpunk, dgtlv2
+
+Let's get an initial version of that and see how much we like it.
+
+PICTURE HERE
+
+I worked of [this image](https://civitai.com/gallery/147523?modelId=11642&modelVersionId=15021&infinite=false&returnUrl=%2Fmodels%2F11642%2Fdigital-diffusion-21) from the Embedding, taking it's negative prompt, CFG scale and using the base 2.1 512px model. I went for a step count of 30 to keep generation times per image down, just above the threshold that I know to be producing coherent images in upscaling. This way I can explore fast in low resolution and upscale later, knowing what I will get. Here are the full generation parameters.
+
+PARAMS HERE
+
+That's a man… and you can feel the cyberpunk… okay… as a starting point, but I think we can do better 😆
+
+## Running wild
+
+This is where wildcards come into play. Our goal here is to find additions to our prompt that turn the image into an interesting and visually pleasing picture. Which is quite a vague requirement at this point, but this process is a lot about how much you can relate to a certain image.
+
+To get started, install the [Wildcards Extension](https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards). You can do so from the "Extensions" tab. This extension allows you to write prompts with wildcards. For example `portrait of a man, cyberpunk, __blog_lighting__, dgtlv2` where wildcards will be replaced with word from files named like the wildcard. In this case from a file named `blog_lighting.txt`. This is it's content:
+
+```text
+
+hard backlight
+warm lighting
+vibrant neon lighting
+cold blue-tones lighting
+single spotlight
+five o'clock shadow
+soft lighting
+```
+
+Every time an image is generated, one line from this file will be picked to replace the wildcard. The line picked depends on the seed. The same seed will get you the same replacement! Also note the first blank line. This is to also allow variants with nothing for this wildcard.
+
+Wildcard files go into: `extensions/stable-diffusion-webui-wildcards/wildcards`.
+
+## Creating options
+
+Prompt Engineering has shown us that great prompts start with the Subject of the image, adding details in descending importance, ending with moods and lighting descriptors. (see e.g. [this guide](https://stable-diffusion-art.com/prompt-guide/))
+
+We will follow that patter and define wildcards for interesting _features_ of our character, a _mood_ and type of _lighting_. You can find all wildcard files I used for my experiment in [this gist](https://gist.github.com/HoverBaum/65871b9d4b8d7139635bf63a4b0c4891), feel free to use them. This leaves my final experimentation prompt as:
+
+`portrait of a man, cyberpunk, __blog_feature__, __blog_feature__, __blog_mood__, __blog_lighting__, dgtlv2`
+
+Now, it's just a matter of hitting "generate forever" and giving it as much time, as you can spare. I used a [Google Colab](https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast_stable_diffusion_AUTOMATIC1111.ipynb) for this experiment and was able to generate about 1 image per 5 seconds.
+
+IMAGE HERE OF GENERATE FOREVER
+
+To generate permanently, right-click the "Generate" button and choose "Generate forever".
+
+I stopped at N images. Statistically speaking I would have needed to generate at least 9216 images to get all possible combinations of my wildcards. But this is about exploration and luck is a part of that.
+
+## Refining the prompt
+
+Now, it's time to refine the prompt by exploring the options and different combinations we have generated.
+
+- Use SD Params Explorer for easier browsing
+- Find the features that I like
+- Create a prompt that I think will work
+- Maybe repeat the wildcard process
+- Finally use an upscaler for an amazing result

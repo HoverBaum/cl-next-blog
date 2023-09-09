@@ -1,6 +1,6 @@
 import { withContentlayer } from 'next-contentlayer'
 import withBundleAnalyzer from '@next/bundle-analyzer'
-import oldBlogRedirects from './scripts/redirects.json' assert { type: 'json' }
+import { oldBlogRedirects } from './scripts/redirects.mjs'
 
 const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',

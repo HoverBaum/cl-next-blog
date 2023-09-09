@@ -19,4 +19,9 @@ const redirects = allPosts.map((post: any) => {
   }
 })
 
-await Deno.writeTextFile('./redirects.json', JSON.stringify(redirects))
+await Deno.writeTextFile(
+  './redirects.mjs',
+  `
+export const oldBlogRedirects = JSON.parse('${JSON.stringify(redirects)}')
+`
+)
