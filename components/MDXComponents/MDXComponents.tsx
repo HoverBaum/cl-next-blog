@@ -3,7 +3,7 @@ import { Img } from './Img'
 import { MDXLink } from './MDXLink'
 import { Paragraph } from './Paragraph'
 
-export const MDXComponents = {
+export const CustomMDXComponents = {
   Img,
   img: Img,
   p: Paragraph,

@@ -9,7 +9,7 @@ import { Img } from 'components/MDXComponents/Img'
 import { Post } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Link from 'next/link'
-import { MDXComponents as DefaultMDXComponent } from 'components/MDXComponents/MDXComponents'
+import { CustomMDXComponents as DefaultMDXComponent } from 'components/MDXComponents/MDXComponents'
 import { Card } from 'components/Card'
 import { PostMeta } from './PostMeta'
 

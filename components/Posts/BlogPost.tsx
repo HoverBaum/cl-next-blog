@@ -1,7 +1,8 @@
+import { MDXComponents } from 'mdx/types'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { Post as ContentlayerPost } from 'contentlayer/generated'
 import { ComponentType } from 'react'
-import { MDXComponents } from '../MDXComponents/MDXComponents'
+import { CustomMDXComponents } from '../MDXComponents/MDXComponents'
 import { PostMeta } from './PostMeta'
 import { Ruler } from 'components/Ruler'
 import { Alert } from 'components/Alert'
@@ -28,7 +29,10 @@ export const BlogPost: ComponentType<PostProps> = ({ post }) => {
         </Alert>
       )}
       {!isConsideredOutdated && <Ruler />}
-      <MDXContent components={MDXComponents} />
+      <MDXContent
+        // Hacky solution here, needs updating! TODO
+        components={CustomMDXComponents as unknown as MDXComponents}
+      />
     </article>
   )
 }
