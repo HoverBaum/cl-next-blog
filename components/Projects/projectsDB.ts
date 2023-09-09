@@ -13,6 +13,18 @@ export type ProjectType = {
 
 export const projectsDB: ProjectType[] = [
   {
+    title: 'Talis',
+    subtitle: 'Dice Roller for Pen & Paper',
+    description: 'Roll your dice using your smartphone.',
+    image: '/images/projects/talis-dice.png',
+    links: [
+      {
+        url: 'https://talis.wallbaum.dev',
+        text: 'Talis',
+      },
+    ],
+  },
+  {
     title: 'The Sword',
     subtitle: 'Interactive Fiction Game',
     description:
