@@ -14,6 +14,24 @@ export type TalkType = {
 
 export const talks: TalkType[] = [
   {
+    title: '🏰 Medieval Strategies for Cyber Security',
+    subtitle: '',
+    description: 'Let medieval castles inspire your modern day Cyber Security.',
+    links: [
+      {
+        href: 'https://medieval-security.wallbaum.dev/',
+        text: 'HTML based presentation',
+        type: 'URL',
+      },
+      {
+        href: 'https://github.com/HoverBaum/talk-medieval-cyber-security',
+        text: 'GitHub Repo',
+        type: 'GitHub',
+      },
+    ],
+    year: 2023,
+  },
+  {
     title: '🌱 Developing Growth',
     subtitle: '',
     description: 'A practical guide to "Growth Hacking" by example.',
@@ -21,6 +39,11 @@ export const talks: TalkType[] = [
       {
         href: 'https://developing-growth.wallbaum.dev/',
         text: 'HTML based presentation',
+        type: 'URL',
+      },
+      {
+        href: 'https://youtu.be/AeZejnAprgo?si=e7VYm0O035zR76Ls',
+        text: 'Recording from Code.Talks 2022',
         type: 'URL',
       },
       {
@@ -37,11 +60,11 @@ export const talks: TalkType[] = [
     description:
       'A talk about Web monetization, Activity Pub and how "Protocol over Platform" is shaping the webs future.',
     links: [
-      {
-        href: 'https://2cents-web.talks.hoverbaum.net/',
-        text: 'HTML based presentation',
-        type: 'URL',
-      },
+      // {
+      //   href: 'https://2cents-web.talks.hoverbaum.net/',
+      //   text: 'HTML based presentation',
+      //   type: 'URL',
+      // },
       {
         href: '/talks/pdf/developing-growth-hendrik-wallbaum.pdf',
         text: 'Code.Talks 2022 version as PDF',
@@ -61,11 +84,11 @@ export const talks: TalkType[] = [
     description:
       'In this talk we will explore the history of web development to understand it’s current state and future. This journey through time is a reflection for web developers as well, as an entry point for everyone unrelated to the craft.',
     links: [
-      {
-        href: 'https://webdev-intro.talks.hoverbaum.net/',
-        text: 'HTML based presentation',
-        type: 'URL',
-      },
+      // {
+      //   href: 'https://webdev-intro.talks.hoverbaum.net/',
+      //   text: 'HTML based presentation',
+      //   type: 'URL',
+      // },
       {
         href: 'https://github.com/HoverBaum/talk-webdev-history-and-future',
         text: 'GitHub Repo',
@@ -80,11 +103,11 @@ export const talks: TalkType[] = [
     description:
       'A talk about why you should do end to end (e2e) testing for your webapps and how to use Cypress for e2e-testing. We will gather motivation to get started with testing before diving into Cypress as an amazing tool to get the job done.',
     links: [
-      {
-        href: 'http://testing-webapps.talks.hoverbaum.net/',
-        text: 'HTML based presentation',
-        type: 'URL',
-      },
+      // {
+      //   href: 'http://testing-webapps.talks.hoverbaum.net/',
+      //   text: 'HTML based presentation',
+      //   type: 'URL',
+      // },
       {
         href: 'https://www.youtube.com/watch?v=ZlHxwSJoCZM',
         text: 'Recording: code.talks 2019',
