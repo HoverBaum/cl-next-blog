@@ -24,6 +24,11 @@ export const talks: TalkType[] = [
         type: 'URL',
       },
       {
+        href: '/talk-pdfs/medieval-security.pdf',
+        text: 'Code.Talks 2023 version as PDF',
+        type: 'PDF',
+      },
+      {
         href: 'https://github.com/HoverBaum/talk-medieval-cyber-security',
         text: 'GitHub Repo',
         type: 'GitHub',
@@ -60,15 +65,10 @@ export const talks: TalkType[] = [
     description:
       'A talk about Web monetization, Activity Pub and how "Protocol over Platform" is shaping the webs future.',
     links: [
-      // {
-      //   href: 'https://2cents-web.talks.hoverbaum.net/',
-      //   text: 'HTML based presentation',
-      //   type: 'URL',
-      // },
       {
-        href: '/talks/pdf/developing-growth-hendrik-wallbaum.pdf',
-        text: 'Code.Talks 2022 version as PDF',
-        type: 'PDF',
+        href: 'https://2cents-change-web.wallbaum.dev/',
+        text: 'HTML based presentation',
+        type: 'URL',
       },
       {
         href: 'https://github.com/HoverBaum/talk-2cents-changing-the-web',
@@ -119,12 +119,12 @@ export const talks: TalkType[] = [
         type: 'YouTube',
       },
       {
-        href: '/talks/pdf/testing-webapps-nl-and-connects.pdf',
+        href: '/talk-pdfs/testing-webapps-nl-and-connects.pdf',
         text: 'As PDF (NL and Hamburg connects)',
         type: 'PDF',
       },
       {
-        href: '/talks/pdf/testing-webapps-charlie.pdf',
+        href: '/talk-pdfs/testing-webapps-charlie.pdf',
         text: 'As PDF (charlie)',
         type: 'PDF',
       },
@@ -148,7 +148,7 @@ export const talks: TalkType[] = [
         type: 'URL',
       },
       {
-        href: '/talks/pdf/api-first-cms.pdf',
+        href: '/talk-pdfs/api-first-cms.pdf',
         text: 'As PDF',
         type: 'PDF',
       },
@@ -167,7 +167,7 @@ export const talks: TalkType[] = [
         type: 'URL',
       },
       {
-        href: '/talks/pdf/node-based-cli.pdf',
+        href: '/talk-pdfs/node-based-cli.pdf',
         text: 'As PDF',
         type: 'PDF',
       },
@@ -186,7 +186,7 @@ export const talks: TalkType[] = [
         type: 'URL',
       },
       {
-        href: '/talks/pdf/choo-frontend.pdf',
+        href: '/talk-pdfs/choo-frontend.pdf',
         text: 'As PDF',
         type: 'PDF',
       },
