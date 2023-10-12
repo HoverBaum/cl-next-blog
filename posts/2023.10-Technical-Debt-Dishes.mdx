@@ -1,0 +1,174 @@
+---
+title: Technical debt and dirty dishes
+tags:
+  - engineering
+  - technical debt
+  - dishes
+categories:
+  - devbaum
+date: 2023-09-25
+---
+
+Working with Engineers you probably heard the term "_Technical Debt_". But what is this "debt" Engineers keep referring to? Just an excuse to push features further out? Join us on a journey to understand what Technical Debt has to do with doing your dishes and paying back your student loans.
+
+![Technical Debt is a lot like doing your dishes.](/images/tech/dishes-debt.png)
+
+## Debt
+
+> Something that is owed
+
+In its most basic form, Debt is simply something that is owed to another. The most common debts we owe are:
+
+- Money 💸, that we owe to a bank or student loan.
+- A favor 🤝, that me might owe to a friend who helped us move apartments.
+
+This is what we most often think about when the word "Debt" is mentioned. But there is another kind of Debt which we all face in our daily lives. I call it "_Dishes Debt_".
+
+## Dishes Debt
+
+Most of us step into our kitchens, day after day to make some food. You might say:
+
+> Your kitchen provides value to your life by allowing you to cook food.
+
+But of cause occasionally this "value creation process" of cooking food produces dishes that you have to do before more food can be prepared. Because you simply do need that big pot for the pasta! 🍝
+
+It is precisely this state of "having to do dished before you can deliver the kitchens value of cooking food" that I refer to as "Dishes Debt".
+
+> Occasionally the value creating process of cooking produces Dishes Debt that has to be paid down before more value (food) can be created.
+
+We find the same kind of principal at work in Engineering.
+
+## Technical Debt
+
+In Engineering we as Engineers:
+
+> Provide value to our customers by coding features for our products.
+
+Similar to how the kitchen provides value by allowing you to cook food, we as Engineers provide value to users by creating features. We make it possible to now sort or filter that table and that adds value to our users workflow.
+
+> Occasionally the value creating process of coding produces debt that has to be paid down before more value (features) can be created.
+
+Similarly to cooking food, sometimes the creation of value produces by-products that we need to take care of, before we can create more value.
+
+And this state where we have to do some coding before we can implement new features, we call **Technical Debt**.
+
+The trouble is however that while Dishes Debt is quite apparent in the pile of dishes forming next to your sink, Technical Debt is quite intangible.
+
+## Types of Technical Debt
+
+To get a better feeling of what constitute Technical Debt and how it can come to be we (at Taxdoo) divide Technical Debt into three categories:
+
+- Deliberate
+- Architectural
+- Entropy
+
+### Deliberate Technical Debt
+
+This is Technical Debt we take on knowingly. Deliberate Technical Debt is often accompanied by: “We need to deliver this now!” and Engineering then cutting corners to hit the deadline.
+
+> We know there are problems but we accept them to deliver something on time.
+
+These problems we accept or corners we cut come in different shapes. They include "hardcoding" connections, maybe for now you can only filter a table of offices by a hardcoded list of cities while we know that in the future that list of possible filters should come from the list of all offices.
+
+### Architectural Technical Debt
+
+What we call Architectural Technical Debt refers to work we need to do due to accommodate changed expectations.
+
+> The system was not build to support this.
+
+Maybe we didn't know about an important use-case before hand, maybe our original assumptions were wrong or maybe our company pivoted.
+
+Anyway, for one or more reasons we build our system in a way that makes it hard to support the next feature we want to implement and now we need to do some "refactoring". We need to change how we support the current use-case into a way that can be expanded to support the new use-case.
+
+This type of Technical Debt often arises in the conflict of creating a "solves all problems" vs "solves exactly our problem" solution. Creating something that is highly adoptable is taking more time up front but allows more flexibility later. While creating something targeted is faster but will need more work to adopt later on.
+
+### Entropy Technical Debt
+
+Entropy is the fact that:
+
+> Over time the quality of everything you don’t consciously maintain deteriorates.
+
+Many things add Entropy to the work of Engineering. New team members can not know all the history of our code and will thus work a bit different. Architecture and requirements change and sometimes not everything can be fully adopted. And sometimes utilised technology become outdated.
+
+## Washing dirty dishes
+
+Now that we can categorise Technical Debts it's time to tackle it. We will do this by once again looking at Dishes Debt first and how we often overcome it.
+
+![With clean dishes, we can cook again.](/images/tech/dishes-clean.png)
+
+### 🥣 Always clean what you need right now
+
+Some of us (and I might be included in that) clean just what they need. Like my pot for porridge that I often wash in the morning to make this days batch of porridge.
+
+### 🧑‍🍳 Do the dishes while cooking to reduce produced debt
+
+A learned chef, turned programmer, that I used to work with was quite passionate about this one. He taught me that no professional kitchen would run without doing the dishes while cooking was still in process.
+
+### 📅 Make it a habit to do dishes once a day
+
+Habits are great, they become automatisms that we don't think about, we just do. And doing dishes every day makes sure we clean small batches that are easy to handle, enabling us to use all our dishes every day.
+
+### 💪 Clean everything in one big push
+
+Sometimes there is nothing else you can do. For days you didn't pay down your dishes debt and now no one can see the counter top anymore. You gotta put in that hour to do everything now.
+
+### 🤖 Innovate out of the problem
+
+Maybe we can even find a way to not have as much dishes debt. Ordering take-out every day could be an option to not have to use any dishes. But that produces a lot of waste and is quite expensive. An innovation could be a dishwasher. It's a bigger, one-time investment but now you don't have to do the washing anymore and it can probably handle dishes that spend a few days hardening their crust.
+
+## Technical Debt strategies
+
+We can translate our Dishes Debt strategies to paying down our technical one.
+
+### 🥣 Always solve what you need right now
+
+Often the default mode of operation for teams, as this is easily explained to "management". There is a new feature coming in but some technical debt is holding us back! No other choice but to fix that first.
+
+If you only do this your system will become hard to maintain, estimates will blow up more and more and generally Software Engineers won't be happy.
+
+### 🧑‍🍳 Solve problems while creating features
+
+In Software Engineering we often employ "Code Reviews". In a Code Review peers check each others work and comment on improvement opportunities. Apart from being natural peer-to-peer learning opportunities, Code Reviews are also a natural place to catch Technical Debt before it makes its way into our main codebase.
+
+Code Reviews, however are not a silver bullet. Another great example of doing dishes while you code is often referred to as "scout mentality" - always leave a piece of code you touch cleaner than it was before.
+
+### 📅 Allocate time for improvements
+
+Some companies allocate a fixed budget of their time towards technical innovation. This time budget is up to Engineers to spend on fixing the technical debt they see or other things.
+
+You can also mark tickets as Technical Debt related and make sure to include a minimum percentage of these in every iteration to keep continuously improving.
+
+### 💪 Clean everything in one big push
+
+Sometimes there is nothing else you can do. You either need to fix that technical debt now because your systems are constantly falling apart or your team just doesn't have that feature pressure right now and can take the leisure to perfect the technical implementation.
+
+This sometimes takes the form of taking a whole sprint just dedicated to fixing and improving things.
+
+### 🤖 Innovate out of the problem
+
+A great way out of technical debt is to solve the old problem in a new way. If updating the system always takes long, maybe you can build a configurable system that is then both faster to adopt, benefitting the business, and erases existing technical debt, making Engineers happy.
+
+## Preventing technical debt
+
+Although we can apply the above mentioned methods to reduce our technical debt, there still is some. And there probably always will be, if only for entropy reasons. But we can still take more measures to prevent some of this debt from arising.
+
+### 🛠 Get the right tools
+
+The right tools can already catch some of the debt that you would otherwise create. Using TypeScript over JavaScript will catch some of those runtime errors during development. Observability will make you aware of problems while they are still easy to fix.
+
+### 👓 Look ahead and keep debt in mind
+
+Realising that debt is something we are likely to incur enables us to consciously take on debt where it helps us to move the business forward and turn it into a part of our prioritization.
+
+## Final thoughts
+
+Writing code is a complex problem. Software Engineers constantly need to decide on trade-offs between "thinking about everything up front" - so that we will need no adoptions later - and "building what is needed right now" - so that we are fast. Both are right at times, largely depending on how easy the system is to change later.
+
+When considering technical debt in the context of planning time for implementation we really have two options:
+
+- invest more time now to prevent debt from arising
+- invest time later to pay down technical debt
+
+If you ask me, it's always worth investing in preventing technical debt and paying down your current debt. Doing this makes sure that your business can react to market changes and, in an ever faster world, that is the most important factor to set you apart!
+
+![Clean Plate with Fork and Knife Emoji.](/images/emojis/fork-and-knife-with-plate.png)
