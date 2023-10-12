@@ -64,6 +64,11 @@ export const Post = defineDocumentType(() => ({
             return acc
           } else return acc.concat(line)
         }, [])
+
+        // If the last line is a headline, we remove it again.
+        if (/^#/.test(excerpt[excerpt.length - 1])) {
+          excerpt.pop()
+        }
         const excerptMDX = excerpt.join('\n\n')
         const compiledExcerpt = await bundleMDX({
           source: excerptMDX,
