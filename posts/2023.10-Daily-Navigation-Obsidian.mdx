@@ -1,0 +1,130 @@
+---
+title: Daily navigation in Obisidan using Dataview
+tags:
+  - Obsidian
+  - Dataview
+  - JavaScript
+categories:
+  - General
+date: 2023-10-14
+---
+
+Daily notes in Obsidian are ephemeral, they matter most for the day there were written and maybe the days surrounding them. But, after a week, we hardly ever refer back to them. If something truly mattered, we probably took it out to another note.
+
+That being said, I often find myself wanting to refer to yesterdays note. And Obsidian doesn't provide a native way to get to yesterdays note. My current solution to this is to add links to the last and next daily note into every daily note vida a template.
+
+![LEt's make note taking more enjoyable.](/images/general/notes-desk.png)
+
+You can read up on [Obsidian Templates](https://help.obsidian.md/Plugins/Templates), if you are not familiar. This article will only cover how I am creating the links.
+
+Jump to the [final solution](#final-solution) if you are only interested in copy-pasting.
+
+## DataviewJS, basics and assumptions
+
+This solution uses [DataviewJS inline queries](https://blacksmithgu.github.io/obsidian-dataview/queries/dql-js-inline/#inline-dataview-js). Remember to only use JavaScript in Obsidian that you understand and trust, as it will have full access to your system!
+
+While our final solution has to be an inline query so that both the back and forward link can be displayed on the same line, I worked with `dataviewjs` codeblocks to approach the final solution. This allowed me to have intermediate steps, making my logic easier to understand, before condensing it to a single line.
+
+All code introduced here needs to run inside pages that have a [file.day](https://blacksmithgu.github.io/obsidian-dataview/annotation/metadata-pages/) attribute. Which holds true for daily notes that have their date in their name or a `Date` field.
+
+Make sure to enable the DataviewJS feature from the Dataview settings!
+
+### Assumptions
+
+This implementation assumes that:
+
+- daily notes life inside a folder (mine is named `journal`)
+- daily notes are named with only their date, following `yyyy-MM-dd` (e.g. 2023-10-14)
+
+If any of these assumptions do not hold true for your Obsidian Vault, you will need to make adjustments to the code.
+
+### Formatting dates
+
+Dataview uses [Luxon](https://moment.github.io/luxon/#/) for date manipulation. Once we have a date object, e.g. from `file.day`, we can call `.toFormat` on it to get the date in the format we need. For our usecase, we need to format dates so that they fit the names of our daily notes.
+
+```JavaScript
+file.day.toFormat('yyyy-MM-dd')
+```
+
+### Why Dataview?
+
+I decided to use [Dataview](https://blacksmithgu.github.io/obsidian-dataview/) for my links because this will keep my links up to date, especially for "next daily".
+
+Alternatively you could also use [Templater](https://github.com/SilentVoid13/Templater) to link to the previous daily note. But it would only work for next daily, if you hardcode that to be the next day, as templates are evaluated at file creation.
+
+## Previous Daily
+
+I am using daily notes mainly for work which means that I often do not have daily notes on the weekend. The meaningful "previous note" for me is thus "the last daily note I took" and not always "yesterdays note".
+
+> The previous daily note is not always yesterdays note!
+
+Initially I rendered out the link in a codeblock, before condensing the logic down to an inline query.
+
+```JavaScript
+const date = dv.pages('"journal"')
+  .where(page => page.file.day && page.file.day < dv.current().file.day)
+  .sort(page => page.file.day, "desc").file.day[0]
+
+const formattedDate = date.toFormat('yyyy-MM-dd')
+
+dv.el("p", formattedDate)
+```
+
+- `dv.pages` let's us "query" for pages, in this case all pages inside the `journal` folder, where only my daily notes life. Remember that you need `'""'` around the folder name ([see docs](https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/#dvpagessource)).
+- `.where` can be used to further filter down the pages we get. Here we look for daily notes prior to the current note.
+- `.sort` we sort the resulting list of pages by their day.
+- `.file.day` effectively "maps" all entries in the list to their day.
+- `[0]` gets the first element of the array of days.
+
+We can now consense this down to a single line and add the prose to create an internal link to the previous daily note.
+
+```
+$= "[[" + dv.pages('"journal"').where(page => page.file.day && page.file.day < dv.current().file.day).sort(page => page.file.day, "desc").file.day[0].toFormat('yyyy-MM-dd') + "| Previous Daily]]"
+```
+
+- `$=` is the default [prefix](https://blacksmithgu.github.io/obsidian-dataview/queries/dql-js-inline/#inline-dataview-js) for inline DataviewJS.
+- `"[[" + +"| Previous Daily]]"`, wraps the output of our logic to get "the day of the previous note", thus creating a valid, internal Link to it.
+
+This logic does not handle the previous daily note not existing! Consider creating an empty one if you are starting with a clean Vault.
+
+## Next daily
+
+Similar to the previous daily note, the next daily note may not necessarily be tomorrows one. Additionally the next daily might not necessarily exist yet. To take all these cases into consideration, we need more logic. I opted to enable this through an [Immediately Invoked Function](https://developer.mozilla.org/en-US/docs/Glossary/IIFE?retiredLocale=de).
+
+```JavaScript
+(function () {
+const date = dv.date(dv.pages('"journal"')
+  .where(page => page.file.day && page.file.day > dv.current().file.day)
+  .sort(page => page.file.day, "asc").file.day)[0]
+  ?.toFormat('yyyy-MM-dd');
+
+if (!!date) return "[[" + date + "| Next Daily ]]";
+return "No next note";
+})()
+```
+
+- `(function() {})()` is our immediate invoked function. Here, the return value of the function will be used here as a value.
+- `date` uses similar logic to above, only this time looking for the next daily note.
+- `.?` the [Optional Chaining Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) enables us to say "this value might exist" and evaluate the entire expression to `undefined`, instead of braking on the `.toFormat` not existing on `undefined` or `null`.
+- `if(!!date)` casts the date to a boolean and returns the link to it, if it exists.
+- In case there is no next daily note yet, I opted to show a hint. You could also figure out the next date and display a link to create tomorrows note.
+- `;`, Semicolons are immensely important here! While JavaScript inserts them for you, we need them here to condense the code to a single line!
+
+This time we do not need to add anything around our code, as it already returns the link or text we want to display. We only need to remove the linebreaks.
+
+```
+$= (function () {const date = dv.date(dv.pages('"journal"').where(page => page.file.day && page.file.day > dv.current().file.day).sort(page => page.file.day, "asc").file.day)[0]?.toFormat('yyyy-MM-dd');if (!!date) return "[[" + date + "| Next Daily ]]";return "No next note";})()
+```
+
+<a name="final-solution"></a>
+## Putting it all together
+
+![Navigation between daily notes in Obsidian](/images/general/obsidian-daily-navigation.png)
+
+For some nicer look-and-feel I added a bit of fluff around the links. Here is a copy and paste of the final solution:
+
+```markdown
+<< `$= "[[" + dv.date(dv.pages('"journal"').where(page => page.file.day && page.file.day < dv.current().file.day).sort(page => page.file.day, "desc").file.day)[0].toFormat('yyyy-MM-dd') + "| Previous Daily]]"` | `$= (function () {const date = dv.date(dv.pages('"journal"').where(page => page.file.day && page.file.day > dv.current().file.day).sort(page => page.file.day, "asc").file.day)[0]?.toFormat('yyyy-MM-dd');if (!!date) return "[[" + date + "| Next Daily ]]";return "No next note";})()` >>
+```
+
+![Compass Emoji - find your bearing](/images/emojis/compass.png)
