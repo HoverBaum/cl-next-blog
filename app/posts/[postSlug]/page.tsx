@@ -7,6 +7,7 @@ import { SmallTitle } from 'components/SmallTitle'
 import { Wrapper } from 'components/Wrapper'
 import { recommandedPosts } from 'utils/postRecommandation'
 import { postsByDateDesc } from 'utils/sort'
+import { DraftBadge } from 'components/DraftBadge'
 
 type Props = {
   params: { postSlug: string }
@@ -44,7 +45,9 @@ export default function SinglePostPage({ params }: Props) {
 
   return (
     <Wrapper>
+      {post.status === 'draft' && <DraftBadge />}
       <BlogPost post={post} />
+
       <AuthorCard />
       <SmallTitle>Read next</SmallTitle>
       <div className="my-6 grid md:grid-cols-3 gap-6">

@@ -12,6 +12,7 @@ import Link from 'next/link'
 import { CustomMDXComponents as DefaultMDXComponent } from 'components/MDXComponents/MDXComponents'
 import { Card } from 'components/Card'
 import { PostMeta } from './PostMeta'
+import { DraftBadge } from 'components/DraftBadge'
 
 type PostCardProps = {
   post: Post
@@ -25,7 +26,9 @@ export const PostCard: React.FC<PostCardProps> = ({
   MDXOverwrites,
 }) => {
   const MDXContent = useMDXComponent(post.excerpt.code)
-  const { title, slug } = post
+  const { title, slug, status } = post
+
+  const isDraft = status === 'draft'
 
   const mergedComponetns = {
     ...DefaultMDXComponent,
@@ -36,7 +39,12 @@ export const PostCard: React.FC<PostCardProps> = ({
   }
 
   return (
-    <Card className={`h-full relative break-words`}>
+    <Card
+      className={`h-full relative break-words ${
+        isDraft && 'border-yellow-500 dark:border-yellow-700'
+      }`}
+    >
+      {isDraft && <DraftBadge />}
       <h3 className={`mt-0 ${variant === 'compact' ? 'text-3xl' : ''}`}>
         <Link href={slug}>{title}</Link>
       </h3>
