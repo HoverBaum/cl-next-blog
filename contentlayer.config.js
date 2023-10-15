@@ -4,7 +4,10 @@ import highlight from 'rehype-highlight'
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `posts/**/*.mdx`,
+  filePathPattern:
+    process.env.VERCEL_ENV === 'production'
+      ? 'posts/**/*.mdx'
+      : `{posts,drafts}/**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: {
@@ -30,6 +33,17 @@ export const Post = defineDocumentType(() => ({
     },
   },
   computedFields: {
+    status: {
+      type: 'enum',
+      options: ['published', 'draft'],
+      default: 'draft',
+      resolve: (post) => {
+        // Posts inside /drafts are still drafts, posts in /posts are published.
+        return post._raw.sourceFilePath.startsWith('posts')
+          ? 'published'
+          : 'draft'
+      },
+    },
     slug: {
       type: 'string',
       resolve: (post) =>
@@ -93,7 +107,7 @@ export const Post = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: '.',
-  contentDirInclude: ['posts'],
+  contentDirInclude: ['posts', 'drafts'],
   documentTypes: [Post],
   // We use highlighting hjere to have it run once at build and not during runtime.
   mdx: { rehypePlugins: [highlight] },
