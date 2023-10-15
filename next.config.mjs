@@ -12,9 +12,6 @@ export default bundleAnalyzer(
     images: {
       domains: ['storage.googleapis.com'],
     },
-    experimental: {
-      appDir: true,
-    },
     redirects: () => {
       return oldBlogRedirects
     },
