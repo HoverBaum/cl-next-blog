@@ -21,9 +21,15 @@ export default function PostsPage() {
     <Wrapper>
       <h1>All posts</h1>
       <div className="mt-4">
-        <LinkButton href="/posts/tags">Explore Tags</LinkButton>
-        <LinkButton href="/posts/categories">Explore Categories</LinkButton>
-        <SearchPostsButton />
+        <LinkButton href="/posts/tags">
+          <span className="hidden md:inline">Explore</span> Tags
+        </LinkButton>
+        <LinkButton href="/posts/categories">
+          <span className="hidden md:inline">Explore</span> Categories
+        </LinkButton>
+        <span className="hidden md:inline">
+          <SearchPostsButton />
+        </span>
       </div>
       <div>
         {posts.map((post) => (
