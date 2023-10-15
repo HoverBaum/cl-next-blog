@@ -11,6 +11,11 @@ import { NextSteps } from 'components/NextSteps/NextSteps'
 import { NextAboutMe } from 'components/NextSteps/NextAboutMe'
 import { NextPosts } from 'components/NextSteps/NextPosts'
 import { NextTalks } from 'components/NextSteps/NextTalks'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Hendriks Blog - HoverBaum',
+}
 
 const posts = allPosts
   .sort((a, b) => {

@@ -6,8 +6,20 @@ import { NextTags } from 'components/NextSteps/NextTags'
 import { PostCard } from 'components/Posts/PostCard'
 import { Wrapper } from 'components/Wrapper'
 import { allPosts } from 'contentlayer/generated'
+import { Metadata } from 'next'
 import { postsByDateDesc } from 'utils/sort'
 import { tagsFromPosts } from 'utils/tagsFromPosts'
+
+type Props = {
+  params: {
+    tagSlug: string
+  }
+}
+
+const tagForSlug = (tagSlug: string) => {
+  const tag = tagsFromPosts(allPosts).find((tag) => tag.tagSlug === tagSlug)
+  return tag
+}
 
 export function generateStaticParams() {
   const tags = tagsFromPosts(allPosts)
@@ -17,14 +29,15 @@ export function generateStaticParams() {
   return paths
 }
 
-export default function SingleTagPage({
-  params: { tagSlug },
-}: {
-  params: {
-    tagSlug: string
+export function generateMetadata({ params }: Props): Metadata {
+  const tag = tagForSlug(params.tagSlug)
+  return {
+    title: tag?.tag + ' Posts - HoverBaum',
   }
-}) {
-  const tag = tagsFromPosts(allPosts).find((tag) => tag.tagSlug === tagSlug)
+}
+
+export default function SingleTagPage({ params: { tagSlug } }: Props) {
+  const tag = tagForSlug(tagSlug)
   if (!tag)
     return (
       <Wrapper>

@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import { LinkButton } from 'components/LinkButton'
 import { NextAboutMe } from 'components/NextSteps/NextAboutMe'
 import { NextHome } from 'components/NextSteps/NextHome'
@@ -8,6 +9,10 @@ import { Wrapper } from 'components/Wrapper'
 import { allPosts } from 'contentlayer/generated'
 import { postsByDateDesc } from 'utils/sort'
 import { SearchPostsButton } from './SearchPostsButton'
+
+export const metadata: Metadata = {
+  title: 'Posts - HoverBaum',
+}
 
 export default function PostsPage() {
   const posts = allPosts.sort(postsByDateDesc)

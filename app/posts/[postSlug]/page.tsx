@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import { allPosts } from '.contentlayer/generated'
 import { AuthorCard } from 'components/AuthorCard'
 import { BlogPost } from 'components/Posts/BlogPost'
@@ -7,6 +8,15 @@ import { Wrapper } from 'components/Wrapper'
 import { recommandedPosts } from 'utils/postRecommandation'
 import { postsByDateDesc } from 'utils/sort'
 
+type Props = {
+  params: { postSlug: string }
+}
+
+const postForSlug = (postSlug: string) => {
+  const post = allPosts.find((post) => post.postSlug === postSlug)
+  return post
+}
+
 export function generateStaticParams() {
   const posts = allPosts.sort(postsByDateDesc)
   const paths = posts.map((post) => ({
@@ -15,12 +25,15 @@ export function generateStaticParams() {
   return paths
 }
 
-export default function SinglePostPage({
-  params: { postSlug },
-}: {
-  params: { postSlug: string }
-}) {
-  const post = allPosts.find((post) => post.postSlug === postSlug)
+export function generateMetadata({ params }: Props): Metadata {
+  const post = postForSlug(params.postSlug)
+  return {
+    title: post?.title + ' - HoverBaum',
+  }
+}
+
+export default function SinglePostPage({ params }: Props) {
+  const post = postForSlug(params.postSlug)
   if (!post)
     return (
       <Wrapper>

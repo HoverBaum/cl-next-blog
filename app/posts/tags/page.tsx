@@ -5,8 +5,13 @@ import { NextSteps } from 'components/NextSteps/NextSteps'
 import { Wrapper } from 'components/Wrapper'
 import { allPosts } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { tagsFromPosts } from 'utils/tagsFromPosts'
+
+export const metadata: Metadata = {
+  title: 'Tags - HoverBaum',
+}
 
 export default function TagsPage() {
   const posts = allPosts.sort((a, b) => {

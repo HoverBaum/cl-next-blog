@@ -6,8 +6,23 @@ import { NextSteps } from 'components/NextSteps/NextSteps'
 import { PostCard } from 'components/Posts/PostCard'
 import { Wrapper } from 'components/Wrapper'
 import { allPosts } from 'contentlayer/generated'
+import { ca } from 'date-fns/locale'
+import { Metadata } from 'next'
 import { categoriesFromPosts } from 'utils/categoriesFromPosts'
 import { postsByDateDesc } from 'utils/sort'
+
+type Props = {
+  params: {
+    categorySlug: string
+  }
+}
+
+const categoryForSlug = (categorySlug: string) => {
+  const category = categoriesFromPosts(allPosts).find(
+    (category) => category.categorySlug === categorySlug
+  )
+  return category
+}
 
 export function generateStaticParams() {
   const categories = categoriesFromPosts(allPosts)
@@ -17,14 +32,17 @@ export function generateStaticParams() {
   return paths
 }
 
+export function generateMetadata({ params }: Props): Metadata {
+  const category = categoryForSlug(params.categorySlug)
+  return {
+    title: category?.name + ' Posts - HoverBaum',
+  }
+}
+
 export default function SingleCategoryPage({
   params: { categorySlug },
-}: {
-  params: { categorySlug: string }
-}) {
-  const category = categoriesFromPosts(allPosts).find(
-    (category) => category.categorySlug === categorySlug
-  )
+}: Props) {
+  const category = categoryForSlug(categorySlug)
   if (!category)
     return (
       <Wrapper>

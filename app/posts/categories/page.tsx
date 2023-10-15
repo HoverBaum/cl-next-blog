@@ -5,8 +5,13 @@ import { NextSteps } from 'components/NextSteps/NextSteps'
 import { Wrapper } from 'components/Wrapper'
 import { allPosts } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { categoriesFromPosts } from 'utils/categoriesFromPosts'
+
+export const metadata: Metadata = {
+  title: 'Categories - HoverBaum',
+}
 
 export default function CategoriesPage() {
   const posts = allPosts.sort((a, b) => {

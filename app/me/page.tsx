@@ -10,7 +10,12 @@ import { NextTalks } from 'components/NextSteps/NextTalks'
 import { FeaturedProjects } from 'components/Projects/FeaturedProjects'
 import { SocialLink } from 'components/SocialLink'
 import { Wrapper } from 'components/Wrapper'
+import { Metadata } from 'next'
 import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'Hendrik - HoverBaum',
+}
 
 export default function Me() {
   return (

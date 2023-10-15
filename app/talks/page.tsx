@@ -5,6 +5,11 @@ import { NextSteps } from 'components/NextSteps/NextSteps'
 import { talks } from 'components/Talks/allTalks'
 import { TalkCard } from 'components/Talks/TalkCard'
 import { Wrapper } from 'components/Wrapper'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Talks - HoverBaum',
+}
 
 export default function TalksPage() {
   return (

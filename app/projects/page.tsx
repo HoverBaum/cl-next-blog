@@ -5,6 +5,11 @@ import { NextSteps } from 'components/NextSteps/NextSteps'
 import { ProjectCard } from 'components/Projects/ProjectCard'
 import { projectsDB } from 'components/Projects/projectsDB'
 import { Wrapper } from 'components/Wrapper'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Projects - HoverBaum',
+}
 
 export default function Projects() {
   return (
