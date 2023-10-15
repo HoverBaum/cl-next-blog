@@ -18,7 +18,7 @@ export const PostMeta: React.FC<PostMetaProps> = ({ post }) => {
             categories.map((category) => (
               <span key={category} className="mr-1">
                 <Link
-                  href={`/categories/${stringToSlug(category)}`}
+                  href={`/posts/categories/${stringToSlug(category)}`}
                   className="no-underline hover:underline"
                 >
                   {category.toUpperCase()}
@@ -36,7 +36,7 @@ export const PostMeta: React.FC<PostMetaProps> = ({ post }) => {
           tags.map((tag) => (
             <span key={tag} className="mr-0.5">
               <Link
-                href={`/tags/${stringToSlug(tag)}`}
+                href={`/posts/tags/${stringToSlug(tag)}`}
                 className="no-underline hover:underline"
               >
                 {`#${tag}`}
