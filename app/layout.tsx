@@ -22,6 +22,7 @@ export default function RootLayout({
         `,
           }}
         />
+        <title key="title">HoverBaum</title>
       </head>
       <body>
         <Providers blogActions={generateBlogActions()}>
