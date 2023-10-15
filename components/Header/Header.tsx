@@ -66,7 +66,7 @@ export const Header = () => {
       >
         {!isFixed && <Ruler className="my-0" />}
         <Wrapper>
-          <nav className="flex justify-center">
+          <nav className="flex justify-center py-4">
             <ul className="flex flex-wrap justify-between md:justify-center p-0 list-none w-full">
               <li className="grid place-items-center md:hidden relative">
                 <BurgerMenu links={headerLinks} />
