@@ -12,13 +12,23 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    // This has a class to make identifying the warning mentioned below easier…
+    <html lang="en" className="htmlClass">
       <head>
-        {/* We will optimistically switch to dark mode for systemt that prefer it. */}
+        {/**
+         * Initially set color mode on html element.
+         * This causes a "Extra attributes from the server: class" warning in dev!
+         * We will optimistically switch to dark mode for systems that prefer it.
+         */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-        if(window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.classList.add('dark')
+            const storedMode = localStorage.theme
+            if(!!storedMode) {
+              document.documentElement.classList.add(storedMode)
+            } else if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              document.documentElement.classList.add('dark')
+            }
         `,
           }}
         />
