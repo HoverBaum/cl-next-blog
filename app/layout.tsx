@@ -12,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    // This has a class to make identifying the warning mentioned below easier…
-    <html lang="en" className="htmlClass">
+    // We suppredd Hydragtion warning because theme logic will always change the class on the html element.
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/**
          * Initially set color mode on html element.
