@@ -104,9 +104,4 @@ body {
   pre {
     @apply bg-surface dark:bg-surface-dark p-1;
   }
-
-  ol,
-  ul {
-    @apply my-4;
-  }
 }

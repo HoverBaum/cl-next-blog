@@ -16,10 +16,10 @@ export const CustomMDXComponents = {
     </h3>
   ),
   ol: (props: any) => (
-    <ol className="list-decimal max-w-p mx-auto pl-6" {...props} />
+    <ol className="list-decimal max-w-p mx-auto my-4 pl-6" {...props} />
   ),
   ul: (props: any) => (
-    <ol className="list-disc max-w-p mx-auto pl-6" {...props} />
+    <ol className="list-disc max-w-p mx-auto my-4 pl-6" {...props} />
   ),
   // Please note the "article blockquote p" stylings in global.css to make this work.
   blockquote: (props: any) => (

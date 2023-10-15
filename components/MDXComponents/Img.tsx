@@ -21,7 +21,7 @@ export const Img: ComponentType<ImgProps> = ({
           limitHeight ? 'max-h-[80vh]' : ''
         }`}
       />
-      <figcaption>{alt}</figcaption>
+      <figcaption className="text-sm">{alt}</figcaption>
     </figure>
   )
 }
