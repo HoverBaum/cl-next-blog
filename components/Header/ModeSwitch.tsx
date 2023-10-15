@@ -35,7 +35,7 @@ export const ModeSwitch = () => {
           ref={ref}
           className="absolute top-[130%] left-full -translate-x-full md:left-1/2 md:-translate-x-1/2 py-0.5 bg-surface dark:bg-surface-dark border border-border shadow-md "
         >
-          <ul className="cursor-pointer">
+          <ul className="cursor-pointer" style={{ margin: 0 }}>
             <li
               onClick={() => selectMode('light')}
               className={`hover:bg-background dark:hover:bg-background-dark px-2 py-0.5 flex items-center font-semibold text-sm ${
