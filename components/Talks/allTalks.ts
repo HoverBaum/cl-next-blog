@@ -24,6 +24,12 @@ export const talks: TalkType[] = [
         type: 'URL',
       },
       {
+        href: 'https://www.youtube.com/watch?v=7W4Il8gpWTY',
+        text: 'Recording at Code.Talks 2023',
+        type: 'YouTube',
+      },
+
+      {
         href: '/talk-pdfs/medieval-security.pdf',
         text: 'Code.Talks 2023 version as PDF',
         type: 'PDF',
