@@ -106,11 +106,12 @@ export const Header = () => {
 
         <Ruler className="my-0" />
       </div>
-      {!isHomepage && (
+      {/* CURRENTLY NOT USED, ADDS NOW VALUE. */}
+      {/* {!isHomepage && (
         <Wrapper>
           <Breadcrums />
         </Wrapper>
-      )}
+      )} */}
     </header>
   )
 }
