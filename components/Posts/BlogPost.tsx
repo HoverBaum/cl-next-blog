@@ -19,8 +19,8 @@ export const BlogPost: ComponentType<PostProps> = ({ post }) => {
   const isConsideredOutdated = new Date(post.date) < threeYearsAgo
 
   return (
-    <article className="pb-7">
-      <h1>{post.title}</h1>
+    <article className="pb-8">
+      <h1 className="mb-2">{post.title}</h1>
       <PostMeta post={post} />
       {isConsideredOutdated && (
         <Alert>
@@ -29,6 +29,7 @@ export const BlogPost: ComponentType<PostProps> = ({ post }) => {
         </Alert>
       )}
       {!isConsideredOutdated && <Ruler />}
+      <div className="mt-8"></div>
       <MDXContent
         // Hacky solution here, needs updating! TODO
         components={CustomMDXComponents as unknown as MDXComponents}

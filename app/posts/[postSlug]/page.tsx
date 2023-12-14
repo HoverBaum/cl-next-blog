@@ -14,7 +14,10 @@ type Props = {
 }
 
 const postForSlug = (postSlug: string) => {
-  const post = allPosts.find((post) => post.postSlug === postSlug)
+  const post = allPosts.find(
+    (post) =>
+      post.postSlug === postSlug || post.alternativeSlugs?.includes(postSlug)
+  )
   return post
 }
 

@@ -31,6 +31,12 @@ export const Post = defineDocumentType(() => ({
       description:
         'Keywords that add context to a post and help reads to find similar.',
     },
+    alternativeSlugs: {
+      type: 'list',
+      of: { type: 'string' },
+      description:
+        'A list of alternative slugs that should redirect to the post.',
+    },
   },
   computedFields: {
     status: {
@@ -47,20 +53,11 @@ export const Post = defineDocumentType(() => ({
     slug: {
       type: 'string',
       resolve: (post) =>
-        `/posts/${post.title
-          .replace(/\s/g, '-')
-          .replace(':', '')
-          .toLowerCase()
-          .replace('ä', 'ae')}`,
+        '/posts/' + post._raw.sourceFileName.replace('.mdx', ''),
     },
     postSlug: {
       type: 'string',
-      resolve: (post) =>
-        `${post.title
-          .replace(/\s/g, '-')
-          .replace(':', '')
-          .toLowerCase()
-          .replace('ä', 'ae')}`,
+      resolve: (post) => post._raw.sourceFileName.replace('.mdx', ''),
     },
     excerpt: {
       type: 'json',
