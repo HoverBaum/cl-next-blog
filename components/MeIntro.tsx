@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { WigglingEmoji } from './WigglingEmoji'
-import ProfilePicture from '../public/images/assets/portrait.jpg'
+import ProfilePicture from '../public/images/assets/Hendrik_Excellency.png'
 
 export const MeIntro = () => {
   // A card with sharp corners that has a quote about me and a picture.

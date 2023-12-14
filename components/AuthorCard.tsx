@@ -4,7 +4,7 @@ import { SmallTitle } from './SmallTitle'
 
 const MyImage = ({ className }: { className?: string }) => (
   <Image
-    src="/images/assets/portrait.jpg"
+    src="/images/assets/Hendrik_Excellency.png"
     alt="Hendrik"
     width={180}
     height={180}
