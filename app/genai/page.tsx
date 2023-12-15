@@ -1,7 +1,10 @@
 import { PostCard } from 'components/Posts/PostCard'
 import { Wrapper } from 'components/Wrapper'
 import { allPosts } from 'contentlayer/generated'
+import Image from 'next/image'
 import { postsByDateDesc } from 'utils/sort'
+import RobotPainting from '../../public/images/genai/robot-painting.png'
+import Link from 'next/link'
 
 const GenAITags = [
   'genai',
@@ -36,11 +39,26 @@ export default function GenAI() {
           GenAI accessible to the masses.
         </p>
 
+        <figure className="flex flex-col items-center my-6">
+          <Image src={RobotPainting} alt="A Robot painting" />
+          <figcaption className="text-sm">
+            A Robot painting for my blog (Dalle-E 3)
+          </figcaption>
+        </figure>
+
         <p>
           Today I am a passionate user of GenAI and love to endulge in Prompt
           Engineering. On this page you find my Posts and Resources about the
-          topic.
+          topic. Start by reading:
         </p>
+
+        <ul>
+          <li>
+            <Link href="/posts/2023.01-Generative-AI-Will-Stay">
+              Generative AI is here to stay!
+            </Link>
+          </li>
+        </ul>
 
         <h2>Related Posts</h2>
         <div>
