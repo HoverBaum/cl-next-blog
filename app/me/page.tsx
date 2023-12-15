@@ -7,6 +7,7 @@ import { NextPosts } from 'components/NextSteps/NextPosts'
 import { NextProjects } from 'components/NextSteps/NextProjects'
 import { NextSteps } from 'components/NextSteps/NextSteps'
 import { NextTalks } from 'components/NextSteps/NextTalks'
+import { PortraitHendrik } from 'components/PortraitHendrik'
 import { FeaturedProjects } from 'components/Projects/FeaturedProjects'
 import { SocialLink } from 'components/SocialLink'
 import { Wrapper } from 'components/Wrapper'
@@ -74,14 +75,7 @@ export default function Me() {
             </ul>
           </div>
           <figure className="flex md:block flex-col items-center mt-4 md:mt-0 mx-auto">
-            <Image
-              src="/images/assets/Hendrik_Excellency.png"
-              alt="Hendrik Wallbaum Profile picture"
-              width={500}
-              height={757}
-              className="w-[50%] sm:w-full mb-2 border border-border dark:border-border-dark shadow-[4px_6px_0_0] shadow-primary dark:shadow-primary-dark bg-[#daddda]"
-              priority
-            />
+            <PortraitHendrik />
 
             <figcaption className="text-sm"></figcaption>
           </figure>
