@@ -8,7 +8,9 @@ export const AuthorCard = () => {
       <div className="md:flex justify-between ">
         <div>
           <SmallTitle className="mt-0 text-2xl">Author</SmallTitle>
-          <PortraitHendrik className="md:hidden mx-auto" />
+
+          <PortraitHendrik className="md:hidden mx-auto max-w-[75%]" />
+
           <p className="pr-4 max-w-[60ch] text-justify">
             I am a JavaScript and GenAI Enthusiast; developer for the fun of it!
             <br />
@@ -17,7 +19,9 @@ export const AuthorCard = () => {
           </p>
           <Link href="/me">More about me</Link>
         </div>
-        <PortraitHendrik className="hidden md:block" />
+        <div className="max-w-[250px]">
+          <PortraitHendrik className="hidden md:block" />
+        </div>
       </div>
     </div>
   )
