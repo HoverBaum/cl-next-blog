@@ -26,7 +26,7 @@ export const BurgerMenu = ({ links }: BurgerMenuProps) => {
       <BarsIcon className="w-4 h-4" onClick={() => setIsOpen(true)} />
       {isOpen && (
         <div ref={ref}>
-          <Card className="absolute top-[120%] left-0 z-50 py-0">
+          <Card className="absolute top-[120%] left-0 z-50 pb-2 pt-4">
             <nav className="min-w-[50vw]">
               <ul>
                 {links.map((link) => (
