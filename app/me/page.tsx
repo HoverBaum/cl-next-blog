@@ -24,20 +24,21 @@ export default function Me() {
       <Wrapper>
         <h1>Hendrik Wallbaum</h1>
         <h4 className="mt-0 mb-8">
-          JS Enthusiast. Developer for fun. Roleplayer.
+          JS & GenAI Enthusiast. Developer for fun. Roleplayer.
         </h4>
         <div className="md:grid grid-cols-3 gap-6">
           <div className="col-span-2">
             <p>
-              I am a JavaScript Enthusiast, developer for fun, intrapreneur and
-              passionate RPG player.
+              I am a JavaScript and GenAI Enthusiast, developer for fun,
+              intrapreneur and passionate RPG player.
             </p>
 
             <p>
               During the day I work as a Staff Engineer, Engineering Manager or
               Frontend Architect building applications throughout many
-              industries. I enjoy getting an overview, shaping visions and
-              teaching my juniors.
+              industries. Or help people to kickstart their GenAI journey. I
+              enjoy getting an overview, shaping visions and teaching my
+              juniors.
             </p>
 
             <p>
@@ -74,7 +75,7 @@ export default function Me() {
               </li>
             </ul>
           </div>
-          <figure className="flex md:block flex-col items-center mt-4 md:mt-0 mx-auto">
+          <figure className="flex md:block flex-col items-center mt-8 md:mt-0 mx-auto">
             <PortraitHendrik />
 
             <figcaption className="text-sm"></figcaption>
