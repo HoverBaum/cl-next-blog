@@ -86,6 +86,11 @@ body {
     @apply my-4;
   }
 
+  p b,
+  p strong {
+    @apply font-bold;
+  }
+
   /* This overwrites certain styling of Paragraphs to enable us to style blockquotes.*/
   article blockquote p {
     @apply my-0 font-noto w-full !important;

@@ -50,7 +50,11 @@ export const PostCard: React.FC<PostCardProps> = ({
       </h3>
       <PostMeta post={post} />
       {post.firstImage && (
-        <Img src={post.firstImage.src} alt={post.firstImage.alt} />
+        <Img
+          src={post.firstImage.src}
+          alt={post.firstImage.alt}
+          className="max-h-[30vh]"
+        />
       )}
       <MDXContent components={mergedComponetns} />
 
