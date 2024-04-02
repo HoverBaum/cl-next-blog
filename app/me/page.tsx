@@ -24,7 +24,7 @@ export default function Me() {
       <Wrapper>
         <h1>Hendrik Wallbaum</h1>
         <h4 className="mt-0 mb-8">
-          JS & GenAI Enthusiast. Developer for fun. Roleplayer.
+          GenAI & JS Enthusiast. Developer for fun. Roleplayer.
         </h4>
         <div className="md:grid grid-cols-3 gap-6">
           <div className="col-span-2">
