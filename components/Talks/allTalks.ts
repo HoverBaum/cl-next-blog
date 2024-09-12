@@ -14,6 +14,19 @@ export type TalkType = {
 
 export const talks: TalkType[] = [
   {
+    title: '🦄 The first Prompticorn',
+    subtitle: '',
+    description: 'How to hand UI over to GenAI.',
+    links: [
+      {
+        href: 'https://talk-prompticorn.wallbaum.dev/1',
+        text: 'HTML based presentation',
+        type: 'URL',
+      },
+    ],
+    year: 2024,
+  },
+  {
     title: '🏰 Medieval Strategies for Cyber Security',
     subtitle: '',
     description: 'Let medieval castles inspire your modern day Cyber Security.',
