@@ -23,6 +23,11 @@ export const talks: TalkType[] = [
         text: 'HTML based presentation',
         type: 'URL',
       },
+      {
+        href: '/talk-pdfs/hendrik_wallbaum-the_first_prompticorn.pdf',
+        text: 'ReactHH PDF',
+        type: 'PDF',
+      },
     ],
     year: 2024,
   },
