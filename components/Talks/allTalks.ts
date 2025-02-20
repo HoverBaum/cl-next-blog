@@ -28,6 +28,11 @@ export const talks: TalkType[] = [
         text: 'ReactHH PDF',
         type: 'PDF',
       },
+      {
+        href: 'https://github.com/HoverBaum/prompticorn',
+        text: 'GitHub Repo',
+        type: 'GitHub',
+      },
     ],
     year: 2024,
   },
