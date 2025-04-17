@@ -1,0 +1,39 @@
+---
+title: Creating a custom nanoid generator with GenAI
+tags:
+  - GenerativeAI
+  - Tools
+  - v0
+  - nanoid
+  - AI
+categories:
+  - General
+date: 2025-03-06
+---
+
+I recently needed some [nanoid](https://github.com/ai/nanoid) like mock IDs for a project. So I had v0 build me a tool for that, it was a super fun experience that I think foreshadows the future. You can read the thread with the [v0](https://v0.dev/chat/nanoid-id-generator-UHjMtAe3ldv) and check out the resulting tool on [Vercel](https://v0-nanoid-id-generator.vercel.app/).
+
+![A whimsical water color illustration of a tiny workshop with robots building small gadgets](/images/general/GenAI-tool-workshop.png)
+
+The project itself was simple enough: I needed unique IDs for mock data in one of my projects, and I didn’t want to keep generating them by hand. Generative AI to the rescue! Within minutes, I had an initial version that got the job done. Admittedly, it wasn’t the prettiest UI in the world, so I spent a bit of time polishing it. But even the first rough version would have been enough for my needs.
+
+Below is a paraphrased excerpt of how I prompted v0 for the task:
+
+> **My prompt**:  
+> “I’m looking to generate IDs using [nanoid](https://github.com/ai/nanoid). I’d like a small UI where I can click a button to create a new ID. Maybe also set the length of the ID. Can you provide a short prototype?”
+
+One shortcoming I noticed was that the UI wasn’t exactly what I had in mind. I had to manually tweak the layout and wording. This might just be how the tools currently are. But for a personal project or one-off tool, it’s more than sufficient. Of course, if I aimed to make a polished commercial product out of it, I’d need to do a lot more under the hood.
+
+## A glimpse at the future
+
+What excites me even more than the actual tool is the possibility that soon, *everyone* might be able to do this. Non-developers could just as easily prompt an AI to create a simple internal tool for, say, generating product SKUs or drafting an invoice from a spreadsheet. We might reach a point where people think: “Instead of searching for a random tool online, I’ll just make a custom one myself!” And that’s amazing.
+
+I believe we’ll keep seeing more and more GenAI-powered platforms that generate everything from prototypes to complete, user-ready applications. Dev knowledge will undoubtedly help if you need to refine details or integrate advanced features, but for the average person wanting quick, specialized tools, GenAI is already knocking on the door.
+
+## Final thoughts
+
+The power of Generative AI doesn’t end with code. We already see how it can produce text, art, music, and even new user interfaces. Creating small, custom utilities feels like the next big frontier. Whether it’s generating IDs with nanoid, mocking out test data, or something far more creative, AI is steadily transforming how we build and use software.
+
+In the meantime, go check out my [AI-generated ID tool](https://v0-nanoid-id-generator.vercel.app/)! Have fun experimenting, and maybe spin up a mini-tool of your own. The future of “build it yourself” is definitely here.
+
+![A whimsical water color illustration of happy humans and robots collaborating to build simple apps](/images/general/GenAI-collab.png)
