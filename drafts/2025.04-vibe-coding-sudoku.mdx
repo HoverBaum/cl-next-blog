@@ -1,0 +1,35 @@
+---
+title: Vide coding a Sudoku game
+tags:
+  - GenerativeAI
+  - Agent
+  - Copilot
+categories:
+  - General
+date: 2025-04-22
+---
+
+With GitHub recently releasing Agent mode for GitHub Copilot I wanted to try my hands at vibe coding. After some consideration I decided on a Killer Sudoku game - more on the rules below. These are my learnings about where the Agent helped me and where it still struggles.
+
+## Game rules
+
+But first, a look at the rules of Killer Sudoku. On the surface it follows the default rules of Sudoku. You have to make sure that numbers occure only once per column and row of nine numbers and only once in a sub-square of nine number. The total area of the game being 9x9 cells.
+
+On top of these rules, Killer Sudoku introduces the concept of "Cages". A Cage is a group of cells that, when added up need to be a certain number. This enables higher difficulties of Killer Sudoku to have fewer or even no pre-filled Cells for players to work from. Instead the game shifts more towards inferrence based on contraints.
+
+![](/images/general/sudoku/killer-sudoku-fresh.png)
+
+Notes
+
+- Optimize test command to not watch for AI usage
+- nice that AI can run terminal command, super happy to allow npm test - afraid that might be security vuleneratbility later
+- Planning is super important, specs need to be rather detailed
+- coding file helps a lot but AI tends to do "common practice" and not your preferred ones
+- Testing helps a lot, especially with writing it. Removes loop
+- AI checking type issues in editor also removes loops when compared with just edit features
+- AI was amazing help in refactoring
+- More complex logic like drawing boxes around cages struggled even when I wrote half of it myself already
+- take it one thing at a time. If you notice a bug while adding a feature, first finish the feature, then fix the bug.
+- The AI is writing tests and that helps the AI to fix some things but I have no idea what the tests do and they are definitely not functional.
+- Adding small features was easy with AI - disable numbers, reset puzzle - no idea about code quality though.
+- Visual changes are hard.
