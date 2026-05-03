@@ -5,6 +5,7 @@ import highlight from 'rehype-highlight'
 import { cache } from 'react'
 import { promises as fs } from 'fs'
 import path from 'path'
+import type { Pluggable } from 'unified'
 import { BlogPost } from './blogPostTypes'
 
 type ParsedFrontmatter = {
@@ -153,10 +154,11 @@ const extractFirstImage = (rawBody: string) => {
 }
 
 const compileMdx = async (source: string) => {
+  const highlightPlugin = highlight as unknown as Pluggable
   const compiled = await bundleMDX({
     source,
     mdxOptions(options) {
-      options.rehypePlugins = [...(options.rehypePlugins ?? []), highlight]
+      options.rehypePlugins = [...(options.rehypePlugins ?? []), highlightPlugin]
       return options
     },
   })
