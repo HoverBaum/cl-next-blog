@@ -6,16 +6,16 @@
  */
 
 import { Img } from 'components/MDXComponents/Img'
-import { Post } from 'contentlayer/generated'
-import { useMDXComponent } from 'next-contentlayer/hooks'
+import { getMDXComponent } from 'mdx-bundler/client'
 import Link from 'next/link'
 import { CustomMDXComponents as DefaultMDXComponent } from 'components/MDXComponents/MDXComponents'
 import { Card } from 'components/Card'
 import { PostMeta } from './PostMeta'
 import { DraftBadge } from 'components/DraftBadge'
+import { BlogPost } from 'utils/blogPostTypes'
 
 type PostCardProps = {
-  post: Post
+  post: BlogPost
   variant?: 'default' | 'compact'
   MDXOverwrites?: any
 }
@@ -25,7 +25,7 @@ export const PostCard: React.FC<PostCardProps> = ({
   variant = 'default',
   MDXOverwrites,
 }) => {
-  const MDXContent = useMDXComponent(post.excerpt.code)
+  const MDXContent = getMDXComponent(post.excerpt.code)
   const { title, slug, status } = post
 
   const isDraft = status === 'draft'

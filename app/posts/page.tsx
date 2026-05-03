@@ -6,16 +6,16 @@ import { NextSteps } from 'components/NextSteps/NextSteps'
 import { NextTalks } from 'components/NextSteps/NextTalks'
 import { PostCard } from 'components/Posts/PostCard'
 import { Wrapper } from 'components/Wrapper'
-import { allPosts } from 'contentlayer/generated'
 import { postsByDateDesc } from 'utils/sort'
 import { SearchPostsButton } from './SearchPostsButton'
+import { getAllPosts } from 'utils/blogPosts'
 
 export const metadata: Metadata = {
   title: 'Posts - HoverBaum',
 }
 
-export default function PostsPage() {
-  const posts = allPosts.sort(postsByDateDesc)
+export default async function PostsPage() {
+  const posts = [...(await getAllPosts())].sort(postsByDateDesc)
 
   return (
     <Wrapper>

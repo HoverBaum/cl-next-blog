@@ -1,10 +1,10 @@
-import { Post } from 'contentlayer/generated'
 import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
 import { stringToSlug } from 'utils/stringToSlug'
+import { BlogPost } from 'utils/blogPostTypes'
 
 export type PostMetaProps = {
-  post: Post
+  post: BlogPost
 }
 
 export const PostMeta: React.FC<PostMetaProps> = ({ post }) => {

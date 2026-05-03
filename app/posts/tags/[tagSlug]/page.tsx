@@ -5,8 +5,8 @@ import { NextSteps } from 'components/NextSteps/NextSteps'
 import { NextTags } from 'components/NextSteps/NextTags'
 import { PostCard } from 'components/Posts/PostCard'
 import { Wrapper } from 'components/Wrapper'
-import { allPosts } from 'contentlayer/generated'
 import { Metadata } from 'next'
+import { getAllPosts } from 'utils/blogPosts'
 import { postsByDateDesc } from 'utils/sort'
 import { tagsFromPosts } from 'utils/tagsFromPosts'
 
@@ -16,12 +16,14 @@ type Props = {
   }
 }
 
-const tagForSlug = (tagSlug: string) => {
+const tagForSlug = async (tagSlug: string) => {
+  const allPosts = await getAllPosts()
   const tag = tagsFromPosts(allPosts).find((tag) => tag.tagSlug === tagSlug)
   return tag
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const allPosts = await getAllPosts()
   const tags = tagsFromPosts(allPosts)
   const paths = tags.map((tag) => ({
     tagSlug: tag.tagSlug,
@@ -29,15 +31,16 @@ export function generateStaticParams() {
   return paths
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const tag = tagForSlug(params.tagSlug)
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const tag = await tagForSlug(params.tagSlug)
   return {
     title: tag?.tag + ' Posts - HoverBaum',
   }
 }
 
-export default function SingleTagPage({ params: { tagSlug } }: Props) {
-  const tag = tagForSlug(tagSlug)
+export default async function SingleTagPage({ params: { tagSlug } }: Props) {
+  const allPosts = await getAllPosts()
+  const tag = await tagForSlug(tagSlug)
   if (!tag)
     return (
       <Wrapper>

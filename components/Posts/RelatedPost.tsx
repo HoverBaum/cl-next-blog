@@ -1,5 +1,5 @@
 import { Paragraph } from 'components/MDXComponents/Paragraph'
-import { Post } from 'contentlayer/generated'
+import { BlogPost } from 'utils/blogPostTypes'
 import { PostCard } from './PostCard'
 
 const RelatedMDXComponents = {
@@ -7,7 +7,7 @@ const RelatedMDXComponents = {
   p: (props: any) => <Paragraph {...props} className="text-sm" />,
 }
 
-export const RelatedPost = ({ post }: { post: Post }) => {
+export const RelatedPost = ({ post }: { post: BlogPost }) => {
   return (
     <PostCard
       post={post}

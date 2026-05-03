@@ -6,11 +6,13 @@ import { Header } from 'components/Header/Header'
 import '../styles/globals.css'
 import { Providers } from './ClientContext/Providers'
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const blogActions = await generateBlogActions()
+
   return (
     // We suppredd Hydragtion warning because theme logic will always change the class on the html element.
     <html lang="en" suppressHydrationWarning>
@@ -34,7 +36,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Providers blogActions={generateBlogActions()}>
+        <Providers blogActions={blogActions}>
           <CommandPalette />
           <Header />
           <main>{children}</main>

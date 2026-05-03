@@ -1,18 +1,18 @@
 import { MDXComponents } from 'mdx/types'
-import { useMDXComponent } from 'next-contentlayer/hooks'
-import { Post as ContentlayerPost } from 'contentlayer/generated'
+import { getMDXComponent } from 'mdx-bundler/client'
 import { ComponentType } from 'react'
 import { CustomMDXComponents } from '../MDXComponents/MDXComponents'
 import { PostMeta } from './PostMeta'
 import { Ruler } from 'components/Ruler'
 import { Alert } from 'components/Alert'
+import { BlogPost as BlogPostType } from 'utils/blogPostTypes'
 
 type PostProps = {
-  post: ContentlayerPost
+  post: BlogPostType
 }
 
 export const BlogPost: ComponentType<PostProps> = ({ post }) => {
-  const MDXContent = useMDXComponent(post.body.code)
+  const MDXContent = getMDXComponent(post.body.code)
   const threeYearsAgo = new Date(
     new Date().setFullYear(new Date().getFullYear() - 3)
   )

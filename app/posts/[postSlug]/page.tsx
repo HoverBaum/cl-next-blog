@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import { allPosts } from '.contentlayer/generated'
 import { AuthorCard } from 'components/AuthorCard'
 import { BlogPost } from 'components/Posts/BlogPost'
 import { RelatedPost } from 'components/Posts/RelatedPost'
@@ -8,36 +7,43 @@ import { Wrapper } from 'components/Wrapper'
 import { recommandedPosts } from 'utils/postRecommandation'
 import { postsByDateDesc } from 'utils/sort'
 import { DraftBadge } from 'components/DraftBadge'
+import { getAllPosts } from 'utils/blogPosts'
 
 type Props = {
   params: { postSlug: string }
 }
 
-const postForSlug = (postSlug: string) => {
-  const post = allPosts.find(
+const postForSlug = async (postSlug: string) => {
+  const allPosts = await getAllPosts()
+  return allPosts.find(
     (post) =>
       post.postSlug === postSlug || post.alternativeSlugs?.includes(postSlug)
   )
-  return post
 }
 
-export function generateStaticParams() {
-  const posts = allPosts.sort(postsByDateDesc)
+export async function generateStaticParams() {
+  const allPosts = await getAllPosts()
+  const posts = [...allPosts].sort(postsByDateDesc)
   const paths = posts.map((post) => ({
     postSlug: post.postSlug,
   }))
   return paths
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const post = postForSlug(params.postSlug)
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = await postForSlug(params.postSlug)
   return {
     title: post?.title + ' - HoverBaum',
   }
 }
 
-export default function SinglePostPage({ params }: Props) {
-  const post = postForSlug(params.postSlug)
+export default async function SinglePostPage({ params }: Props) {
+  const allPosts = await getAllPosts()
+  const post = allPosts.find(
+    (entry) =>
+      entry.postSlug === params.postSlug ||
+      entry.alternativeSlugs?.includes(params.postSlug)
+  )
   if (!post)
     return (
       <Wrapper>

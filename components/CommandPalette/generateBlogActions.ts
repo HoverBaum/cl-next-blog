@@ -1,6 +1,6 @@
 import 'server-only'
-import { allPosts } from 'contentlayer/generated'
 import { categoriesFromPosts } from 'utils/categoriesFromPosts'
+import { getAllPosts } from 'utils/blogPosts'
 import { postsByDateDesc } from 'utils/sort'
 import { tagsFromPosts } from 'utils/tagsFromPosts'
 
@@ -13,7 +13,9 @@ export type BlogAction = {
   parent?: string
 }
 
-export const generateBlogActions = () => {
+export const generateBlogActions = async () => {
+  const allPosts = await getAllPosts()
+  const sortedPosts = [...allPosts].sort(postsByDateDesc)
   const actions = categoriesFromPosts(allPosts)
     .map(({ slug, name }) => ({
       id: slug,
@@ -32,7 +34,7 @@ export const generateBlogActions = () => {
       }))
     )
     .concat(
-      allPosts.sort(postsByDateDesc).map(({ _id, title, slug }) => ({
+      sortedPosts.map(({ _id, title, slug }) => ({
         id: _id,
         name: title,
         section: 'Posts',
