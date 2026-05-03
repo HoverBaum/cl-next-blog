@@ -1,4 +1,4 @@
-import { Post } from 'contentlayer/generated'
+import { BlogPost } from './blogPostTypes'
 import { postsByDateDesc } from './sort'
 
 /**
@@ -9,7 +9,7 @@ import { postsByDateDesc } from './sort'
  * @param secondPost
  * @returns
  */
-const relevanceScore = (post: Post, secondPost: Post) => {
+const relevanceScore = (post: BlogPost, secondPost: BlogPost) => {
   // Return a negative number for the same post to make sure it ranks last.
   if (post._id === secondPost._id) return -1000
   const postTags = post.tags || []
@@ -34,7 +34,7 @@ const relevanceScore = (post: Post, secondPost: Post) => {
  * @param primaryPost Current post to find related posts to.
  * @param posts List of posts to find related posts in.
  */
-export const recommandedPosts = (primaryPost: Post, posts: Post[]) => {
+export const recommandedPosts = (primaryPost: BlogPost, posts: BlogPost[]) => {
   const recommandedPosts = posts
     .sort(postsByDateDesc)
     .map((post) => ({
@@ -42,7 +42,7 @@ export const recommandedPosts = (primaryPost: Post, posts: Post[]) => {
       ...post,
     }))
     .sort((a, b) => b.relevanceScore - a.relevanceScore)
-    .slice(0, 2) as Post[]
+    .slice(0, 2) as BlogPost[]
 
   // Find the most recent post, not yet recommanded.
   const recentPost = posts

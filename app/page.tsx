@@ -1,9 +1,7 @@
-import { compareDesc } from 'date-fns'
 import { MeIntro } from 'components/MeIntro'
 import { PostCard } from 'components/Posts/PostCard'
 import { SmallTitle } from 'components/SmallTitle'
 import { Wrapper } from 'components/Wrapper'
-import { allPosts } from 'contentlayer/generated'
 import { LinkButton } from 'components/LinkButton'
 import { RecentTalks } from 'components/Talks/RecentTalks'
 import { FeaturedProjects } from 'components/Projects/FeaturedProjects'
@@ -12,18 +10,16 @@ import { NextAboutMe } from 'components/NextSteps/NextAboutMe'
 import { NextPosts } from 'components/NextSteps/NextPosts'
 import { NextTalks } from 'components/NextSteps/NextTalks'
 import { Metadata } from 'next'
+import { getAllPosts } from 'utils/blogPosts'
+import { postsByDateDesc } from 'utils/sort'
 
 export const metadata: Metadata = {
   title: 'Hendriks Blog - HoverBaum',
 }
 
-const posts = allPosts
-  .sort((a, b) => {
-    return compareDesc(new Date(a.date), new Date(b.date))
-  })
-  .slice(0, 3)
-
 export default async function Home() {
+  const posts = [...(await getAllPosts())].sort(postsByDateDesc).slice(0, 3)
+
   return (
     <Wrapper>
       <MeIntro />

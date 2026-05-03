@@ -1,4 +1,4 @@
-import { Post } from 'contentlayer/generated'
+import { BlogPost } from './blogPostTypes'
 import { stringToSlug } from './stringToSlug'
 
 export type TagType = {
@@ -15,7 +15,7 @@ export type TagType = {
  * @param posts The posts to extract tags from.
  * @returns A list of tags sorted by occurance descending.
  */
-export const tagsFromPosts = (posts: Post[]): TagType[] => {
+export const tagsFromPosts = (posts: BlogPost[]): TagType[] => {
   const tags = posts.reduce((acc, post) => {
     if (post.tags) {
       post.tags.forEach((tag) => {

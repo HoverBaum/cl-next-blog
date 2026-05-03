@@ -1,7 +1,7 @@
 import { PostCard } from 'components/Posts/PostCard'
 import { Wrapper } from 'components/Wrapper'
-import { allPosts } from 'contentlayer/generated'
 import Image from 'next/image'
+import { getAllPosts } from 'utils/blogPosts'
 import { postsByDateDesc } from 'utils/sort'
 import RobotPainting from '../../public/images/genai/robot-painting.png'
 import Link from 'next/link'
@@ -18,8 +18,8 @@ const GenAITags = [
   'copilot',
 ]
 
-export default function GenAI() {
-  const posts = allPosts
+export default async function GenAI() {
+  const posts = [...(await getAllPosts())]
     .filter((post) =>
       post.tags?.some((tag) => GenAITags.includes(tag.toLowerCase()))
     )

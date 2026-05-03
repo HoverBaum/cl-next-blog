@@ -1,6 +1,6 @@
 'use client'
 
-import { BlogAction } from 'components/CommandPalette/generateBlogActions'
+import type { BlogAction } from 'components/CommandPalette/generateBlogActions'
 import { useKBarActions } from 'components/CommandPalette/useKBarActions'
 import { KBarProvider } from 'kbar'
 import { useRouter } from 'next/navigation'
@@ -24,7 +24,7 @@ export function Providers({
         perform: () => router.push(action.href),
       })),
     ],
-    [kBarActions]
+    [blogActions, kBarActions, router]
   )
 
   // Include tracking only on prod.

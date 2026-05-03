@@ -1,4 +1,4 @@
-import { Post } from 'contentlayer/generated'
+import { BlogPost } from './blogPostTypes'
 import { stringToSlug } from './stringToSlug'
 
 export type CategoryType = {
@@ -13,7 +13,7 @@ export type CategoryType = {
  * @param posts Posts to extract categories from.
  * @returns List of caregories, sorted by count descending.
  */
-export const categoriesFromPosts = (posts: Post[]) => {
+export const categoriesFromPosts = (posts: BlogPost[]) => {
   const categories = posts.reduce((acc, post) => {
     if (post.categories) {
       post.categories.forEach((category) => {

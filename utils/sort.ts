@@ -1,5 +1,5 @@
-import { Post } from 'contentlayer/generated'
+import { BlogPost } from './blogPostTypes'
 
-export const postsByDateDesc = (a: Post, b: Post): number => {
+export const postsByDateDesc = (a: BlogPost, b: BlogPost): number => {
   return new Date(b.date).getTime() - new Date(a.date).getTime()
 }
