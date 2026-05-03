@@ -15,6 +15,24 @@ type ParsedFrontmatter = {
   alternativeSlugs?: string[]
 }
 
+const SCALAR_FRONTMATTER_KEYS = ['title', 'date'] as const
+const LIST_FRONTMATTER_KEYS = [
+  'tags',
+  'categories',
+  'alternativeSlugs',
+] as const
+
+type ScalarFrontmatterKey = (typeof SCALAR_FRONTMATTER_KEYS)[number]
+type ListFrontmatterKey = (typeof LIST_FRONTMATTER_KEYS)[number]
+
+const isScalarFrontmatterKey = (key: string): key is ScalarFrontmatterKey => {
+  return SCALAR_FRONTMATTER_KEYS.includes(key as ScalarFrontmatterKey)
+}
+
+const isListFrontmatterKey = (key: string): key is ListFrontmatterKey => {
+  return LIST_FRONTMATTER_KEYS.includes(key as ListFrontmatterKey)
+}
+
 const MARKDOWN_IMAGE_REGEX = /\!\[(.+?)\]\((.+?)\)/
 
 const isProduction = process.env.VERCEL_ENV === 'production'
@@ -62,12 +80,19 @@ const parseFrontmatter = (rawContent: string) => {
   const parsed = rawFrontmatter.split('\n').reduce((acc, line) => {
     const keyValueMatch = line.match(/^([A-Za-z0-9_]+):\s*(.*)$/)
     if (keyValueMatch) {
-      const key = keyValueMatch[1] as keyof ParsedFrontmatter
+      const key = keyValueMatch[1]
       const value = keyValueMatch[2]
-      if (value === '') {
-        acc.currentKey = key
-        acc.data[key] = []
-      } else {
+
+      if (isListFrontmatterKey(key)) {
+        if (value === '') {
+          acc.currentKey = key
+          acc.data[key] = []
+        } else {
+          // Allow single-line list values such as "tags: React".
+          acc.currentKey = undefined
+          acc.data[key] = [parseFrontmatterValue(value)]
+        }
+      } else if (isScalarFrontmatterKey(key)) {
         acc.currentKey = undefined
         acc.data[key] = parseFrontmatterValue(value)
       }
@@ -85,7 +110,7 @@ const parseFrontmatter = (rawContent: string) => {
     return acc
   }, {
     data: {} as ParsedFrontmatter,
-    currentKey: undefined as keyof ParsedFrontmatter | undefined,
+    currentKey: undefined as ListFrontmatterKey | undefined,
   })
 
   return {
