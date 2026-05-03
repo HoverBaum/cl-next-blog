@@ -228,10 +228,13 @@ const loadPostsFromDirectory = async (
 }
 
 export const getAllPosts = cache(async (): Promise<BlogPost[]> => {
-  const directories = [{ path: postsRoot, status: 'published' as const }]
+  const directories: Array<{
+    path: string
+    status: BlogPost['status']
+  }> = [{ path: postsRoot, status: 'published' }]
   if (!isProduction) {
     if (await directoryExists(draftsRoot)) {
-      directories.push({ path: draftsRoot, status: 'draft' as const })
+      directories.push({ path: draftsRoot, status: 'draft' })
     }
   }
 
