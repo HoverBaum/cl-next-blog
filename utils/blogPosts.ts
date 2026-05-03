@@ -36,7 +36,8 @@ const isListFrontmatterKey = (key: string): key is ListFrontmatterKey => {
 
 const MARKDOWN_IMAGE_REGEX = /\!\[(.+?)\]\((.+?)\)/
 
-const isProduction = process.env.VERCEL_ENV === 'production'
+const deploymentEnvironment = process.env.VERCEL_ENV ?? process.env.NODE_ENV
+const isProduction = deploymentEnvironment === 'production'
 
 const postsRoot = path.join(process.cwd(), 'posts')
 const draftsRoot = path.join(process.cwd(), 'drafts')
